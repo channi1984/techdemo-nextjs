@@ -75,7 +75,18 @@ export default function Main() {
 					</div>
 
 					<div className="list">
-						
+						<ul>
+							<li>
+								<div className="thumb">
+									<Image src="/images/img-thumb.png" alt="썸네일 이미지" width={505} height={505} />
+								</div>
+								<div className="info">
+									<span>Model A</span>
+									<strong>$699</strong>
+									<button type="button">Buy Now</button>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>

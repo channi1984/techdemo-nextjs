@@ -39,9 +39,16 @@
 .wrap-main .cart .detail p {padding-top: 1rem; font-family: gr; font-size: 1.4rem; color: rgba(255,255,255,.7);}
 
 .wrap-main .desc {flex-grow: 1; padding-left: 7rem;}
-.wrap-main .desc .big-font {font-family: pb; font-size: 9rem; text-align: center; letter-spacing: .7rem; line-height: 1.2;}
-.wrap-main .desc .big-font span {font-family: gt;}
-.wrap-main .desc .big-img {margin-top: 7rem;}
+.wrap-main .big-font {font-family: pb; font-size: 9rem; text-align: center; letter-spacing: .7rem; line-height: 1.2;}
+.wrap-main .big-font span {font-family: gt;}
+.wrap-main .big-img {margin-top: 7rem;}
 
-.wrap-main .desc .model {margin-top: 8rem;}
-.wrap-main .desc .model .title {font-family: gb; font-size: 4rem; text-align: center;}
+.wrap-main .model {margin-top: 8rem;}
+.wrap-main .model .title {font-family: gb; font-size: 4rem; text-align: center;}
+.wrap-main .model .list {margin-top: 4rem;}
+.wrap-main .model .list ul {display: flex;}
+.wrap-main .model .list li {width: 33.333%; padding: 3rem; border-right: 1px solid #282727;}
+.wrap-main .model .list .info {display: flex; flex-direction: column; align-items: center; padding: 2rem 0; border-bottom: 1px solid #E4DAD7;}
+.wrap-main .model .list .info span {font-size: 1.7rem;}
+.wrap-main .model .list .info strong {margin: 1rem 0; font-family: gbl; font-size: 4.8rem; color: #ff5733;}
+.wrap-main .model .list .info button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.6rem; background: #ff5733; border-radius: .8rem; color: #000;}
