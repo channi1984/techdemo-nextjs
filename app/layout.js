@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 							<div className="menu">
 								<ul>
 									<li>
-										<Link href="/features">Features</Link>
+										<Link href="/movie">Movie</Link>
 									</li>
 									<li>
 										<Link href="/specifications">Specifications</Link>
