@@ -11,7 +11,7 @@
 .wrap-header .left .menu a:hover {color: #FF5733;}
 .wrap-header .right .util {display: flex; align-items: center;}
 .wrap-header .right .util .price {font-size: 1.3rem;}
-.wrap-header .right .util .price .dolor {color: #FF5733;}
+.wrap-header .right .util .price .dolor {padding-left: 1rem; color: #FF5733;}
 .wrap-header .right .util .buy button {display: flex; justify-content: center; align-items: center; height: 3.6rem; margin-left: 3rem; background: #FF5733; padding: 0 1rem; border-radius: .8rem; line-height: 1; color: #fff;}
 
 /* 메인 */
@@ -38,7 +38,7 @@
 .wrap-main .cart .detail strong {font-size: 1.4rem;}
 .wrap-main .cart .detail p {padding-top: 1rem; font-family: gr; font-size: 1.4rem; color: rgba(255,255,255,.7);}
 
-.wrap-main .desc {flex-grow: 1; padding-left: 7rem;}
+.wrap-main .desc {flex-grow: 1; padding-left: 7rem; font-size: 1.7rem;}
 .wrap-main .big-font {font-family: pb; font-size: 9rem; text-align: center; letter-spacing: .7rem; line-height: 1.2;}
 .wrap-main .big-font span {font-family: gt;}
 .wrap-main .big-img {margin-top: 7rem;}
