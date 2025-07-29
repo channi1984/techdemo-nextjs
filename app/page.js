@@ -54,8 +54,14 @@ export default function Main() {
 					<p>6.8-inch display, 20MP camera, 5500mAh battery</p>
 				</div>
 			</div>
+
 			<div className="desc">
-				제품 소개
+				<div className="big-font">
+					Experience the<br />
+					Future of<br />
+					Mobile<br />
+					Technology
+				</div>
 			</div>
 		</div>
 	);
