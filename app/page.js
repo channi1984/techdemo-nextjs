@@ -39,6 +39,20 @@ export default function Main() {
 						</li>
 					</ul>
 				</div>
+
+				<div className="add">
+					<button type="button">Add to cart</button>
+				</div>
+
+				<div className="detail">
+					<strong>Product Details</strong>
+					<p>This is the latest model with cutting-edge technology.</p>
+				</div>
+
+				<div className="detail">
+					<strong>Specifications</strong>
+					<p>6.8-inch display, 20MP camera, 5500mAh battery</p>
+				</div>
 			</div>
 			<div className="desc">
 				제품 소개
