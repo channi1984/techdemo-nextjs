@@ -38,5 +38,7 @@
 .wrap-main .cart .detail strong {font-size: 1.4rem;}
 .wrap-main .cart .detail p {padding-top: 1rem; font-family: gr; font-size: 1.4rem; color: rgba(255,255,255,.7);}
 
-.wrap-main .desc {flex-grow: 1;}
-.wrap-main .desc .big-font {display: none; font-family: gel; font-size: 12rem; text-align: center;}
+.wrap-main .desc {flex-grow: 1; padding-left: 7rem;}
+.wrap-main .desc .big-font {font-family: pb; font-size: 9rem; text-align: center; letter-spacing: .7rem; line-height: 1.2;}
+.wrap-main .desc .big-font span {font-family: gt;}
+.wrap-main .desc .big-img {margin-top: 7rem;}

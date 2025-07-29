@@ -57,10 +57,16 @@ export default function Main() {
 
 			<div className="desc">
 				<div className="big-font">
+					<span>
 					Experience the<br />
 					Future of<br />
-					Mobile<br />
-					Technology
+					</span>
+					MOBILE<br />
+					TECHNOLOGY
+				</div>
+
+				<div className="big-img">
+					<Image src="/images/img-big.png" alt="이미지" width={1793} height={1345}/>
 				</div>
 			</div>
 		</div>
