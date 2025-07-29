@@ -7,8 +7,9 @@ export default function Features() {
 			- API를 이용한 Fetch 연습?<br /><br />
 			- 투두 리스트???<br /><br />
 			- 컨텍스트 API??<br /><br />
-			- 프롭스 부모에서 자식에게 넘기기 <br /><br />
-			- 프롭스 자식에서 부모에게 넘기기 <br /><br />
+			- 프롭스 부모에서 자식에게 넘기기<br /><br />
+			- 프롭스 자식에서 부모에게 넘기기<br /><br />
+			- 동적 라우팅<br /><br />
 		</div>
 	);
 }
