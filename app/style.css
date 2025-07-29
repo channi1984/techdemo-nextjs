@@ -18,7 +18,7 @@
 .wrap-main {display: flex; padding-top: 5rem;}
 .wrap-main .cart {flex-shrink: 0; width: 40rem;}
 .wrap-main .cart .title strong {font-family: gb; font-size: 2.8rem;}
-.wrap-main .cart .title p {margin-top: 1rem; line-height: 1; font-family: gr; font-size: 2.8rem; color: #FF5733;}
+.wrap-main .cart .title p {margin-top: 1rem; line-height: 1; font-size: 2.8rem; color: #FF5733;}
 .wrap-main .cart .color ul {display: flex; align-items: center; margin-top: 2.5rem;}
 .wrap-main .cart .color li {margin-right: 1rem;}
 .wrap-main .cart .color button {width: 3.6rem; height: 3.6rem; border-radius: 10rem;}
