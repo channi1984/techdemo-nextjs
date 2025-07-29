@@ -26,7 +26,8 @@
 
 /* CSS Reset */
 *,:after,:before,::after,::before{box-sizing:border-box;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-html,body{overflow: visible;width:100%;height:100%;font-family:pm;line-height:1.5;font-size:10px; background: #0D0402; color:#fff;word-wrap:break-word;letter-spacing: 0;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,p,button{margin:0;padding:0}
+html,body{overflow: visible;width:100%;height:100%;font-family:pm;line-height:1.5;font-size:10px; background: #0D0402; color:#fff;word-wrap:break-word;letter-spacing: 1px;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,p,button{margin:0;padding:0}
 body{word-break:keep-all; overflow-x: hidden !important;}
 body::-webkit-scrollbar {width: 10px; height: 10px;}
 body::-webkit-scrollbar-thumb {background: #D9D9D9; border: 2px solid #fff; border-radius: 1rem;}
@@ -43,7 +44,7 @@ input[type="button"],
 input[type="submit"] {cursor: pointer;}
 a:focus,button:focus,input:focus,select:focus,textarea:focus {outline: none;}
 a:link,a:active,a:visited{text-decoration:none;color:#fff}
-a:hover{text-decoration:none;color:#002d56;}
+a:hover{text-decoration:none;color:#fff;}
 legend{width:0;height:0;font-size:0;position:absolute;z-index:-1}
 table{width:100%;border-spacing:0;table-layout:fixed;}
 caption{width:0;height:0;padding:0;font-size:0;opacity:0}

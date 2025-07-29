@@ -4,4 +4,10 @@
 /* 헤더 */
 .wrap-header .area {display: flex; justify-content: space-between; align-items: center; height: 8rem;}
 .wrap-header .left {display: flex; justify-content: center; align-items: center;}
-.wrap-header .left .logo {width: 18rem;}
+.wrap-header .left .logo {width: 18rem; margin-right: 5rem;}
+.wrap-header .left .menu ul {display: flex; align-items: center;}
+.wrap-header .left .menu li {margin-right: 3rem;}
+.wrap-header .left .menu a {font-family: pb; font-size: 1.6rem;}
+.wrap-header .right .util {display: flex; align-items: center;}
+.wrap-header .right .util .price {font-size: 1.3rem;}
+.wrap-header .right .util .buy {display: flex; justify-content: center; align-items: center; height: 3.6rem; margin-left: 3rem; background: #FF5733; padding: 0 1rem; border-radius: .8rem; color: #fff;}
