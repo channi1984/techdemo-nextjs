@@ -1,2 +1,7 @@
 /* 레이아웃 */
 .area {max-width: 144rem; margin: 0 auto;}
+
+/* 헤더 */
+.wrap-header .area {display: flex; justify-content: space-between; align-items: center; height: 8rem;}
+.wrap-header .left {display: flex; justify-content: center; align-items: center;}
+.wrap-header .left .logo {width: 18rem;}
