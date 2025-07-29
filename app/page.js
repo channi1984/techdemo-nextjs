@@ -2,183 +2,129 @@ import Image from "next/image";
 
 export default function Main() {
 	return (
-		<div className="wrap-main">
-			<div className="cart">
-				<div className="title">
-					<strong>TechMaster Pro</strong>
-					<p>$999</p>
-				</div>
-
-				<div className="color">
-					<ul>
-						<li className="color1">
-							<button type="button"></button>
-						</li>
-						<li className="color2">
-							<button type="button"></button>
-						</li>
-						<li className="color3">
-							<button type="button"></button>
-						</li>
-						<li className="color4">
-							<button type="button"></button>
-						</li>
-					</ul>
-				</div>
-
-				<div className="size">
-					<ul>
-						<li>
-							<button type="button">medium</button>
-						</li>
-						<li>
-							<button type="button">medium</button>
-						</li>
-						<li>
-							<button type="button">medium</button>
-						</li>
-					</ul>
-				</div>
-
-				<div className="add">
-					<button type="button">Add to cart</button>
-				</div>
-
-				<div className="detail detail1">
-					<strong>Product Details</strong>
-					<p>This is the latest model with cutting-edge technology.</p>
-				</div>
-
-				<div className="detail">
-					<strong>Specifications</strong>
-					<p>6.8-inch display, 20MP camera, 5500mAh battery</p>
-				</div>
-			</div>
-
-			<div className="desc">
-				<div className="big-font">
-					<span>
+		<div className="desc">
+			<div className="big-font">
+				<span>
 					Experience the<br />
 					Future of<br />
-					</span>
-					MOBILE<br />
-					TECHNOLOGY
+				</span>
+				MOBILE<br />
+				TECHNOLOGY
+			</div>
+
+			<div className="big-img">
+				<Image src="/images/img-big.png" alt="이미지" width={1793} height={1345} />
+			</div>
+
+			<div className="model">
+				<div className="title">
+					Compare Our Models
 				</div>
 
-				<div className="big-img">
-					<Image src="/images/img-big.png" alt="이미지" width={1793} height={1345}/>
-				</div>
+				<div className="list">
+					<ul>
+						<li>
+							<div className="thumb">
+								<Image src="/images/img-thumb.png" alt="썸네일 이미지" width={505} height={505} />
+							</div>
+							<div className="info">
+								<span>Model A</span>
+								<strong>$699</strong>
+								<button type="button">Buy Now</button>
+							</div>
+							<div className="icons">
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
+									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
+								</div>
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
+									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
+								</div>
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
+									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
+								</div>
+							</div>
+						</li>
 
-				<div className="model">
-					<div className="title">
-						Compare Our Models
-					</div>
+						<li>
+							<div className="thumb">
+								<Image src="/images/img-thumb.png" alt="썸네일 이미지" width={505} height={505} />
+							</div>
+							<div className="info">
+								<span>Model A</span>
+								<strong>$699</strong>
+								<button type="button">Buy Now</button>
+							</div>
+							<div className="icons">
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
+									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
+								</div>
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
+									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
+								</div>
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
+									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
+								</div>
+							</div>
+						</li>
 
-					<div className="list">
-						<ul>
-							<li>
-								<div className="thumb">
-									<Image src="/images/img-thumb.png" alt="썸네일 이미지" width={505} height={505} />
-								</div>
-								<div className="info">
-									<span>Model A</span>
-									<strong>$699</strong>
-									<button type="button">Buy Now</button>
-								</div>
-								<div className="icons">
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
+						<li>
+							<div className="thumb">
+								<Image src="/images/img-thumb.png" alt="썸네일 이미지" width={505} height={505} />
+							</div>
+							<div className="info">
+								<span>Model A</span>
+								<strong>$699</strong>
+								<button type="button">Buy Now</button>
+							</div>
+							<div className="icons">
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
 									</div>
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
-									</div>
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
-									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
 								</div>
-							</li>
-
-							<li>
-								<div className="thumb">
-									<Image src="/images/img-thumb.png" alt="썸네일 이미지" width={505} height={505} />
-								</div>
-								<div className="info">
-									<span>Model A</span>
-									<strong>$699</strong>
-									<button type="button">Buy Now</button>
-								</div>
-								<div className="icons">
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
 									</div>
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
-									</div>
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
-									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
 								</div>
-							</li>
-
-							<li>
-								<div className="thumb">
-									<Image src="/images/img-thumb.png" alt="썸네일 이미지" width={505} height={505} />
-								</div>
-								<div className="info">
-									<span>Model A</span>
-									<strong>$699</strong>
-									<button type="button">Buy Now</button>
-								</div>
-								<div className="icons">
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
+								<div className="box">
+									<div className="icon">
+										<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
 									</div>
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
-									</div>
-									<div className="box">
-										<div className="icon">
-											<Image src="/images/ic-phone3.png" alt="아이콘" width={121} height={100} />
-										</div>
-										<strong>Camera</strong>
-										<p>12MP</p>
-									</div>
+									<strong>Camera</strong>
+									<p>12MP</p>
 								</div>
-							</li>
-						</ul>
-					</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

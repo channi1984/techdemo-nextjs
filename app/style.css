@@ -15,8 +15,8 @@
 .wrap-header .right .util .buy button {display: flex; justify-content: center; align-items: center; height: 3.6rem; margin-left: 3rem; background: #FF5733; padding: 0 1rem; border-radius: .8rem; line-height: 1; color: #fff;}
 
 /* 메인 */
-.wrap-main {display: flex; padding-top: 5rem;}
-.wrap-main .cart {flex-shrink: 0; width: 40rem;}
+.wrap-main {display: flex; align-items: flex-start; padding-top: 5rem;}
+.wrap-main .cart {position: sticky; left: 0; top: 4rem; flex-shrink: 0; width: 40rem;}
 .wrap-main .cart .title strong {font-family: gb; font-size: 2.8rem;}
 .wrap-main .cart .title p {margin-top: 1rem; line-height: 1; font-size: 2.8rem; color: #FF5733;}
 .wrap-main .cart .color ul {display: flex; align-items: center; margin-top: 2.5rem;}
