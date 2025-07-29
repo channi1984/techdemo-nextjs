@@ -68,6 +68,12 @@ export default function Main() {
 				<div className="big-img">
 					<Image src="/images/img-big.png" alt="이미지" width={1793} height={1345}/>
 				</div>
+
+				<div className="model">
+					<div className="title">
+						Compare Our Models
+					</div>
+				</div>
 			</div>
 		</div>
 	);
