@@ -73,6 +73,10 @@ export default function Main() {
 					<div className="title">
 						Compare Our Models
 					</div>
+
+					<div className="list">
+						
+					</div>
 				</div>
 			</div>
 		</div>

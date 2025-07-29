@@ -42,3 +42,6 @@
 .wrap-main .desc .big-font {font-family: pb; font-size: 9rem; text-align: center; letter-spacing: .7rem; line-height: 1.2;}
 .wrap-main .desc .big-font span {font-family: gt;}
 .wrap-main .desc .big-img {margin-top: 7rem;}
+
+.wrap-main .desc .model {margin-top: 8rem;}
+.wrap-main .desc .model .title {font-family: gb; font-size: 4rem; text-align: center;}
