@@ -26,7 +26,7 @@
 
 /* CSS Reset */
 *,:after,:before,::after,::before{box-sizing:border-box;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-html,body{overflow: visible;width:100%;height:100%;font-family:pm;line-height:1.5;font-size:10px; background: #0D0402; color:#fff;word-wrap:break-word;letter-spacing: 1px;}
+html,body{overflow: visible;width:100%;height:100%;font-family:gb;line-height:1.5;font-size:10px; background: #0D0402; color:#fff;word-wrap:break-word;letter-spacing: 1px;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,p,button{margin:0;padding:0}
 body{word-break:keep-all; overflow-x: hidden !important;}
 body::-webkit-scrollbar {width: 10px; height: 10px;}
@@ -38,7 +38,7 @@ li{list-style:none}
 img{width:auto;max-width:100%;height:auto;vertical-align:top;}
 i,em,address{font-style:normal}
 label,button{cursor:pointer}
-button{font-family:pm;background-color:transparent;overflow:visible;border:0}
+button{font-family:gb;background-color:transparent;overflow:visible;border:0}
 a,button,input{border:0 none}
 input[type="button"],
 input[type="submit"] {cursor: pointer;}
@@ -50,7 +50,7 @@ table{width:100%;border-spacing:0;table-layout:fixed;}
 caption{width:0;height:0;padding:0;font-size:0;opacity:0}
 th{text-align:center}
 input::-ms-clear{display:none}
-input,button{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;font-family:pm}
+input,button{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;font-family:gb}
 input[type="radio"]{position:relative;top:.2rem}
 pre{white-space:pre-line;background-color:#fff;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;overflow-y:auto}
 select::-ms-expand{display:none}
