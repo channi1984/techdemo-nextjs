@@ -42,7 +42,7 @@ a,button,input{border:0 none}
 input[type="button"],
 input[type="submit"] {cursor: pointer;}
 a:focus,button:focus,input:focus,select:focus,textarea:focus {outline: none;}
-a:link,a:active,a:visited{text-decoration:none;color:#000}
+a:link,a:active,a:visited{text-decoration:none;color:#fff}
 a:hover{text-decoration:none;color:#002d56;}
 legend{width:0;height:0;font-size:0;position:absolute;z-index:-1}
 table{width:100%;border-spacing:0;table-layout:fixed;}
