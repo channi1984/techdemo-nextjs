@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import "./globals.css";
 import "./style.css"
@@ -16,21 +17,23 @@ export default function RootLayout({ children }) {
 					<div className="area">
 						<div className="left">
 							<div className="logo">
-								<Image src="/images/ic-logo.png" alt="로고" width={356} height={44} />
+								<Link href="/">
+									<Image src="/images/ic-logo.png" alt="로고" width={356} height={44} />
+								</Link>
 							</div>
 							<div className="menu">
 								<ul>
 									<li>
-										<a href="#link">Features</a>
+										<Link href="/features">Features</Link>
 									</li>
 									<li>
-										<a href="#link">Specifications</a>
+										<Link href="/specifications">Specifications</Link>
 									</li>
 									<li>
-										<a href="#link">Reviews</a>
+										<Link href="/reviews">Reviews</Link>
 									</li>
 									<li>
-										<a href="#link">Support</a>
+										<Link href="/support">Support</Link>
 									</li>
 								</ul>
 							</div>

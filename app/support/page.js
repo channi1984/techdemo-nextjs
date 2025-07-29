@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export default function Features() {
+export default function Support() {
 	return (
 		<div className="desc">
-			Features 컨텐츠가 들어갑니다.
+			support 컨텐츠가 들어갑니다.
 		</div>
 	);
 }
