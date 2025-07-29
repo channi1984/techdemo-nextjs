@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
 							<div className="util">
 								<div className="price">
 									<span>Starting from</span>
-									<span>$999</span>
+									<span className="dolor">$999</span>
 								</div>
 								<div className="buy">
 									<button type="button">Buy now</button>

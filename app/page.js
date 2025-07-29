@@ -44,7 +44,7 @@ export default function Main() {
 					<button type="button">Add to cart</button>
 				</div>
 
-				<div className="detail">
+				<div className="detail detail1">
 					<strong>Product Details</strong>
 					<p>This is the latest model with cutting-edge technology.</p>
 				</div>
