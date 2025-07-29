@@ -38,7 +38,7 @@ li{list-style:none}
 img{width:auto;max-width:100%;height:auto;vertical-align:top;}
 i,em,address{font-style:normal}
 label,button{cursor:pointer}
-button{font-family:gb;background-color:transparent;overflow:visible;border:0}
+button{font-family:gb;background-color:transparent;overflow:visible;border:0;color:#fff;}
 a,button,input{border:0 none}
 input[type="button"],
 input[type="submit"] {cursor: pointer;}
