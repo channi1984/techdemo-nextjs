@@ -9,7 +9,9 @@ export default function MovieDetail() {
 				<div className="thumb">
 					<Image src="/images/img-movie-detail.png" alt="커버 이미지" width={860} height={964} />
 					<div className="play">
-						<button type="button">플레이 버튼</button>
+						<button type="button">
+							<Image src="/images/ic-movie-play2.png" alt="플레이 이미지" width={80} height={80} />
+						</button>
 					</div>
 				</div>
 
@@ -28,7 +30,7 @@ export default function MovieDetail() {
 					<div className="title">
 						Under Paris
 					</div>
-					<div className="desc">
+					<div className="text">
 						To save Paris from a bloodbath, a grieving scientist is forced to face her
 						tragic past when a giant shark appears in the Seine. <strong>Show More</strong>
 					</div>
