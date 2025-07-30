@@ -86,3 +86,6 @@
 .wrap-movie .list .subject {text-align: center; margin-top: 2rem;}
 .wrap-movie .list .star {display: flex; justify-content: center; align-items: center; margin-top: 1rem;}
 .wrap-movie .list .star img {width: 3rem;}
+
+/* 무비 디테일 */
+.wrap-movie-detail {}
