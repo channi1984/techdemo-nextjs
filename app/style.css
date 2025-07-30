@@ -79,11 +79,11 @@
 .wrap-movie .tab .on button,
 .wrap-movie .tab button:hover {background: #3A21D9;}
 
-.wrap-movie .list {margin-top: 2rem;}
+.wrap-movie .list {margin-top: 2rem; margin-bottom: 2rem;}
 .wrap-movie .list > ul {display: flex; justify-content: space-between; flex-wrap: wrap;}
-.wrap-movie .list > ul > li {width: calc(50% - 1rem); margin-top: 2rem;}
-.wrap-movie .list .thumb img {width: 100%;}
-.wrap-movie .list .subject {text-align: center; margin-top: 2rem;}
+.wrap-movie .list > ul > li {width: calc(33.333% - 1rem); margin-top: 2rem;}
+.wrap-movie .list .thumb img {width: 100%; border-radius: 1rem;}
+.wrap-movie .list .subject {margin-top: 2rem; text-align: center; font-size: 1.6rem;}
 .wrap-movie .list .star {display: flex; justify-content: center; align-items: center; margin-top: 1rem;}
 .wrap-movie .list .star img {width: 3rem;}
 

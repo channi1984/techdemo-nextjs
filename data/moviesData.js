@@ -23,7 +23,19 @@ const movies = [
 		actors: [
 			{ name: "John Doe", imageUrl: "/images/img-movie-actor.png" },
 		],
-	}
+	},
+	{
+		id: "the-great-escape",
+		title: "The Great Escape",
+		imageUrl: "/images/img-movie3.png",
+		imageDetailUrl: "/images/img-movie-detail3.png",
+		description: "A classic war film about Allied prisoners of war who plan a mass escape from a German POW camp during World War II.",
+		rating: 4.8,
+		actors: [
+			{ name: "Steve McQueen", imageUrl: "/images/img-movie-actor.png" },
+			{ name: "James Garner", imageUrl: "/images/img-movie-actor.g" },
+		],
+	},
 ];
 
 export default movies;
