@@ -1,5 +1,5 @@
 /* 레이아웃 */
-.area {max-width: 144rem; margin: 0 auto;}
+.area {max-width: 146rem; margin: 0 auto; padding: 0 2rem;}
 
 /* 헤더 */
 .wrap-header .area {display: flex; justify-content: space-between; align-items: center; height: 8rem;}
@@ -79,7 +79,10 @@
 .wrap-movie .tab .on button,
 .wrap-movie .tab button:hover {background: #3A21D9;}
 
-.wrap-movie .list {margin-top: 4rem;}
-.wrap-movie .list ul {display: flex; justify-content: space-between; flex-wrap: wrap;}
-.wrap-movie .list li {width: calc(50% - 1rem);}
+.wrap-movie .list {margin-top: 2rem;}
+.wrap-movie .list > ul {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.wrap-movie .list > ul > li {width: calc(50% - 1rem); margin-top: 2rem;}
 .wrap-movie .list .thumb img {width: 100%;}
+.wrap-movie .list .subject {text-align: center; margin-top: 2rem;}
+.wrap-movie .list .star {display: flex; justify-content: center; align-items: center; margin-top: 1rem;}
+.wrap-movie .list .star img {width: 3rem;}

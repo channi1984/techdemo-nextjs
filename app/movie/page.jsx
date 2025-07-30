@@ -25,7 +25,7 @@ export default function MovieFeatures() {
 					</div>
 				</div>
 
-				{/* 서치 */}
+				{/* 검색 */}
 				<div className="search">
 					<button type="button" className="search">검색버튼</button>
 					<input type="text" placeholder="Search" />
@@ -42,7 +42,7 @@ export default function MovieFeatures() {
 					</ul>
 				</div>
 
-				{/* 리스트 */}
+				{/* 무비 리스트 */}
 				<div className="list">
 					<ul>
 						<li>
@@ -53,7 +53,7 @@ export default function MovieFeatures() {
 								<div className="subject">
 									Under Paris 1
 								</div>
-								<ul>
+								<ul className="star">
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
@@ -71,7 +71,7 @@ export default function MovieFeatures() {
 								<div className="subject">
 									Under Paris 2
 								</div>
-								<ul>
+								<ul className="star">
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
@@ -89,7 +89,7 @@ export default function MovieFeatures() {
 								<div className="subject">
 									Under Paris 3
 								</div>
-								<ul>
+								<ul className="star">
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
@@ -107,7 +107,7 @@ export default function MovieFeatures() {
 								<div className="subject">
 									Under Paris 4
 								</div>
-								<ul>
+								<ul className="star">
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
