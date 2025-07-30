@@ -5,7 +5,7 @@ export default function MovieFeatures() {
 		<div className="desc">
 			{/* 무비 */}
 			<div className="wrap-movie">
-				무비앱
+
 			</div>
 		</div>
 	);
