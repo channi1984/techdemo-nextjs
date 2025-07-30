@@ -4,11 +4,12 @@ import Link from "next/link";
 import "./globals.css";
 import "./style.css"
 
+export const viewport = {
+	width: '1500px',
+}
+
 export const metadata = {
 	title: "Next JS TechDemo",
-	viewport : {
-		width: '1500px'
-	}
 };
 
 export default function RootLayout({ children }) {

@@ -79,7 +79,7 @@
 .wrap-movie .tab .on button,
 .wrap-movie .tab button:hover {background: #3A21D9;}
 
-.wrap-movie .list {margin-top: 3rem;}
+.wrap-movie .list {margin-top: 4rem;}
 .wrap-movie .list ul {display: flex; justify-content: space-between; flex-wrap: wrap;}
 .wrap-movie .list li {width: calc(50% - 1rem);}
 .wrap-movie .list .thumb img {width: 100%;}

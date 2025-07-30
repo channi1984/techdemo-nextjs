@@ -99,7 +99,7 @@ export default function MovieFeatures() {
 							</Link>
 						</li>
 
-						<li> 
+						<li>
 							<Link href="">
 								<div className="thumb">
 									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
