@@ -1,1 +1,2 @@
-It's My Next JS TechDemo Page!!
+이 앱은 넥스트 JS를 숙지하기 위한 토이 프로젝트 입니다.
+by Channi84
