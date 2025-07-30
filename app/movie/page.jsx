@@ -46,8 +46,72 @@ export default function MovieFeatures() {
 						<li>
 							<Link href="">
 								<div className="thumb">
-									
+									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
 								</div>
+								<div className="subject">
+									Under Paris
+								</div>
+								<ul>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+								</ul>
+							</Link>
+						</li>
+
+						<li>
+							<Link href="">
+								<div className="thumb">
+									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
+								</div>
+								<div className="subject">
+									Under Paris
+								</div>
+								<ul>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+								</ul>
+							</Link>
+						</li>
+
+						<li>
+							<Link href="">
+								<div className="thumb">
+									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
+								</div>
+								<div className="subject">
+									Under Paris
+								</div>
+								<ul>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+								</ul>
+							</Link>
+						</li>
+
+						<li>
+							<Link href="">
+								<div className="thumb">
+									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
+								</div>
+								<div className="subject">
+									Under Paris
+								</div>
+								<ul>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+								</ul>
 							</Link>
 						</li>
 					</ul>
