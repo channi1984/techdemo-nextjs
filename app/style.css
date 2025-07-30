@@ -71,3 +71,10 @@
 .wrap-movie .search .search {position: absolute; left: 0; top: 0; width: 6rem; height: 100%; background: url('/images/ic-movie-search.png') no-repeat center / 2rem auto; text-indent: -9999rem;}
 .wrap-movie .search .filter {position: absolute; right: 0; top: 0; width: 6rem; height: 100%; background: url('/images/ic-movie-filter.png') no-repeat center / 2rem auto; text-indent: -9999rem;}
 .wrap-movie .search input {width: 100%; padding: 0 6rem; background: transparent; font-family: gr; font-size: 1.6rem; color: #fff;}
+
+.wrap-movie .tab {margin-top: 2rem;}
+.wrap-movie .tab ul {display: flex; justify-content: space-between; align-items: center; gap: 0 2rem;}
+.wrap-movie .tab li {width: 25%;}
+.wrap-movie .tab button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.5rem; background: #515053; border-radius: 1rem; color: #fff;}
+.wrap-movie .tab .on button,
+.wrap-movie .tab button:hover {background: #3A21D9;}
