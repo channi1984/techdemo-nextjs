@@ -6,6 +6,9 @@ import "./style.css"
 
 export const metadata = {
 	title: "Next JS TechDemo",
+	viewport : {
+		width: '1500px'
+	}
 };
 
 export default function RootLayout({ children }) {
