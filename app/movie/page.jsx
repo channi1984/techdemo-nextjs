@@ -48,7 +48,7 @@ export default function MovieFeatures() {
 					<ul>
 						{movies.map((movie) => (
 							<li key={movie.id}>
-								<Link href={`/movies/${movie.id}`}>
+								<Link href={`/movie/${movie.id}`}>
 									<div className="thumb">
 										<Image src={movie.imageUrl} alt={movie.title} width={384} height={538} />
 									</div>

@@ -88,10 +88,10 @@
 .wrap-movie .list .star img {width: 3rem;}
 
 /* 무비 디테일 */
-.wrap-movie-detail .thumb {position: relative;}
-.wrap-movie-detail .thumb img {border-radius: 2rem;}
-.wrap-movie-detail .thumb .play {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
-.wrap-movie-detail .thumb .play img {width: 4rem;}
+.wrap-movie-detail > .thumb {overflow: hidden; position: relative; display: flex; align-items: flex-start; height: 50rem; border-radius: 2rem;}
+.wrap-movie-detail > .thumb::after {content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,.9);}
+.wrap-movie-detail > .thumb .play {position: absolute; left: 50%; top: 50%; z-index: 1; transform: translate(-50%, -50%);}
+.wrap-movie-detail > .thumb .play img {width: 8rem;}
 
 .wrap-movie-detail .badge {display: flex; justify-content: space-between; align-items: center; margin-top: 3rem;}
 .wrap-movie-detail .badge ul {display: flex; align-items: center;}

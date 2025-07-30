@@ -70,7 +70,7 @@ export default function MovieDetail() {
 				</div>
 
 				<div className="button">
-					<button type="button">Open</button>
+					<button type="button">Play</button>
 				</div>
 			</div>
 		</div>
