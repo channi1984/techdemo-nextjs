@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MovieFeatures() {
 	return (
@@ -27,6 +28,29 @@ export default function MovieFeatures() {
 					<button type="button" className="search">검색버튼</button>
 					<input type="text" placeholder="Search" />
 					<button type="button" className="filter">필터버튼</button>
+				</div>
+
+				{/* 탭 */}
+				<div className="tab">
+					<ul>
+						<li className="on"><button type="button">Action</button></li>
+						<li><button type="button">Drama</button></li>
+						<li><button type="button">Comedy</button></li>
+						<li><button type="button">Romance</button></li>
+					</ul>
+				</div>
+
+				{/* 리스트 */}
+				<div className="list">
+					<ul>
+						<li>
+							<Link href="">
+								<div className="thumb">
+									
+								</div>
+							</Link>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
