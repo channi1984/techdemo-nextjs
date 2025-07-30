@@ -51,7 +51,7 @@ export default function MovieFeatures() {
 									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
 								</div>
 								<div className="subject">
-									Under Paris
+									Under Paris 1
 								</div>
 								<ul>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
@@ -69,7 +69,7 @@ export default function MovieFeatures() {
 									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
 								</div>
 								<div className="subject">
-									Under Paris
+									Under Paris 2
 								</div>
 								<ul>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
@@ -87,7 +87,7 @@ export default function MovieFeatures() {
 									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
 								</div>
 								<div className="subject">
-									Under Paris
+									Under Paris 3
 								</div>
 								<ul>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
@@ -105,7 +105,7 @@ export default function MovieFeatures() {
 									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
 								</div>
 								<div className="subject">
-									Under Paris
+									Under Paris 4
 								</div>
 								<ul>
 									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
