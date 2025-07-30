@@ -58,3 +58,9 @@
 .wrap-main .model .icons p {font-size: 1.5rem;}
 
 /* 무비앱 */
+.wrap-movie .header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;}
+.wrap-movie .header .people {display: flex; align-items: center;}
+.wrap-movie .header .people .thumb {width: 4rem;}
+.wrap-movie .header .people .info {display: flex; flex-direction: column; align-items: flex-start; margin-left: 2rem;}
+.wrap-movie .header .people .info span {font-family: gl; font-size: 1.2rem;}
+.wrap-movie .header .menu img {width: 2rem;}
