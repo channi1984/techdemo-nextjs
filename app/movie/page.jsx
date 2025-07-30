@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import movies from "@/data/moviesData";
 
 export default function MovieFeatures() {
 	return (
@@ -45,77 +46,25 @@ export default function MovieFeatures() {
 				{/* 무비 리스트 */}
 				<div className="list">
 					<ul>
-						<li>
-							<Link href="">
-								<div className="thumb">
-									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
-								</div>
-								<div className="subject">
-									Under Paris 1
-								</div>
-								<ul className="star">
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-								</ul>
-							</Link>
-						</li>
-
-						<li>
-							<Link href="">
-								<div className="thumb">
-									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
-								</div>
-								<div className="subject">
-									Under Paris 2
-								</div>
-								<ul className="star">
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-								</ul>
-							</Link>
-						</li>
-
-						<li>
-							<Link href="">
-								<div className="thumb">
-									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
-								</div>
-								<div className="subject">
-									Under Paris 3
-								</div>
-								<ul className="star">
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-								</ul>
-							</Link>
-						</li>
-
-						<li>
-							<Link href="">
-								<div className="thumb">
-									<Image src="/images/img-movie.png" alt="커버이미지" width={384} height={538} />
-								</div>
-								<div className="subject">
-									Under Paris 4
-								</div>
-								<ul className="star">
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-									<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-								</ul>
-							</Link>
-						</li>
+						{movies.map((movie) => (
+							<li key={movie.id}>
+								<Link href={`/movies/${movie.id}`}>
+									<div className="thumb">
+										<Image src={movie.imageUrl} alt={movie.title} width={384} height={538} />
+									</div>
+									<div className="subject">
+										{movie.title}
+									</div>
+									<ul className="star">
+										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+									</ul>
+								</Link>
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>
