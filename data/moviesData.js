@@ -1,6 +1,6 @@
 const movies = [
 	{
-		id: "under-paris", // URL의 [detail]에 매핑될 값
+		id: "1", // URL의 [detail]에 매핑될 값
 		title: "Under Paris",
 		imageUrl: "/images/img-movie.png",
 		imageDetailUrl: "/images/img-movie-detail.png",
@@ -14,7 +14,7 @@ const movies = [
 		],
 	},
 	{
-		id: "another-movie",
+		id: "2",
 		title: "Another Movie",
 		imageUrl: "/images/img-movie.png",
 		imageDetailUrl: "/images/img-movie-detail.png",
@@ -25,7 +25,7 @@ const movies = [
 		],
 	},
 	{
-		id: "the-great-escape",
+		id: "3",
 		title: "The Great Escape",
 		imageUrl: "/images/img-movie.png",
 		imageDetailUrl: "/images/img-movie-detail.png",
@@ -37,7 +37,7 @@ const movies = [
 		],
 	},
 	{
-		id: "under-paris", // URL의 [detail]에 매핑될 값
+		id: "4", // URL의 [detail]에 매핑될 값
 		title: "Under Paris",
 		imageUrl: "/images/img-movie.png",
 		imageDetailUrl: "/images/img-movie-detail.png",
@@ -51,7 +51,7 @@ const movies = [
 		],
 	},
 	{
-		id: "another-movie",
+		id: "5",
 		title: "Another Movie",
 		imageUrl: "/images/img-movie.png",
 		imageDetailUrl: "/images/img-movie-detail.png",
@@ -62,7 +62,7 @@ const movies = [
 		],
 	},
 	{
-		id: "the-great-escape",
+		id: "6",
 		title: "The Great Escape",
 		imageUrl: "/images/img-movie.png",
 		imageDetailUrl: "/images/img-movie-detail.png",
