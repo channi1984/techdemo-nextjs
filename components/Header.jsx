@@ -26,11 +26,11 @@ export default function Header() {
 				<div className="right">
 					<div className="util">
 						<div className="price">
-							<span>Starting from</span>
-							<span className="dolor">$999</span>
+							<span>Author</span>
+							<span className="dolor">Channi</span>
 						</div>
 						<div className="buy">
-							<button type="button">Buy now</button>
+							<button type="button">Button</button>
 						</div>
 					</div>
 				</div>

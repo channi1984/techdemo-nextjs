@@ -8,7 +8,7 @@ export const viewport = {
 }
 
 export const metadata = {
-	title: "넥스트JS 테크데모",
+	title: "넥스트 JS 테크데모",
 };
 
 export default function RootLayout({ children }) {
@@ -61,13 +61,8 @@ export default function RootLayout({ children }) {
 								</div>
 
 								<div className="detail detail1">
-									<strong>Details</strong>
-									<p>This is the latest model with cutting-edge technology.</p>
-								</div>
-
-								<div className="detail">
-									<strong>Specifications</strong>
-									<p>6.8-inch display, 20MP camera, 5500mAh battery</p>
+									<strong>Description</strong>
+									<p>This is Next JS Techdemo page.</p>
 								</div>
 							</div>
 

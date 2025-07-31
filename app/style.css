@@ -77,19 +77,19 @@
 .wrap-movie .tab {margin-top: 2rem;}
 .wrap-movie .tab ul {display: flex; justify-content: space-between; align-items: center; gap: 0 2rem;}
 .wrap-movie .tab li {width: 25%;}
-.wrap-movie .tab button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.5rem; background: #515053; border-radius: 1rem; color: #fff;}
+.wrap-movie .tab button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.5rem; background: #515053; border-radius: 1rem; color: rgba(255,255,255,.7);}
 .wrap-movie .tab .on button,
-.wrap-movie .tab button:hover {background: #3A21D9;}
+.wrap-movie .tab button:hover {background: #3A21D9; color: #fff;}
 
-.wrap-movie .list {margin-top: 2rem; margin-bottom: 2rem;}
+.wrap-movie .list {margin-bottom: 2rem;}
 .wrap-movie .list > ul {display: flex; flex-wrap: wrap; width: calc(100% + 2rem)}
-.wrap-movie .list > ul > li {width: 50%; margin-top: 2rem;}
+.wrap-movie .list > ul > li {width: 33.333%; margin-top: 3rem;}
 .wrap-movie .list > ul > li.nodata {width: 100%; padding: 2rem 0; text-align: center; font-family: gr;}
 .wrap-movie .list a {display: block; padding-right: 2rem;}
 .wrap-movie .list .thumb img {width: 100%; border-radius: 1rem;}
-.wrap-movie .list .subject {margin-top: 2rem; text-align: center; font-size: 1.6rem;}
-.wrap-movie .list .star {display: flex; justify-content: center; align-items: center; margin-top: 1rem;}
-.wrap-movie .list .star img {width: 3rem;}
+.wrap-movie .list .subject {margin-top: 3rem; text-align: center; font-family: gm; font-size: 1.6rem; color: rgba(255,255,255,.7);}
+.wrap-movie .list .star {display: flex; justify-content: center; align-items: center; margin-top: .5rem;}
+.wrap-movie .list .star img {width: 2rem;}
 
 /* 무비 디테일 */
 .wrap-movie-detail > .thumb {overflow: hidden; position: relative; border-radius: 2rem;}
