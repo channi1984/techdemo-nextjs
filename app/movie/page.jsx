@@ -96,7 +96,7 @@ export default function MovieFeatures() {
 						))}
 						{/* 검색 결과가 없을 때 메세지 표시 */}
 						{filteredMovies.length === 0 && searchTerm !== "" && (
-							<li>검색 결과가 없습니다.</li>
+							<li className="nodata">No Data.</li>
 						)}
 					</ul>
 				</div>
