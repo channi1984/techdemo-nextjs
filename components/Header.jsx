@@ -8,7 +8,7 @@ export default function Header() {
 				<div className="left">
 					<div className="logo">
 						<Link href="/">
-							<Image src="/images/ic-logo.png" alt="로고" width={356} height={44} />
+							TECHDEMO
 						</Link>
 					</div>
 					<div className="menu">
@@ -17,13 +17,7 @@ export default function Header() {
 								<Link href="/movie">Movie</Link>
 							</li>
 							<li>
-								<Link href="/movie_api">Movie Api</Link>
-							</li>
-							<li>
-								<Link href="/reviews">Reviews</Link>
-							</li>
-							<li>
-								<Link href="/support">Support</Link>
+								<Link href="/movie_api">Movie by Api</Link>
 							</li>
 						</ul>
 					</div>
