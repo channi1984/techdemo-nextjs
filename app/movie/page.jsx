@@ -6,23 +6,42 @@ import movies from "@/data/moviesData";
 import { useState, useEffect } from 'react';
 
 export default function MovieFeatures() {
+	//검색어 상태
 	const [searchTerm, setSearchTerm] = useState("");
+	// 필터링된 영화 목록 상태
 	const [filteredMovies, setFilteredMovies] = useState(movies);
+	// 현재 활성화된 탭 상태, 기본값은 All
+	const [activeTab, setActiveTab] = useState("All");
 
 	useEffect(() => {
+		let moviesToFilter = movies; // 기본적으로 모든 영화
+
+		// 1. 탭으로 필터링
+		if (activeTab !== "All") {
+			moviesToFilter = movies.filter((movie) => movie.genre === activeTab);
+		}
+
+		// 2. 검색어로 필터링
 		if (searchTerm === "") {
-			setFilteredMovies(movies); //검색어가 없으면 모든 영화를 표시
+			setFilteredMovies(moviesToFilter); //검색어가 없으면 모든 영화를 표시
 		} else {
 			const lowercasedSearchTerm = searchTerm.toLowerCase();
-			const filtered = movies.filter((movie) =>
+			const filteredBySearch = moviesToFilter.filter((movie) =>
 				movie.title.toLowerCase().includes(lowercasedSearchTerm)
 			);
-			setFilteredMovies(filtered); //필터로 나온 리스트 적용
+			setFilteredMovies(filteredBySearch); //필터로 나온 리스트 적용
 		}
-	}, [searchTerm]); //searchTerm이 변경될 때마다 이 효과를 실행합니다.
+	}, [searchTerm, activeTab]); //searchTerm 또는 activeTab이 변경될 때마다 이 효과를 실행
 
+	// 검색어 입력 핸들러
 	const handleSearchChange = (event) => {
 		setSearchTerm(event.target.value); //입력 필드의 값으로 검색어 상태를 업데이트
+	};
+
+	// 탭 클릭 핸들러
+	const handleTabClick = (genre) => {
+		setActiveTab(genre); //클릭한 탭 탭 상태 업데이트
+		setSearchTerm(""); //검색어 초기화
 	}
 
 	return (
@@ -63,10 +82,11 @@ export default function MovieFeatures() {
 				{/* 탭 */}
 				<div className="tab">
 					<ul>
-						<li className="on"><button type="button">Action</button></li>
-						<li><button type="button">Drama</button></li>
-						<li><button type="button">Comedy</button></li>
-						<li><button type="button">Romance</button></li>
+						<li className={activeTab === "All" ? "on" : ""}><button type="button" onClick={() => handleTabClick("All")}>All</button></li>
+						<li className={activeTab === "Action" ? "on" : ""}><button type="button" onClick={() => handleTabClick("Action")}>Action</button></li>
+						<li className={activeTab === "Drama" ? "on" : ""}><button type="button" onClick={() => handleTabClick("Drama")}>Drama</button></li>
+						<li className={activeTab === "Comedy" ? "on" : ""}><button type="button" onClick={() => handleTabClick("Comedy")}>Comedy</button></li>
+						<li className={activeTab === "Romance" ? "on" : ""}><button type="button" onClick={() => handleTabClick("Romance")}>Romance</button></li>
 					</ul>
 				</div>
 
