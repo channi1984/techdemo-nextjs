@@ -80,7 +80,7 @@
 .wrap-movie .tab button:hover {background: #3A21D9;}
 
 .wrap-movie .list {margin-top: 2rem; margin-bottom: 2rem;}
-.wrap-movie .list > ul {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.wrap-movie .list > ul {display: flex; flex-wrap: wrap;}
 .wrap-movie .list > ul > li {width: calc(33.333% - 1rem); margin-top: 2rem;}
 .wrap-movie .list .thumb img {width: 100%; border-radius: 1rem;}
 .wrap-movie .list .subject {margin-top: 2rem; text-align: center; font-size: 1.6rem;}

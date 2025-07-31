@@ -18,7 +18,7 @@ export default function MovieFeatures() {
 			const filtered = movies.filter((movie) =>
 				movie.title.toLowerCase().includes(lowercasedSearchTerm)
 			);
-			setFilteredMovies(filtered);
+			setFilteredMovies(filtered); //필터로 나온 리스트 적용
 		}
 	}, [searchTerm]); //searchTerm이 변경될 때마다 이 효과를 실행합니다.
 
