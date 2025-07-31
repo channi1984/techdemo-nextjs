@@ -38,7 +38,7 @@ const movies = [
         genre: "Drama",
         actors: [
             { name: "Steve McQueen", imageUrl: "/images/img-movie-actor.png" },
-            { name: "James Garner", imageUrl: "/images/img-movie-actor.g" },
+            { name: "James Garner", imageUrl: "/images/img-movie-actor.png" },
         ],
     },
     {
@@ -76,7 +76,7 @@ const movies = [
         genre: "Drama",
         actors: [
             { name: "Meryl Streep", imageUrl: "/images/img-movie-actor.png" },
-            { name: "Tom Hanks", imageUrl: "/images/img-movie-actor.g" },
+            { name: "Tom Hanks", imageUrl: "/images/img-movie-actor.png" },
         ],
     },
     {
