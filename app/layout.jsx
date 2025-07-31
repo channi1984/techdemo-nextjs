@@ -8,7 +8,7 @@ export const viewport = {
 }
 
 export const metadata = {
-	title: "Next JS TechDemo",
+	title: "넥스트JS 테크데모",
 };
 
 export default function RootLayout({ children }) {
