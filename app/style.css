@@ -39,6 +39,8 @@
 .wrap-main .cart .detail p {padding-top: 1rem; font-family: gr; font-size: 1.4rem; color: rgba(255,255,255,.7);}
 
 .wrap-main .desc {flex-grow: 1; padding-left: 7rem; font-size: 1.7rem; padding-bottom: 7rem;}
+.wrap-main .desc.loading {padding: 20rem 0; text-align: center; font-family: gr; font-size: 2rem; color: rgba(255,255,255,.7);}
+.wrap-main .desc.error {padding: 20rem 0; text-align: center; font-size: 2rem; color: red;}
 .wrap-main .big-font {font-family: pb; font-size: 9rem; text-align: center; letter-spacing: .7rem; line-height: 1.2;}
 .wrap-main .big-font span {font-family: gt;}
 .wrap-main .big-img {margin-top: 7rem;}
@@ -81,7 +83,7 @@
 
 .wrap-movie .list {margin-top: 2rem; margin-bottom: 2rem;}
 .wrap-movie .list > ul {display: flex; flex-wrap: wrap; width: calc(100% + 2rem)}
-.wrap-movie .list > ul > li {width: 33.333%; margin-top: 2rem;}
+.wrap-movie .list > ul > li {width: 50%; margin-top: 2rem;}
 .wrap-movie .list > ul > li.nodata {width: 100%; padding: 2rem 0; text-align: center; font-family: gr;}
 .wrap-movie .list a {display: block; padding-right: 2rem;}
 .wrap-movie .list .thumb img {width: 100%; border-radius: 1rem;}

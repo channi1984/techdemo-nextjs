@@ -17,7 +17,7 @@ export default function Header() {
 								<Link href="/movie">Movie</Link>
 							</li>
 							<li>
-								<Link href="/specifications">Specifications</Link>
+								<Link href="/movie_api">Movie Api</Link>
 							</li>
 							<li>
 								<Link href="/reviews">Reviews</Link>

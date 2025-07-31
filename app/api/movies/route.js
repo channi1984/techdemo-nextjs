@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 const movies = [
     {
         id: "1",
@@ -117,4 +119,6 @@ const movies = [
     },
 ];
 
-export default movies;
+export async function GET() {
+	return NextResponse.json(movies);
+}
