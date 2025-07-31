@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import movies from "@/data/moviesData";
+
+import movies from "@/data/moviesData"; //더미데이터
 import { useState, useEffect } from 'react';
 
 export default function MovieFeatures() {
@@ -14,7 +15,7 @@ export default function MovieFeatures() {
 	const [activeTab, setActiveTab] = useState("All");
 
 	useEffect(() => {
-		let moviesToFilter = movies; // 기본적으로 모든 영화
+		let moviesToFilter = movies; // 모든 영화를 변수에 저장
 
 		// 1. 탭으로 필터링
 		if (activeTab !== "All") {

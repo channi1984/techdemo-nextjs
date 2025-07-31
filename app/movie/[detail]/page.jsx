@@ -6,9 +6,9 @@ import movies from "@/data/moviesData";
 
 export default function MovieDetail() {
 	const params = useParams();
-	const { detail } = params; // URL에서 '[detail]' 파라미터 가져오기 (폴더명과 일치)
+	const { detail } = params; // URL에서 '[detail]' "파라미터" 가져오기 (폴더명과 일치)
 
-	// [detail] 값을 사용하여 해당 영화를 더미 데이터에서 찾기
+	// [detail] URL 파라메터 값을 사용하여 해당 영화를 더미 데이터에서 찾기
 	const movie = movies.find((m) => m.id === detail);
 
 	if (!movie) {
