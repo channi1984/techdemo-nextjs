@@ -10,7 +10,6 @@ export default function MovieFeatures() {
 	const [filteredMovies, setFilteredMovies] = useState(movies);
 
 	useEffect(() => {
-		console.log(searchTerm);
 		if (searchTerm === "") {
 			setFilteredMovies(movies); //검색어가 없으면 모든 영화를 표시
 		} else {
@@ -104,3 +103,4 @@ export default function MovieFeatures() {
 		</div>
 	);
 }
+ 
