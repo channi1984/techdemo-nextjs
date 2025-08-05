@@ -42,20 +42,6 @@ export default function RootLayout({ children }) {
 									</ul>
 								</div>
 
-								<div className="size">
-									<ul>
-										<li>
-											<button type="button">medium</button>
-										</li>
-										<li>
-											<button type="button">medium</button>
-										</li>
-										<li>
-											<button type="button">medium</button>
-										</li>
-									</ul>
-								</div>
-
 								<div className="add">
 									<button type="button">Button</button>
 								</div>
