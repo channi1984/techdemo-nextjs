@@ -17,7 +17,7 @@ export default function Header() {
 				<div className="left">
 					<div className="logo">
 						<Link href="/">
-							TECHDEMO
+							CHANNI.KR
 						</Link>
 					</div>
 					<div className="menu">
