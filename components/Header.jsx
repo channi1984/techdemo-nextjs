@@ -7,6 +7,10 @@ import { usePathname } from "next/navigation";
 export default function Header() {
 	const pathname = usePathname();
 
+	//pathname이 "/movie" 또는 "movie/1" 등 movie로 시작하는지 확인
+	const isMovieActive = pathname.startsWith('/movie/') || pathname === "/movie";
+	const isMovieApiActive = pathname.startsWith('/movie_api/') || pathname === "/movie_api";
+
 	return (
 		<header className="wrap-header">
 			<div className="area">
@@ -18,10 +22,10 @@ export default function Header() {
 					</div>
 					<div className="menu">
 						<ul>
-							<li className={pathname === "/movie" ? "on" : ""}>
+							<li className={isMovieActive ? "on" : ""}>
 								<Link href="/movie">Movie</Link>
 							</li>
-							<li className={pathname === "/movie_api" ? "on" : ""}>
+							<li className={isMovieApiActive ? "on" : ""}>
 								<Link href="/movie_api">Movie by Api</Link>
 							</li>
 						</ul>
