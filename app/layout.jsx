@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 
 export const viewport = {
 	width: '1500px',
+	initialScale: 1.0,
 }
 
 export const metadata = {
