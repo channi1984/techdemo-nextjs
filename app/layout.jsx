@@ -28,16 +28,16 @@ export default function RootLayout({ children }) {
 									<p>by Next JS</p>
 								</div>
 
-								<div className="color">
+								<div className="size">
 									<ul>
-										<li className="color2">
-											<button type="button"></button>
+										<li>
+											<button type="button">button</button>
 										</li>
-										<li className="color3">
-											<button type="button"></button>
+										<li>
+											<button type="button">button</button>
 										</li>
-										<li className="color4">
-											<button type="button"></button>
+										<li>
+											<button type="button">button</button>
 										</li>
 									</ul>
 								</div>
