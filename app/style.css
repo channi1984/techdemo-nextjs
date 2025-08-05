@@ -8,6 +8,7 @@
 .wrap-header .left .menu ul {display: flex; align-items: center;}
 .wrap-header .left .menu li {margin-right: 4rem;}
 .wrap-header .left .menu a {font-family: gb; font-size: 1.6rem;}
+.wrap-header .left .menu li.on a,
 .wrap-header .left .menu a:hover {color: #FF5733;}
 .wrap-header .right .util {display: flex; align-items: center;}
 .wrap-header .right .util .price {font-size: 1.3rem;}

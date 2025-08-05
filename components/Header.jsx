@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+	const pathname = usePathname();
+
 	return (
 		<header className="wrap-header">
 			<div className="area">
@@ -13,10 +18,10 @@ export default function Header() {
 					</div>
 					<div className="menu">
 						<ul>
-							<li>
+							<li className={pathname === "/movie" ? "on" : ""}>
 								<Link href="/movie">Movie</Link>
 							</li>
-							<li>
+							<li className={pathname === "/movie_api" ? "on" : ""}>
 								<Link href="/movie_api">Movie by Api</Link>
 							</li>
 						</ul>
