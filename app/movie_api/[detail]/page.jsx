@@ -117,7 +117,6 @@ export default function MovieDetail() {
                     </div>
                     <div className="text">
                         {movie.description}
-                        <strong>Show More</strong>
                     </div>
                 </div>
 
