@@ -23,8 +23,7 @@ const movies = [
         genre: "Action",
         actors: [
             { name: "샤이아 라보프", imageUrl: "/images/img-movie-actor2-1.png" },
-            { name: "타이레스 깁슨", imageUrl: "/images/img-movie-actor2-2.png" },
-            { name: "메간 폭스", imageUrl: "/images/img-movie-actor2-3.png" },
+            { name: "메간 폭스", imageUrl: "/images/img-movie-actor2-2.png" },
         ],
         youtubeId: "v=jnCefPQIH98",
     },
