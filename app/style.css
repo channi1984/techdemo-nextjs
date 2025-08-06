@@ -115,6 +115,7 @@
 .wrap-movie .list .star img {width: 2rem;}
 
 @media screen and (max-width: 710px) {
+	.wrap-movie {padding: 1.8rem 2rem;}
 	.wrap-movie .tab ul {gap: 0 1rem;}
 	.wrap-movie .list > ul > li {width: 50%;}
 }
