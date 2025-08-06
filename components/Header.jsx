@@ -28,6 +28,12 @@ export default function Header() {
 							<li className={isMovieApiActive ? "on" : ""}>
 								<Link href="/movie_api">Movie by Api</Link>
 							</li>
+							<li>
+								<Link href="/">Todo List</Link>
+							</li>
+							<li>
+								<Link href="/">Swiper Slide</Link>
+							</li>
 						</ul>
 					</div>
 				</div>
