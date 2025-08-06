@@ -24,6 +24,7 @@
 	.wrap-header .left {width: 100%; flex-wrap: wrap; justify-content: flex-start;}
 	.wrap-header .left .logo {width: 100%; margin-right: 0; margin-top: 3rem;}
 	.wrap-header .left .menu {width: 100%; margin-top: 2rem; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2);}
+	.wrap-header .left .menu li {margin-right: 2.5rem;}
 }
 
 /* 메인 */
