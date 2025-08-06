@@ -13,7 +13,7 @@ export default function ViewportChanger() {
 
 		// 화면 넓이에 따라 뷰포트 변경을 진행
 		function setViewport() {
-			const screenWidth = screen.width;
+			const screenWidth = window.innerWidth;
 			let content = '';
 
 			if (screenWidth > 1024) {
@@ -21,7 +21,7 @@ export default function ViewportChanger() {
 			} else if (screenWidth > 600) {
 				content = 'width=1100, user-scalable=no';
 			} else {
-				content = 'width=1800, user-scalable=yes';
+				content = 'width=500, user-scalable=yes';
 			}
 
 			viewportTag.setAttribute('content', content);
