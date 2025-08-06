@@ -1,4 +1,4 @@
-## 각 파일의 쓰임새 (by Channi)
+## 각 파일의 쓰임새
 
 * /api/movies/route.js : API 데이터
 * /api/movies/[id]/route.js : 동적API 데이터
