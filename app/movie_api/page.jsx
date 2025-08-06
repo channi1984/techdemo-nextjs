@@ -57,7 +57,7 @@ export default function MovieFeatures() {
 		if (searchTerm !== "") {
 			const lowercasedSearchTerm = searchTerm.toLowerCase();
 			currentFilteredMovies = currentFilteredMovies.filter((movie) => (
-				movie.title.toLowerCase().inclueds(lowercasedSearchTerm)
+				movie.title.toLowerCase().includes(lowercasedSearchTerm)
 			));
 		}
 		setFilteredMovies(currentFilteredMovies);
