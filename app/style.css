@@ -119,6 +119,12 @@
 	.wrap-movie .list > ul > li {width: 50%;}
 }
 
+@media screen and (max-width: 570px) {
+	.wrap-movie .list > ul {width: 100%;}
+	.wrap-movie .list > ul > li {width: 100%;}
+	.wrap-movie .list a {padding-right: 0;}
+}
+
 /* 무비 디테일 */
 .wrap-movie-detail > .thumb {overflow: hidden; position: relative; max-width: 58rem;}
 .wrap-movie-detail > .thumb img {border-radius: 2rem;}
