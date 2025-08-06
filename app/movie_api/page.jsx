@@ -90,7 +90,7 @@ export default function MovieFeatures() {
 							<Image src="/images/ic-movie-profile.png" alt="커버이미지" width={80} height={80} />
 						</div>
 						<div className="info">
-							<span>Welcome back</span>
+							<span>Welcome back!</span>
 							<strong>Channi84</strong>
 						</div>
 					</div>
