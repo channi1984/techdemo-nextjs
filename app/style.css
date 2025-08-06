@@ -15,6 +15,17 @@
 .wrap-header .right .util .price .dolor {padding-left: 1rem; color: #FF5733;}
 .wrap-header .right .util .buy button {display: flex; justify-content: center; align-items: center; height: 3.6rem; margin-left: 3rem; background: #FF5733; padding: 0 1rem; border-radius: .8rem; line-height: 1; color: #fff;}
 
+@media screen and (max-width: 1000px) {
+	.wrap-header .right {display: none;}
+}
+
+@media screen and (max-width: 710px) {
+	.wrap-header .area {height: auto;}
+	.wrap-header .left {width: 100%; flex-wrap: wrap; justify-content: flex-start;}
+	.wrap-header .left .logo {width: 100%; margin-right: 0; margin-top: 3rem;}
+	.wrap-header .left .menu {width: 100%; margin-top: 2rem; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2);}
+}
+
 /* 메인 */
 .wrap-main {display: flex; align-items: flex-start; padding-top: 5rem;}
 .wrap-main .cart {position: sticky; left: 0; top: 4rem; flex-shrink: 0; width: 40rem;}
@@ -60,6 +71,17 @@
 .wrap-main .model .icons strong {margin: 1rem 0; font-size: 1.7rem;}
 .wrap-main .model .icons p {font-size: 1.5rem;}
 
+@media screen and (max-width: 1220px) {
+	.wrap-main {flex-wrap: wrap; padding-top: 3rem;}
+	.wrap-main .cart {width: 100%;}
+	.wrap-main .desc {padding-left: 0; padding-top: 3rem;}
+}
+
+@media screen and (max-width: 710px) {
+	.wrap-main .cart {display: none;}
+	.wrap-main .desc {padding-top: 0;}
+}
+
 /* 무비앱 */
 .wrap-movie {padding: 2rem 3rem; background: #1F1F29; border-radius: 1rem;}
 .wrap-movie .header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;}
@@ -91,6 +113,11 @@
 .wrap-movie .list .subject {margin-top: 3rem; text-align: center; font-family: gm; font-size: 1.6rem; color: rgba(255,255,255,.7);}
 .wrap-movie .list .star {display: flex; justify-content: center; align-items: center; margin-top: .5rem;}
 .wrap-movie .list .star img {width: 2rem;}
+
+@media screen and (max-width: 710px) {
+	.wrap-movie .tab ul {gap: 0 1rem;}
+	.wrap-movie .list > ul > li {width: 50%;}
+}
 
 /* 무비 디테일 */
 .wrap-movie-detail > .thumb {overflow: hidden; position: relative; max-width: 58rem;}
