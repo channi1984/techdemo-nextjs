@@ -105,7 +105,7 @@ export default function MovieDetail() {
 				<div className="wrap-youtube">
 					<div className="box-youtube">
 						<button className="close" onClick={handleClosePopup}>닫기</button>
-						<div class="videoWrapper">
+						<div className="videoWrapper">
 							<iframe
 								width="100%"
 								height="auto"

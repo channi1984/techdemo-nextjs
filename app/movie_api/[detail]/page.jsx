@@ -149,14 +149,16 @@ export default function MovieDetail() {
                 <div className="wrap-youtube">
                     <div className="box-youtube">
                         <button className="close" onClick={handleClosePopup}>닫기</button>
-                        <iframe
-                            width="800"
-                            height="450"
-                            src={embedUrl}
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
+                        <div className="videoWrapper">
+							<iframe
+								width="100%"
+								height="auto"
+								src={embedUrl}
+								title="YouTube video player"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							></iframe>
+						</div>
                     </div>
                 </div>
             )}
