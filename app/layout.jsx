@@ -2,9 +2,9 @@ import "./globals.css";
 import "./style.css"
 
 import Header from "@/components/Header";
+import ViewportChanger from "@/components/ViewportChanger";
 
 export const viewport = {
-	width: '1500px',
 	initialScale: 1.0,
 }
 
@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="ko">
 			<body>
+				<ViewportChanger />
 				{/* 헤더 */}
 				<Header />
 
