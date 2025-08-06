@@ -91,7 +91,7 @@ export default function MovieFeatures() {
 						</div>
 						<div className="info">
 							<span>Welcome back</span>
-							<strong>Aymen Missaoui Width API</strong>
+							<strong>Channi84</strong>
 						</div>
 					</div>
 
