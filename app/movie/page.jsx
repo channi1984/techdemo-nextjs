@@ -105,11 +105,11 @@ export default function MovieFeatures() {
 										{movie.title}
 									</div>
 									<ul className="star">
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+										{Array.from({length : Math.round(movie.rating)}).map((_, index) => (
+											<li key={`star-${index}`}>
+												<Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} />
+											</li>
+										))}
 									</ul>
 								</Link>
 							</li>

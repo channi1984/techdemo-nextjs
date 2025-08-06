@@ -5,7 +5,7 @@ const movies = [
         imageUrl: "/images/img-movie1.png",
         imageDetailUrl: "/images/img-movie-detail1.png",
         description: "빨간 불이 꺼지고 운명을 건 레이스가 시작된다!",
-        rating: 5.0,
+        rating: 5,
         genre: "스포츠/드라마",
         actors: [
             { name: "브래드 피트", imageUrl: "/images/img-movie-actor1-1.png" },
@@ -19,7 +19,7 @@ const movies = [
         imageUrl: "/images/img-movie2.png",
         imageDetailUrl: "/images/img-movie-detail2.png",
         description: "함부로 상상하지 마라 모든 것은 변신한다!",
-        rating: 4.5,
+        rating: 3,
         genre: "Action",
         actors: [
             { name: "샤이아 라보프", imageUrl: "/images/img-movie-actor2-1.png" },
@@ -33,7 +33,7 @@ const movies = [
         imageUrl: "/images/img-movie3.png",
         imageDetailUrl: "/images/img-movie-detail3.png",
         description: "한순간의 실수도 용납되지 않는 하늘 위, 가장 압도적인 비행이 시작된다!",
-        rating: 4.8,
+        rating: 2,
         genre: "Drama",
         actors: [
             { name: "Steve McQueen", imageUrl: "/images/img-movie-actor3-1.png" },
@@ -47,7 +47,7 @@ const movies = [
         imageUrl: "/images/img-movie4.png",
         imageDetailUrl: "/images/img-movie-detail4.png",
         description: "레전드 액션 블록버스터 <존 윅>의 새로운 챕터가 열린다!",
-        rating: 4.0,
+        rating: 3,
         genre: "Romance",
         actors: [
             { name: "키아누 리브스", imageUrl: "/images/img-movie-actor4-1.png" },
@@ -61,7 +61,7 @@ const movies = [
         imageUrl: "/images/img-movie5.png",
         imageDetailUrl: "/images/img-movie-detail5.png",
         description: "이제껏 본 적 없는 진짜 ‘조커’를 만나라.",
-        rating: 4.2,
+        rating: 4,
         genre: "Comedy",
         actors: [
             { name: "호아킨 피닉스", imageUrl: "/images/img-movie-actor5-1.png" },
@@ -75,7 +75,7 @@ const movies = [
         imageUrl: "/images/img-movie6.png",
         imageDetailUrl: "/images/img-movie-detail6.png",
         description: "An intense and moving drama exploring human emotions.",
-        rating: 4.7,
+        rating: 3,
         genre: "Drama",
         actors: [
             { name: "케일리 스패니", imageUrl: "/images/img-movie-actor6-1.png" },

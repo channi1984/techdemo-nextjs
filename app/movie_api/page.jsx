@@ -75,9 +75,9 @@ export default function MovieFeatures() {
 	}
 
 	//로딩중
-	if(loading) return <div className="desc loading">영화 데이터를 불러오는 중입니다.</div>;
+	if (loading) return <div className="desc loading">영화 데이터를 불러오는 중입니다.</div>;
 	//에러남
-	if(error) return <div className="desc error">에러: {error}</div>;
+	if (error) return <div className="desc error">에러: {error}</div>;
 
 	return (
 		<div className="desc">
@@ -139,11 +139,11 @@ export default function MovieFeatures() {
 										{movie.title}
 									</div>
 									<ul className="star">
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
-										<li><Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} /></li>
+										{Array.from({ length: Math.round(movie.rating) }).map((_, index) => (
+											<li key={`star-${index}`}>
+												<Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} />
+											</li>
+										))}
 									</ul>
 								</Link>
 							</li>
