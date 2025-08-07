@@ -16,7 +16,7 @@ export default function ViewportChanger() {
 
 		// 화면 넓이에 따라 뷰포트 변경을 진행
 		function setViewport() {
-			const screenWidth = window.innerWidth;
+			const screenWidth = screen.width;
 			let content = '';
 
 			if (screenWidth > 1024) {
