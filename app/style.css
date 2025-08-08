@@ -192,10 +192,10 @@
 .wrap-todo .cm-check span::before {content: ""; position: absolute;}
 
 .wrap-todo .cm-check.style1 span {padding-left: 4rem; line-height: 3rem;}
-.wrap-todo .cm-check.style1 span::before {width: 2.5rem; height: 2.5rem; border: 1px solid #666; left: 0; top: .2rem; border-radius: 100%;}
-.wrap-todo .cm-check.style1 input:focus + span::before {border-color: #ff5733;}
-.wrap-todo .cm-check.style1 input:focus:checked + span::before {border-color: #ff5733;}
-.wrap-todo .cm-check.style1 input:checked + span::before {background: #ff5733 url("/images/ic-check-on.png") no-repeat .6rem center / 1rem auto; border-color: #ff5733;}
+.wrap-todo .cm-check.style1 span::before {width: 2.5rem; height: 2.5rem; border: 1px solid #ff5733; left: 0; top: .2rem; border-radius: 100%;}
+.wrap-todo .cm-check.style1 input:focus + span::before {border-color: #272f9a;}
+.wrap-todo .cm-check.style1 input:focus:checked + span::before {border-color: #272f9a;}
+.wrap-todo .cm-check.style1 input:checked + span::before {background: #272f9a url("/images/ic-check-on.png") no-repeat .6rem center / 1rem auto; border-color: #272f9a;}
 
 .wrap-todo .empty {display: flex; flex-direction: column; align-items: center; margin-top: 10rem;}
 .wrap-todo .empty .ico img {max-width: 10rem;}
