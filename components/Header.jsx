@@ -10,6 +10,8 @@ export default function Header() {
 	//pathname이 "/movie" 또는 "movie/1" 등 movie로 시작하는지 확인
 	const isMovieActive = pathname.startsWith('/movie/') || pathname === "/movie";
 	const isMovieApiActive = pathname.startsWith('/movie_api/') || pathname === "/movie_api";
+	const isTodoListActive = pathname.startsWith('/todolist/') || pathname === "/todolist";
+	const isMusicActive = pathname.startsWith('/music/') || pathname === "/music";
 
 	return (
 		<header className="wrap-header">
@@ -28,11 +30,11 @@ export default function Header() {
 							<li className={isMovieApiActive ? "on" : ""}>
 								<Link href="/movie_api">Movie by Api</Link>
 							</li>
-							<li>
+							<li className={isTodoListActive ? "on" : ""}>
 								<Link href="/todolist">Todo List</Link>
 							</li>
-							<li>
-								<Link href="/">Swiper Slide</Link>
+							<li className={isMusicActive ? "on" : ""}>
+								<Link href="/music">Music</Link>
 							</li>
 						</ul>
 					</div>

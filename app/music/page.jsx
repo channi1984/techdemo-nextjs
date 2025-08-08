@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function TodoList() {
+export default function Music() {
 	return (
 		<div className="desc">
-			{/* 투두 리스트 */}
-			나는 투두 리스트야
+			{/* 뮤직 */}
+			나는 뮤직앱이야
 		</div>
 	);
 }
