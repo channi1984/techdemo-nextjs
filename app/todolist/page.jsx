@@ -13,7 +13,10 @@ export default function TodoList() {
 	// 할 일 추가 버튼 클릭시 실행될 함수
 	const handleAddTodo = () => {
 		// 입력창에 내용이 없으면 함수 종류
-		if (input.trim() === "") return;
+		if (input.trim() === "") {
+			alert('할 일이 입력되지 않았습니다 :D');
+			return;
+		}
 
 		//새로운 할 일 객체 생성
 		const newTodo = {
@@ -38,11 +41,19 @@ export default function TodoList() {
 	// 체크박스 클릭 시
 	const handleToggleComplete = (id) => {
 		//id가 일치하는 할 일의 completed 상태를 토글
-		setTodos(
-			todos.map((todo) =>
-				todo.id === id ? { ...todo, completed: !todo.completed } : todo
-			)
-		);
+		const newTodos = todos.map((todo) =>
+			todo.id === id ? { ...todo, completed: !todo.completed } : todo
+		)
+
+		// 모든 할 일이 완료되었는지 확인
+		const allCompleted = newTodos.every(todo => todo.completed);
+
+		// 모든 할 일이 완료되었으면 알림창
+		if (allCompleted) {
+			alert('🎉 모든 할 일을 완료했습니다! 🎉');
+		}
+
+		setTodos(newTodos);
 	}
 
 	// 삭제 버튼 클릭시
@@ -51,7 +62,7 @@ export default function TodoList() {
 		setTodos(todos.filter((todo) => todo.id !== id));
 	};
 
-	const completedCount = todos.filter((todo) => todo.completed).length;;
+	const completedCount = todos.filter((todo) => todo.completed).length;
 
 	return (
 		<div className="desc">
@@ -79,11 +90,11 @@ export default function TodoList() {
 
 				<div className="state">
 					<div className="total">
-							Todo
+						Todo
 						<span>{todos.length}</span>
 					</div>
 					<div className="complete">
-							Complete
+						Complete
 						<span>{completedCount}</span>
 					</div>
 				</div>
