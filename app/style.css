@@ -1,18 +1,6 @@
 /* 레이아웃 */
 .area {max-width: 146rem; margin: 0 auto; padding: 0 2rem;}
 
-/* 커스텀 체크박스 */
-.cm-check {position: relative;}
-.cm-check input {position: absolute; opacity: 0; top: .1rem;}
-.cm-check span {display: inline-block; position: relative; font-family: gm; font-size: 1.6rem; color: rgba(255,255,255,.6); letter-spacing: 0;}
-.cm-check span::before {content: ""; position: absolute;}
-
-.cm-check.style1 span {padding-left: 4rem; line-height: 3rem;}
-.cm-check.style1 span::before {width: 2.5rem; height: 2.5rem; border: 1px solid #666; left: 0; top: .2rem; border-radius: 100%;}
-.cm-check.style1 input:focus + span::before {border-color: #ff5733;}
-.cm-check.style1 input:focus:checked + span::before {border-color: #ff5733;}
-.cm-check.style1 input:checked + span::before {background: #ff5733 url("/images/ic-check-on.png") no-repeat .6rem center / 1rem auto; border-color: #ff5733;}
-
 /* 헤더 */
 .wrap-header .area {display: flex; justify-content: space-between; align-items: center; height: 8rem;}
 .wrap-header .left {display: flex; justify-content: center; align-items: center;}
@@ -60,8 +48,8 @@
 .wrap-main .cart .add button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.6rem; background: #FF5733; border-radius: .8rem; color: #050100;}
 .wrap-main .cart .detail {padding: 2rem 0; border-top: 1px solid rgba(255,255,255,.2);}
 .wrap-main .cart .detail1 {margin-top: 3rem;}
-.wrap-main .cart .detail strong {font-size: 1.4rem;}
-.wrap-main .cart .detail p {padding-top: 1rem; font-family: gr; font-size: 1.4rem; color: rgba(255,255,255,.7);}
+.wrap-main .cart .detail strong {font-size: 1.4rem; letter-spacing: 1px;}
+.wrap-main .cart .detail p {padding-top: 1rem; font-family: gr; font-size: 1.4rem; letter-spacing: 1px; color: rgba(255,255,255,.7);}
 
 .wrap-main .desc {flex-grow: 1; padding-left: 7rem; font-size: 1.7rem; padding-bottom: 7rem;}
 .wrap-main .desc.loading {padding: 20rem 0; text-align: center; font-family: gr; font-size: 2rem; color: rgba(255,255,255,.7);}
@@ -101,8 +89,8 @@
 .wrap-movie .header .people {display: flex; align-items: center;}
 .wrap-movie .header .people .thumb {width: 4rem;}
 .wrap-movie .header .people .info {display: flex; flex-direction: column; align-items: flex-start; margin-left: 2rem;}
-.wrap-movie .header .people .info span {font-family: gl; font-size: 1.2rem; color: #B9C1D9;}
-.wrap-movie .header .people .info strong {margin-top: .3rem;}
+.wrap-movie .header .people .info span {font-family: gl; font-size: 1.2rem; letter-spacing: 1px; color: #B9C1D9;}
+.wrap-movie .header .people .info strong {margin-top: .3rem; letter-spacing: 1px;}
 .wrap-movie .header .menu img {width: 2rem;}
 
 .wrap-movie .search {position: relative; display: flex; align-items: center; height: 5rem; background: #131316; border-radius: .75rem;}
@@ -113,7 +101,7 @@
 .wrap-movie .tab {margin-top: 2rem;}
 .wrap-movie .tab ul {display: flex; justify-content: space-between; align-items: center; gap: 0 2rem;}
 .wrap-movie .tab li {width: 25%;}
-.wrap-movie .tab button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.5rem; background: #515053; border-radius: 1rem; color: rgba(255,255,255,.7);}
+.wrap-movie .tab button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.5rem; background: #515053; border-radius: 1rem; letter-spacing: 1px; color: rgba(255,255,255,.7);}
 .wrap-movie .tab .on button,
 .wrap-movie .tab button:hover {background: #3A21D9; color: #fff;}
 
@@ -198,3 +186,17 @@
 .wrap-todo .list .work .del button {display: flex; width: 1.5rem; height: 2rem; background: url('/images/ic-todo-del.png') no-repeat center / 1.5rem; text-indent: -9999rem;}
 .wrap-todo .list .work .del button:hover {background: url('/images/ic-todo-del-on.png') no-repeat center / 1.5rem;}
 
+.wrap-todo .cm-check {position: relative;}
+.wrap-todo .cm-check input {position: absolute; opacity: 0; top: .1rem;}
+.wrap-todo .cm-check span {display: inline-block; position: relative; font-family: gm; font-size: 1.6rem; color: rgba(255,255,255,.6); letter-spacing: 0;}
+.wrap-todo .cm-check span::before {content: ""; position: absolute;}
+
+.wrap-todo .cm-check.style1 span {padding-left: 4rem; line-height: 3rem;}
+.wrap-todo .cm-check.style1 span::before {width: 2.5rem; height: 2.5rem; border: 1px solid #666; left: 0; top: .2rem; border-radius: 100%;}
+.wrap-todo .cm-check.style1 input:focus + span::before {border-color: #ff5733;}
+.wrap-todo .cm-check.style1 input:focus:checked + span::before {border-color: #ff5733;}
+.wrap-todo .cm-check.style1 input:checked + span::before {background: #ff5733 url("/images/ic-check-on.png") no-repeat .6rem center / 1rem auto; border-color: #ff5733;}
+
+.wrap-todo .empty {display: flex; flex-direction: column; align-items: center; margin-top: 10rem;}
+.wrap-todo .empty .ico img {max-width: 10rem;}
+.wrap-todo .empty .text {margin-top: 3rem; font-family: gm; font-size: 1.5rem; line-height: 1.6; text-align: center; color: rgba(255,255,255,.4);}
