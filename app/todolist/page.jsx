@@ -44,62 +44,82 @@ export default function TodoList() {
 					<div className="work">
 						<ul>
 							<li>
-								<div className="checkbox">
-									<input type="checkbox" name="check1" id="check1" />
+								<div className="left">
+									<div className="checkbox">
+										<label htmlFor="check1" className="cm-check style1">
+											<input type="checkbox" name="check1" id="check1" checked={isChecked} onChange={setIsChecked} />
+											<span>쇼핑하기</span>
+										</label>
+									</div>
 								</div>
-								<div className="subject">
-									<strong>쇼핑 하기</strong>
-								</div>
-								<div className="del">
-									<button type="button" className="btn-del">삭제하기</button>
-								</div>
-							</li>
-
-							<li>
-								<div className="checkbox">
-									<input type="checkbox" name="check1" id="check1" />
-								</div>
-								<div className="subject">
-									<strong>레고 만들기</strong>
-								</div>
-								<div className="del">
-									<button type="button" className="btn-del">삭제하기</button>
+								<div className="right">
+									<div className="del">
+										<button type="button" className="btn-del">삭제하기</button>
+									</div>
 								</div>
 							</li>
 
 							<li>
-								<div className="checkbox">
-									<input type="checkbox" name="check1" id="check1" />
+								<div className="left">
+									<div className="checkbox">
+										<label htmlFor="check2" className="cm-check style1">
+											<input type="checkbox" name="check2" id="check2" checked={isChecked} onChange={setIsChecked} />
+											<span>쇼핑하기</span>
+										</label>
+									</div>
 								</div>
-								<div className="subject">
-									<strong>자전거 수리하기</strong>
-								</div>
-								<div className="del">
-									<button type="button" className="btn-del">삭제하기</button>
-								</div>
-							</li>
-
-							<li>
-								<div className="checkbox">
-									<input type="checkbox" name="check1" id="check1" checked={isChecked} onChange={setIsChecked}/>
-								</div>
-								<div className="subject">
-									<strong>디아블로 하기</strong>
-								</div>
-								<div className="del">
-									<button type="button" className="btn-del">삭제하기</button>
+								<div className="right">
+									<div className="del">
+										<button type="button" className="btn-del">삭제하기</button>
+									</div>
 								</div>
 							</li>
 
 							<li>
-								<div className="checkbox">
-									<input type="checkbox" name="check1" id="check1" checked={isChecked} onChange={setIsChecked}/>
+								<div className="left">
+									<div className="checkbox">
+										<label htmlFor="check3" className="cm-check style1">
+											<input type="checkbox" name="check3" id="check3" checked={isChecked} onChange={setIsChecked} />
+											<span>쇼핑하기</span>
+										</label>
+									</div>
 								</div>
-								<div className="subject">
-									<strong>TV 사기</strong>
+								<div className="right">
+									<div className="del">
+										<button type="button" className="btn-del">삭제하기</button>
+									</div>
 								</div>
-								<div className="del">
-									<button type="button" className="btn-del">삭제하기</button>
+							</li>
+
+							<li>
+								<div className="left">
+									<div className="checkbox">
+										<label htmlFor="check4" className="cm-check style1">
+											<input type="checkbox" name="check4" id="check4" checked={isChecked} onChange={setIsChecked} />
+											<span>쇼핑하기</span>
+										</label>
+									</div>
+								</div>
+								<div className="right">
+									<div className="del">
+										<button type="button" className="btn-del">삭제하기</button>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<div className="left">
+									<div className="checkbox">
+										<label htmlFor="check5" className="cm-check style1">
+											<input type="checkbox" name="check5" id="check5" checked={isChecked} onChange={setIsChecked} />
+											<span>쇼핑하기</span>
+										</label>
+									</div>
+								</div>
+								<div className="right">
+									<div className="del">
+										<button type="button" className="btn-del">삭제하기</button>
+									</div>
 								</div>
 							</li>
 						</ul>
