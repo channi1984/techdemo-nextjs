@@ -9,7 +9,7 @@ export const viewport = {
 }
 
 export const metadata = {
-	title: "CAHNNI.KR",
+	title: "CHANNI.KR",
 };
 
 export default function RootLayout({ children }) {
