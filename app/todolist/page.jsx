@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import initTodos from "@/data/todosData";
 
 export default function TodoList() {
 	// 할 일 목록을 담을 상태
-	const [todos, setTodos] = useState([]);
+	const [todos, setTodos] = useState(initTodos);
 	// 입력창의 값을 담을 상태
 	const [input, setInput] = useState("");
-
-	const [isChecked, setIsChecked] = useState(false);
 
 	// 할 일 추가 버튼 클릭시 실행될 함수
 	const handleAddTodo = () => {
@@ -53,10 +52,6 @@ export default function TodoList() {
 	};
 
 	const completedCount = todos.filter((todo) => todo.completed).length;;
-
-	const hanldeChange = (e) => {
-		setIsChecked(e.target.checked);
-	}
 
 	return (
 		<div className="desc">
