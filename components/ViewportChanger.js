@@ -20,7 +20,7 @@ export default function ViewportChanger() {
 			let content = '';
 
 			if (screenWidth > 1024) {
-				content = 'width=1800, user-scalable=no';
+				content = 'width=1500, user-scalable=no';
 			} else if (screenWidth > 600) {
 				content = 'width=1100, user-scalable=no';
 			} else {
