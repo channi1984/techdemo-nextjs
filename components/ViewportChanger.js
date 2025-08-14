@@ -24,7 +24,7 @@ export default function ViewportChanger() {
 			} else if (screenWidth > 600) {
 				content = 'width=1100, user-scalable=no';
 			} else {
-				content = 'width=500, user-scalable=no';
+				content = 'width=450, user-scalable=no';
 			}
 
 			viewportTag.setAttribute('content', content);
