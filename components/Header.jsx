@@ -30,11 +30,11 @@ export default function Header() {
 							<li className={isMovieApiActive ? "on" : ""}>
 								<Link href="/movie_api">Movie by Api</Link>
 							</li>
-							<li className={isTodoListActive ? "on" : ""}>
-								<Link href="/todolist">Todo List</Link>
-							</li>
 							<li className={isMusicActive ? "on" : ""}>
 								<Link href="/music">Music</Link>
+							</li>
+							<li className={isTodoListActive ? "on" : ""}>
+								<Link href="/todolist">Todo List</Link>
 							</li>
 						</ul>
 					</div>
