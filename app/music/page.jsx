@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import { useState, useEffect } from 'react';
 
@@ -133,7 +132,7 @@ export default function Music() {
 								{musics.map((music) => (
 									<li key={music.id}>
 										<div className="num">
-											<span>1</span>
+											<span>{music.id}</span>
 											<div className="play">
 												<button type="button" className="btn-play">
 													<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
