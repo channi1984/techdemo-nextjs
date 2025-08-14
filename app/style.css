@@ -278,9 +278,12 @@
 }
 
 @media screen and (max-width: 610px) {
+	.wrap-music .cover {min-height: 27rem;}
+	.wrap-music .cover .title strong {font-size: 3rem;}
 	.wrap-music .play-bar {display: flex; flex-direction: column; padding: 3rem;}
-	.wrap-music .play-list .body .num {width: 8rem;}
-	.wrap-music .play-list .body .num .btn-play {left: 3.1rem;}
+	.wrap-music .play-list .body .num {width: 3rem; text-align: left;}
+	.wrap-music .play-list .body .num .btn-play {left: -.6rem;}
+	.wrap-music .play-list .body .title {width: calc(100% - 8rem);}
 	.wrap-music .play-bar .bar-control {padding-top: 2rem;}
 	.wrap-music .play-bar .bar-cover {width: 100%; justify-content: flex-start; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.1);}
 }
