@@ -233,6 +233,58 @@ export default function Music() {
 						</div>
 					</div>
 				</div>
+
+				<div className="play-bar">
+					<div className="bar-cover">
+						<div className="thumb">
+							<Image src="/images/img-music-cover.png" alt="커버이미지" width={128} height={128} />
+						</div>
+						<div className="subject">
+							<strong>Big Wick Energy</strong>
+							<p>Tyler Bates, Joel J. Richard</p>
+						</div>
+					</div>
+
+					<div className="bar-control">
+						<ul>
+							<li className="shuffle">
+								<button type="button" className="btn-shuffle">
+									<Image src="/images/ic-music-shuffle.png" alt="셔플 재생" width={54} height={54} />
+								</button>
+							</li>
+							<li className="control">
+								<ul>
+									<li className="prev">
+										<button type="button" className="btn-prev">
+											<Image src="/images/ic-music-bar-prev.png" alt="이전 재생" width={64} height={64} />
+										</button>
+									</li>
+									<li className="play">
+										<button type="button" className="btn-play">
+											<Image src="/images/ic-music-all-play.png" alt="이전 재생" width={160} height={160} />
+										</button>
+									</li>
+									<li className="next">
+										<button type="button" className="btn-next">
+											<Image src="/images/ic-music-bar-next.png" alt="다음 재생" width={64} height={64} />
+										</button>
+									</li>
+								</ul>
+							</li>
+							<li className="repeat">
+								<button type="button" className="btn-repeat">
+									<Image src="/images/ic-music-repeat.png" alt="반복 재생" width={64} height={64} />
+								</button>
+							</li>
+						</ul>
+					</div>
+
+					<div className="bar-util">
+						<button type="button" className="btn-mute">
+							<Image src="/images/ic-music-mute.png" alt="음소거" width={37} height={43} />
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

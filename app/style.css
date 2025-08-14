@@ -248,3 +248,5 @@
 .wrap-music .play-list .body .title .music .subject p {margin-top: .5rem; font-family: pm; font-size: 1.2rem; color: rgba(255,255,255,.3);}
 .wrap-music .play-list .body .album {flex-shrink: 0; width: 25rem; font-family: gm; font-size: 1.4rem; color: rgba(255,255,255,.5);}
 .wrap-music .play-list .body .time {flex-shrink: 0; width: 15rem; font-family: gm; font-size: 1.4rem; color: rgba(255,255,255,.5);}
+
+.wrap-music .play-bar {}
