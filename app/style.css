@@ -249,4 +249,38 @@
 .wrap-music .play-list .body .album {flex-shrink: 0; width: 25rem; font-family: gm; font-size: 1.4rem; color: rgba(255,255,255,.5);}
 .wrap-music .play-list .body .time {flex-shrink: 0; width: 15rem; font-family: gm; font-size: 1.4rem; color: rgba(255,255,255,.5);}
 
-.wrap-music .play-bar {}
+.wrap-music .play-bar {display: flex; justify-content: space-between; align-items: center; background: #11111e; padding: 2rem;}
+.wrap-music .play-bar .bar-cover {display: flex; align-items: center;}
+.wrap-music .play-bar .bar-cover .thumb {width: 6rem; margin-right: 1.5rem;}
+.wrap-music .play-bar .bar-cover .subject {text-align: left;}
+.wrap-music .play-bar .bar-cover .subject strong {font-family: gb; font-size: 1.4rem; text-transform: uppercase; color: rgba(255,255,255,.7);}
+.wrap-music .play-bar .bar-cover .subject p {margin-top: .5rem; font-family: pm; font-size: 1.2rem; color: rgba(255,255,255,.3);}
+.wrap-music .play-bar .bar-control {padding-right: 11rem;}
+.wrap-music .play-bar .bar-control ul {display: flex; align-items: center;}
+.wrap-music .play-bar .bar-control .btn-shuffle {width: 1.5rem;}
+.wrap-music .play-bar .bar-control .control {margin: 0 2rem;}
+.wrap-music .play-bar .bar-control .btn-prev {width: 3rem;}
+.wrap-music .play-bar .bar-control .btn-play {margin: 0 2rem; width: 5rem;}
+.wrap-music .play-bar .bar-control .btn-next {width: 3rem;}
+.wrap-music .play-bar .bar-control .btn-repeat {width: 2.2rem;}
+.wrap-music .play-bar .bar-util .btn-mute {width: 1.8rem;}
+
+@media screen and (max-width: 1340px) {
+	.wrap-music .play-list .header {display: none;}
+	.wrap-music .play-list .body li {flex-wrap: wrap;}
+	.wrap-music .play-list .body .album {display: none;}
+	.wrap-music .play-list .body .time {display: none;}
+}
+
+@media screen and (max-width: 750px) {
+	.wrap-music .play-bar .bar-control {padding-right: 0;}
+	.wrap-music .play-bar .bar-util {display: none;}
+}
+
+@media screen and (max-width: 610px) {
+	.wrap-music .play-bar {display: flex; flex-direction: column; padding: 3rem;}
+	.wrap-music .play-list .body .num {width: 8rem;}
+	.wrap-music .play-list .body .num .btn-play {left: 3.1rem;}
+	.wrap-music .play-bar .bar-control {padding-top: 2rem;}
+	.wrap-music .play-bar .bar-cover {width: 100%; justify-content: flex-start; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.1);}
+}
