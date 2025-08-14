@@ -6,6 +6,7 @@ import ViewportChanger from "@/components/ViewportChanger";
 
 export const viewport = {
 	initialScale: 1.0,
+	maximumScale: 1.0,
 }
 
 export const metadata = {
