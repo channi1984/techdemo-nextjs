@@ -1,8 +1,12 @@
 ## 각 파일의 쓰임새
 
 ```
-/app/api/movies/route.js : API 데이터 (무비앱 용)
-/app/api/movies/[id]/route.js : 동적 API 데이터 (무비앱 용)
+/app/api/movies/route.js : 무비앱 API 데이터
+/app/api/movies/[id]/route.js : 무비앱  동적 API 데이터
+```
+
+```
+/app/api/musics/route.js : 뮤직앱 API 데이터
 ```
 
 ```
