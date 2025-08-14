@@ -192,7 +192,7 @@
 .wrap-todo .cm-check span::before {content: ""; position: absolute;}
 
 .wrap-todo .cm-check.style1 span {padding-left: 4rem; line-height: 3rem;}
-.wrap-todo .cm-check.style1 span::before {width: 2.5rem; height: 2.5rem; border: 1px solid #ff5733; left: 0; top: .2rem; border-radius: 100%;}
+.wrap-todo .cm-check.style1 span::before {width: 2.5rem; height: 2.5rem; border: 1px solid #404040; left: 0; top: .2rem; border-radius: 100%;}
 .wrap-todo .cm-check.style1 input:focus + span::before {border-color: #272f9a;}
 .wrap-todo .cm-check.style1 input:focus:checked + span::before {border-color: #272f9a;}
 .wrap-todo .cm-check.style1 input:checked + span::before {background: #272f9a url("/images/ic-check-on.png") no-repeat .6rem center / 1rem auto; border-color: #272f9a;}
@@ -221,9 +221,10 @@
 .wrap-music .cover .info .more .btn-more {width: .5rem;}
 
 .wrap-music .play-list {padding: 3rem; background: #1f1f29;}
-.wrap-music .play-list .util {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;}
+.wrap-music .play-list .util {display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;}
 .wrap-music .play-list .total {display: flex; align-items: center; font-size: 1.4rem; color: rgba(255,255,255,.8);}
-.wrap-music .play-list .total em {margin-right: .5rem;}
+.wrap-music .play-list .total em {margin-right: .5rem; color: #ff5733;}
+.wrap-music .play-list .search {display: flex; align-items: center; padding: .8rem 1.2rem; border-radius: 10rem; border: 1px solid rgba(255,255,255,.2);}
 .wrap-music .play-list .search .btn-search {width: 1.5rem;}
 .wrap-music .play-list .search .inp-search {background: transparent;}
 .wrap-music .play-list .header {display: flex; align-items: center; height: 5rem; text-align: center;}
@@ -235,8 +236,10 @@
 .wrap-music .play-list .header .time img {width: 2rem;}
 .wrap-music .play-list .body {text-align: center; letter-spacing: .6px;}
 .wrap-music .play-list .body li {display: flex; align-items: center; padding: 1rem 0;}
-.wrap-music .play-list .body .num {flex-shrink: 0; width: 10rem; font-size: 1.4rem; color: rgba(255,255,255,.5);}
-.wrap-music .play-list .body .num .btn-play {display: none; width: 2rem;}
+.wrap-music .play-list .body .num {position: relative; flex-shrink: 0; width: 10rem; font-size: 1.4rem; color: rgba(255,255,255,.5);}
+.wrap-music .play-list .body .num .btn-play {display: none; position: absolute; left: 4rem; top: -1.4rem; width: 2rem;}
+.wrap-music .play-list .body li:hover .num .btn-play {display: block;}
+.wrap-music .play-list .body li:hover .num span {display: none;}
 .wrap-music .play-list .body .title {flex-grow: 1;}
 .wrap-music .play-list .body .title .music {display: flex; align-items: center;}
 .wrap-music .play-list .body .title .music .thumb {width: 6rem; margin-right: 1.5rem;}

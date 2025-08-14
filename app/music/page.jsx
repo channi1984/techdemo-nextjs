@@ -92,7 +92,7 @@ export default function Music() {
 							<ul>
 								<li>
 									<div className="num">
-										1
+										<span>1</span>
 										<div className="play">
 											<button type="button" className="btn-play">
 												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
@@ -120,7 +120,7 @@ export default function Music() {
 
 								<li>
 									<div className="num">
-										2
+										<span>2</span>
 										<div className="play">
 											<button type="button" className="btn-play">
 												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
@@ -148,7 +148,7 @@ export default function Music() {
 
 								<li>
 									<div className="num">
-										3
+										<span>3</span>
 										<div className="play">
 											<button type="button" className="btn-play">
 												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
@@ -176,7 +176,7 @@ export default function Music() {
 
 								<li>
 									<div className="num">
-										4
+										<span>4</span>
 										<div className="play">
 											<button type="button" className="btn-play">
 												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
@@ -204,7 +204,7 @@ export default function Music() {
 
 								<li>
 									<div className="num">
-										5
+										<span>5</span>
 										<div className="play">
 											<button type="button" className="btn-play">
 												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
