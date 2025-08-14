@@ -1,4 +1,5 @@
-const musics = [
+//음악 리스트
+export const musics = [
     {
         id: "1",
         title: "Big Wick Energy",
@@ -41,4 +42,8 @@ const musics = [
     }
 ];
 
-export default musics;
+//기본 페이지 정보
+export const pageInfo = {
+    mainTitle: "JOHN WICK",
+    userAvatar: "/images/img-music-player.png",
+};

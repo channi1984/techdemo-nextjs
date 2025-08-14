@@ -225,8 +225,8 @@
 .wrap-music .play-list .total {display: flex; align-items: center; font-size: 1.4rem; color: rgba(255,255,255,.8);}
 .wrap-music .play-list .total em {margin-right: .5rem; color: #ff5733;}
 .wrap-music .play-list .search {display: flex; align-items: center; padding: .8rem 1.2rem; border-radius: 10rem; border: 1px solid rgba(255,255,255,.2);}
-.wrap-music .play-list .search .btn-search {width: 1.5rem;}
-.wrap-music .play-list .search .inp-search {background: transparent;}
+.wrap-music .play-list .search .btn-search {width: 1.5rem; margin-right: 1rem;}
+.wrap-music .play-list .search .inp-search {background: transparent; font-family: gm; color: #fff;}
 .wrap-music .play-list .header {display: flex; align-items: center; height: 5rem; text-align: center;}
 .wrap-music .play-list .header .num {flex-shrink: 0; width: 10rem;}
 .wrap-music .play-list .header .num img {width: 1rem;}

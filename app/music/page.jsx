@@ -1,8 +1,47 @@
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 
+import { useState, useEffect } from 'react';
+
 export default function Music() {
+	// API에서 뮤직 목록 가져옴
+	const [musics, setMusics] = useState([]);
+	// 큰 제목
+	const [pageTitle, setPageTitle] = useState();
+	// 아바타
+	const [userAvatar, setUserAvatar] = useState();
+	// 로딩상태
+	const [loading, setLoading] = useState(true);
+
+	// Fetch
+	useEffect(() => {
+		async function fetchMusics() {
+			try {
+				setLoading(true);
+				const response = await fetch('/api/musics');
+				if (!response.ok) {
+					throw new Error(`HTTP error! state: ${response.status}`);
+				}
+
+				const data = await response.json();
+				setMusics(data.musics);
+				setPageTitle(data.mainTitle);
+				setUserAvatar(data.userAvatar);
+			} catch (e) {
+				throw new Error("음악 데이터를 불러오는 데 실패했습니다.");
+				console.error("Fetch error:", e);
+			} finally {
+				setLoading(false);
+			}
+		}
+		fetchMusics();
+	}, []);
+
+	//로딩중
+	if (loading) return <div className="desc loading">음악 데이터를 불러오는 중입니다.</div>;
+
 	return (
 		<div className="desc">
 			{/* 뮤직 */}
@@ -16,11 +55,11 @@ export default function Music() {
 							</button>
 						</div>
 						<div className="player">
-							<Image src="/images/img-music-player.png" alt="플레이어" width={80} height={80} />
+							<Image src={userAvatar} alt="플레이어" width={80} height={80} />
 						</div>
 					</div>
 					<div className="title">
-						<strong>JOHN WICK</strong>
+						<strong>{pageTitle}</strong>
 					</div>
 					<div className="info">
 						<div className="util">
@@ -62,7 +101,7 @@ export default function Music() {
 				<div className="play-list">
 					<div className="util">
 						<div className="total">
-							<em>15</em> Songs
+							<em>{musics.length}</em> Songs
 						</div>
 						<div className="search">
 							<button type="button" className="btn-search">
@@ -90,145 +129,36 @@ export default function Music() {
 
 						<div className="body">
 							<ul>
-								<li>
-									<div className="num">
-										<span>1</span>
-										<div className="play">
-											<button type="button" className="btn-play">
-												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
-											</button>
-										</div>
-									</div>
-									<div className="title">
-										<div className="music">
-											<div className="thumb">
-												<Image src="/images/img-music-cover.png" alt="커버이미지" width={128} height={128} />
-											</div>
-											<div className="subject">
-												<strong>Big Wick Energy</strong>
-												<p>Tyler Bates, Joel J. Richard</p>
+								{/* musics를 사용하여 렌더링합니다. */}
+								{musics.map((music) => (
+									<li key={music.id}>
+										<div className="num">
+											<span>1</span>
+											<div className="play">
+												<button type="button" className="btn-play">
+													<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
+												</button>
 											</div>
 										</div>
-									</div>
-									<div className="album">
-										John Wick Chapter 4
-									</div>
-									<div className="time">
-										3:15
-									</div>
-								</li>
-
-								<li>
-									<div className="num">
-										<span>2</span>
-										<div className="play">
-											<button type="button" className="btn-play">
-												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
-											</button>
-										</div>
-									</div>
-									<div className="title">
-										<div className="music">
-											<div className="thumb">
-												<Image src="/images/img-music-cover.png" alt="커버이미지" width={128} height={128} />
-											</div>
-											<div className="subject">
-												<strong>Nowhere To Run</strong>
-												<p>Tyler Bates, Joel J. Richard</p>
+										<div className="title">
+											<div className="music">
+												<div className="thumb">
+													<Image src={music.cover} alt={music.title} width={128} height={128} />
+												</div>
+												<div className="subject">
+													<strong>{music.title}</strong>
+													<p>{music.artist}</p>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div className="album">
-										John Wick Chapter 4
-									</div>
-									<div className="time">
-										2:11
-									</div>
-								</li>
-
-								<li>
-									<div className="num">
-										<span>3</span>
-										<div className="play">
-											<button type="button" className="btn-play">
-												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
-											</button>
+										<div className="album">
+											{music.album}
 										</div>
-									</div>
-									<div className="title">
-										<div className="music">
-											<div className="thumb">
-												<Image src="/images/img-music-cover.png" alt="커버이미지" width={128} height={128} />
-											</div>
-											<div className="subject">
-												<strong>Sand Wick</strong>
-												<p>Tyler Bates, Joel J. Richard</p>
-											</div>
+										<div className="time">
+											{music.time}
 										</div>
-									</div>
-									<div className="album">
-										John Wick Chapter 4
-									</div>
-									<div className="time">
-										5:12
-									</div>
-								</li>
-
-								<li>
-									<div className="num">
-										<span>4</span>
-										<div className="play">
-											<button type="button" className="btn-play">
-												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
-											</button>
-										</div>
-									</div>
-									<div className="title">
-										<div className="music">
-											<div className="thumb">
-												<Image src="/images/img-music-cover.png" alt="커버이미지" width={128} height={128} />
-											</div>
-											<div className="subject">
-												<strong>Change Your Nature</strong>
-												<p>Tyler Bates, Joel J. Richard</p>
-											</div>
-										</div>
-									</div>
-									<div className="album">
-										John Wick Chapter 4
-									</div>
-									<div className="time">
-										4:23
-									</div>
-								</li>
-
-								<li>
-									<div className="num">
-										<span>5</span>
-										<div className="play">
-											<button type="button" className="btn-play">
-												<Image src="/images/ic-music-play.png" alt="플레이" width={42} height={50} />
-											</button>
-										</div>
-									</div>
-									<div className="title">
-										<div className="music">
-											<div className="thumb">
-												<Image src="/images/img-music-cover.png" alt="커버이미지" width={128} height={128} />
-											</div>
-											<div className="subject">
-												<strong>Continental Breakfast</strong>
-												<p>Tyler Bates, Joel J. Richard</p>
-											</div>
-										</div>
-									</div>
-									<div className="album">
-										John Wick Chapter 4
-									</div>
-									<div className="time">
-										2:15
-									</div>
-								</li>
+									</li>
+								))}
 							</ul>
 						</div>
 					</div>

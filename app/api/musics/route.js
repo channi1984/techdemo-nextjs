@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
-import musics from "@/data/musicsDada";
+import { musics, pageInfo } from "@/data/musicsDada";
 
 export async function GET() {
-    return NextResponse.json(musics);
+    //musics와 pageInfo를 하나의 객체로 합침.
+    const responseData = {
+        ...pageInfo,
+        musics: musics,
+    }
+    return NextResponse.json(responseData);
 }
