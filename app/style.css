@@ -200,3 +200,6 @@
 .wrap-todo .empty {display: flex; flex-direction: column; align-items: center; margin-top: 10rem;}
 .wrap-todo .empty .ico img {max-width: 10rem;}
 .wrap-todo .empty .text {margin-top: 3rem; font-family: gm; font-size: 1.5rem; line-height: 1.6; text-align: center; color: rgba(255,255,255,.4);}
+
+/* 뮤직 */
+.wrap-music {}
