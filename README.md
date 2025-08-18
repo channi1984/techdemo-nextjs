@@ -11,6 +11,7 @@
 ```
 /app/movie/page.jsx : 무비앱 리스트 페이지
 /app/movie/[id]/page.jsx : 무비앱 뷰 페이지 (동적 라우팅)
+---
 /app/movie_api/page.jsx :  무비앱 (API) 리스트 페이지
 /app/movie_api/[id]/page.jsx : 무비앱 (API) 뷰 페이지 (동적 라우팅)
 /app/music/page.jsx : 뮤직앱
@@ -27,5 +28,5 @@
 ```
 /data/moviesData.js : 더미 데이터 (무비앱 용)
 /data/musicsData.js : 더미 데이터 (뮤직앱 용)
-/data/todosData.js : 더미 데이터 (투두리스트앱 용)
+/data/todosData.js : 더미 데이터 (투두 리스트앱 용)
 ```
