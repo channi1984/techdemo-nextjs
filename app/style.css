@@ -237,9 +237,9 @@
 .wrap-music .play-list .body {text-align: center; letter-spacing: .6px;}
 .wrap-music .play-list .body li {display: flex; align-items: center; padding: 1rem 0; cursor: pointer;}
 .wrap-music .play-list .body .num {position: relative; flex-shrink: 0; width: 10rem; font-size: 1.4rem; color: rgba(255,255,255,.5);}
-.wrap-music .play-list .body .num .btn-play {display: none; position: absolute; left: 4rem; top: -1.4rem; width: 2rem;}
+.wrap-music .play-list .body .num .btn-play {opacity: 0; position: absolute; left: 4rem; top: -1.4rem; width: 2rem;}
 .wrap-music .play-list .body li:hover .num .btn-play,
-.wrap-music .play-list .body li.active .num .btn-play {display: block;}
+.wrap-music .play-list .body li.active .num .btn-play {opacity: 1;}
 .wrap-music .play-list .body li:hover .num span,
 .wrap-music .play-list .body li.active .num span {display: none;}
 .wrap-music .play-list .body .title {flex-grow: 1;}
