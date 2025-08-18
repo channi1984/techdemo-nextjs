@@ -5,14 +5,20 @@ import Image from "next/image";
 import { useState, useEffect } from 'react';
 
 export default function Music() {
+	// 검색어 상태
+	const [searchTerm, setSearchTerm] = useState("");
 	// API에서 뮤직 목록 가져옴
 	const [musics, setMusics] = useState([]);
+	// 로딩상태
+	const [loading, setLoading] = useState(true);
+	// 에러상태
+	const [error, setError] = useState(null);
+	// 검색어 입력 상태
+	const [filteredMusics, setFilteredMusics] = useState([]);
 	// 큰 제목
 	const [pageTitle, setPageTitle] = useState();
 	// 아바타
 	const [userAvatar, setUserAvatar] = useState();
-	// 로딩상태
-	const [loading, setLoading] = useState(true);
 
 	// Fetch
 	useEffect(() => {
@@ -28,6 +34,7 @@ export default function Music() {
 				setMusics(data.musics);
 				setPageTitle(data.mainTitle);
 				setUserAvatar(data.userAvatar);
+				setFilteredMusics(data.musics);
 			} catch (e) {
 				throw new Error("음악 데이터를 불러오는 데 실패했습니다.");
 				console.error("Fetch error:", e);
@@ -38,8 +45,30 @@ export default function Music() {
 		fetchMusics();
 	}, []);
 
+	// 검색어 필터
+	useEffect(() => {
+		let currentFilteredMusics = musics;
+		console.log(searchTerm)
+		// 검색어 필터링
+		if (searchTerm !== "") {
+			const lowercasedSearchTerm = searchTerm.toLowerCase();
+			currentFilteredMusics = currentFilteredMusics.filter((music) => (
+				music.title.toLowerCase().includes(lowercasedSearchTerm)
+			));
+		}
+		setFilteredMusics(currentFilteredMusics);
+	}, [searchTerm, musics]);
+
+	// 검색어 핸들러
+	const handleSearchChange = (event) => {
+		setSearchTerm(event.target.value);
+	}
+
 	//로딩중
 	if (loading) return <div className="desc loading">음악 데이터를 불러오는 중입니다.</div>;
+
+	//에러남
+	if (error) return <div className="desc error">에러: {error}</div>;
 
 	return (
 		<div className="desc">
@@ -106,7 +135,12 @@ export default function Music() {
 							<button type="button" className="btn-search">
 								<Image src="/images/btn-music-search.png" alt="더보기" width={39} height={39} />
 							</button>
-							<input type="text" className="inp-search" />
+							<input type="text"
+								className="inp-search"
+								placeholder="Search"
+								value={searchTerm}
+								onChange={handleSearchChange}
+							/>
 						</div>
 					</div>
 
@@ -128,8 +162,8 @@ export default function Music() {
 
 						<div className="body">
 							<ul>
-								{/* musics를 사용하여 렌더링합니다. */}
-								{musics.map((music) => (
+								{/* filteredMusics를 사용하여 렌더링합니다. */}
+								{filteredMusics.map((music) => (
 									<li key={music.id}>
 										<div className="num">
 											<span>{music.id}</span>
@@ -158,6 +192,10 @@ export default function Music() {
 										</div>
 									</li>
 								))}
+								{/* 검색 결과가 없을 때 메세지 표시 */}
+								{filteredMusics.length === 0 && searchTerm !== "" && (
+									<li className="nodata">No Data.</li>
+								)}
 							</ul>
 						</div>
 					</div>
