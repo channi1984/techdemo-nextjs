@@ -114,6 +114,32 @@ export default function Music() {
 		handlePlayMusic(nextMusic);
 	}
 
+	// 이전 음악 재생 핸들러
+	const handlePlayPrevMusic = () => {
+		// 현재 재생 중인 음악이 없을 경우 함수 종료
+		if (!currentMusic) {
+			return;
+		}
+
+		// 현재 음악의 인덱스 찾기
+		const currentIndex = filteredMusics.findIndex(
+			(music) => music.id === currentMusic.id
+		);
+
+		// 이전 인덱스 계산 (음수가 되지 않도록 수정)
+		let prevIndex = currentIndex - 1;
+		if (prevIndex < 0) {
+			prevIndex = filteredMusics.length - 1; // 첫 곡일 경우 마지막 곡으로 이동
+		}
+
+		// 이전 음악 객체 가져오기
+		const prevMusic = filteredMusics[prevIndex];
+
+		// 이전 음악 재생
+		handlePlayMusic(prevMusic);
+	}
+
+
 	// 로딩중
 	if (loading) return <div className="desc loading">음악 데이터를 불러오는 중입니다.</div>;
 
@@ -274,7 +300,7 @@ export default function Music() {
 								<li className="control">
 									<ul>
 										<li className="prev">
-											<button type="button" className="btn-prev">
+											<button type="button" className="btn-prev" onClick={handlePlayPrevMusic}>
 												<Image src="/images/ic-music-bar-prev.png" alt="이전 재생" width={64} height={64} />
 											</button>
 										</li>
