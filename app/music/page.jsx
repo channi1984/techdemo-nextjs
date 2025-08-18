@@ -188,11 +188,11 @@ export default function Music() {
 							<ul>
 								{/* filteredMusics를 사용하여 렌더링합니다. */}
 								{filteredMusics.map((music) => (
-									<li key={music.id} className={currentMusic?.id === music.id ? 'active' : ''}  onClick={() => handlePlayMusic(music)} onTouchEnd={() => handlePlayMusic(music)}>
+									<li key={music.id} className={currentMusic?.id === music.id ? 'active' : ''}>
 										<div className="num">
 											<span>{music.id}</span>
 											<div className="play">
-												<button type="button" className="btn-play">
+												<button type="button" className="btn-play" onClick={() => handlePlayMusic(music)}>
 													{currentMusic?.id === music.id && isPlaying ? (
 														<Image src="/images/ic-music-pause.png" alt="정지" width={42} height={50} />
 													) : (
