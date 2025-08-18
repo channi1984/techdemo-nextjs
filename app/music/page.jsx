@@ -92,7 +92,27 @@ export default function Music() {
 		}
 	};
 
-	// 다음 윽알 재생 핸들러
+	// 다음 음악 재생 핸들러
+	const handlePlayNextMusic = () => {
+		// 현재 재생 중인 음악이 없을 경우 함수 종료
+		if (!currentMusic) {
+			return;
+		}
+
+		// 현재 음악의 인덱스 찾기
+		const currentIndex = filteredMusics.findIndex(
+			(music) => music.id === currentMusic.id
+		);
+
+		// 다음 인덱스 계산
+		const nextIndex = (currentIndex + 1) % filteredMusics.length;
+
+		// 다음 음악 객체 가져오기
+		const nextMusic = filteredMusics[nextIndex];
+
+		// 다음 음악 재생
+		handlePlayMusic(nextMusic);
+	}
 
 	// 로딩중
 	if (loading) return <div className="desc loading">음악 데이터를 불러오는 중입니다.</div>;
@@ -264,7 +284,7 @@ export default function Music() {
 											</button>
 										</li>
 										<li className="next">
-											<button type="button" className="btn-next">
+											<button type="button" className="btn-next" onClick={handlePlayNextMusic}>
 												<Image src="/images/ic-music-bar-next.png" alt="다음 재생" width={64} height={64} />
 											</button>
 										</li>
