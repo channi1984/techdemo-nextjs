@@ -34,5 +34,6 @@
 
 ```
 /data/moviesData.js : 더미 데이터 (무비앱 용)
+/data/musicsData.js : 더미 데이터 (뮤직앱 용)
 /data/todosData.js : 더미 데이터 (투두리스트앱 용)
 ```
