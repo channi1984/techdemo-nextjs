@@ -92,6 +92,8 @@ export default function Music() {
 		}
 	};
 
+	// 다음 윽알 재생 핸들러
+
 	// 로딩중
 	if (loading) return <div className="desc loading">음악 데이터를 불러오는 중입니다.</div>;
 
