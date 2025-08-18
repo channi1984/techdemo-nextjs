@@ -6,6 +6,7 @@ export const musics = [
         artist: "Tyler Bates, Joel J. Richard",
         cover: "/images/img-music-cover.png",
         album: "John Wick Chapter 4",
+        mp3: "/music/Big Wick Energy.mp3",
         time: "3:15"
     },
     {
@@ -14,6 +15,7 @@ export const musics = [
         artist: "Tyler Bates, Joel J. Richard",
         cover: "/images/img-music-cover.png",
         album: "John Wick Chapter 4",
+        mp3: "/music/Nowhere to Run.mp3",
         time: "2:11"
     },
     {
@@ -22,6 +24,7 @@ export const musics = [
         artist: "Tyler Bates, Joel J. Richard",
         cover: "/images/img-music-cover.png",
         album: "John Wick Chapter 4",
+        mp3: "/music/Sand Wick.mp3",
         time: "5:12"
     },
     {
@@ -30,15 +33,8 @@ export const musics = [
         artist: "Tyler Bates, Joel J. Richard",
         cover: "/images/img-music-cover.png",
         album: "John Wick Chapter 4",
+        mp3: "/music/Change Your Nature.mp3",
         time: "4:23"
-    },
-    {
-        id: "5",
-        title: "Big Wick Energy",
-        artist: "Tyler Bates, Joel J. Richard",
-        cover: "/images/img-music-cover.png",
-        album: "John Wick Chapter 4",
-        time: "2:15"
     }
 ];
 
