@@ -3,6 +3,7 @@ import "./style.css"
 
 import Header from "@/components/Header";
 import ViewportChanger from "@/components/ViewportChanger";
+import FastClickInitializer from "@/components/FastClickInitializer";
 
 export const viewport = {
 	initialScale: 1.0,
@@ -17,6 +18,9 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="ko">
 			<body>
+				{/* 패스트 클릭 */}
+				<FastClickInitializer />
+				{/* 뷰 포트 */}
 				<ViewportChanger />
 				{/* 헤더 */}
 				<Header />
