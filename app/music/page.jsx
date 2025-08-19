@@ -238,7 +238,7 @@ export default function Music() {
 							<ul>
 								{/* filteredMusics를 사용하여 렌더링합니다. */}
 								{filteredMusics.map((music) => (
-									<li key={music.id} className={currentMusic?.id === music.id ? 'active' : ''} onClick={() => handlePlayMusic(event, music)}>
+									<li key={music.id} className={currentMusic?.id === music.id ? 'active' : ''} onClick={(event) => handlePlayMusic(event, music)}>
 										<div className="num">
 											<span>{music.id}</span>
 											<div className="play">
