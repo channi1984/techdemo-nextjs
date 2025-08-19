@@ -10,7 +10,11 @@ export const viewport = {
 }
 
 export const metadata = {
-	title: "CHANNI.KR",
+	title: "Channi.kr",
+	description: 'Welcome to Channi.kr',
+	icons: {
+		icon: '/favicon.png',
+	},
 };
 
 export default function RootLayout({ children }) {
