@@ -71,9 +71,7 @@ export default function Music() {
 	}
 
 	// 음악 재생 핸들러
-	const handlePlayMusic = (event, music) => {
-		event.stopPropagation(); //이벤트 전파 방지
-
+	const handlePlayMusic = (music) => {
 		if (currentMusic && currentMusic.id === music.id) {
 			// 같은 음악을 다시 클릭했을 경우
 			if (isPlaying) {
@@ -238,7 +236,7 @@ export default function Music() {
 							<ul>
 								{/* filteredMusics를 사용하여 렌더링합니다. */}
 								{filteredMusics.map((music) => (
-									<li key={music.id} className={currentMusic?.id === music.id ? 'active' : ''} onClick={(event) => handlePlayMusic(event, music)}>
+									<li key={music.id} className={currentMusic?.id === music.id ? 'active' : ''} onClick={() => handlePlayMusic(music)}>
 										<div className="num">
 											<span>{music.id}</span>
 											<div className="play">
