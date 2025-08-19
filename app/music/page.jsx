@@ -71,7 +71,9 @@ export default function Music() {
 	}
 
 	// 음악 재생 핸들러
-	const handlePlayMusic = (music) => {
+	const handlePlayMusic = (event, music) => {
+		event.stopPropagation(); //이벤트 전파 방지
+
 		if (currentMusic && currentMusic.id === music.id) {
 			// 같은 음악을 다시 클릭했을 경우
 			if (isPlaying) {
