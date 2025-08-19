@@ -7,19 +7,19 @@ import { useState, useEffect, useRef } from 'react';
 export default function Music() {
 	// 검색어 상태
 	const [searchTerm, setSearchTerm] = useState("");
-	// API에서 뮤직 목록 가져옴
+	// API에서 가져온 뮤직 목록 상태
 	const [musics, setMusics] = useState([]);
-	// 로딩상태
+	// 로딩 상태
 	const [loading, setLoading] = useState(true);
-	// 에러상태
+	// 에러 상태
 	const [error, setError] = useState(null);
 	// 검색어 입력 상태
 	const [filteredMusics, setFilteredMusics] = useState([]);
-	// 큰 제목
+	// 큰 제목 상태
 	const [pageTitle, setPageTitle] = useState();
-	// 아바타
+	// 아바타 상태
 	const [userAvatar, setUserAvatar] = useState();
-	// 현재 재생중인 음악
+	// 현재 재생중인 음악 상태
 	const [currentMusic, setCurrentMusic] = useState(null);
 	// 재생 상태
 	const [isPlaying, setIsPlaying] = useState(false);

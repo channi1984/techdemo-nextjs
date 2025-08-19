@@ -8,11 +8,11 @@ import { useState, useEffect } from 'react';
 export default function MovieFeatures() {
 	// 검색어 상태
 	const [searchTerm, setSearchTerm] = useState("");
-	// API에서 영화 목록 가져옴
+	// API에서 가져온 영화 목록 상태
 	const [movies, setMovies] = useState([]);
-	// 로딩상태
+	// 로딩 상태
 	const [loading, setLoading] = useState(true);
-	// 에러상태
+	// 에러 상태
 	const [error, setError] = useState(null);
 	// 영화 검색어 입력 상태
 	const [filteredMovies, setFilteredMovies] = useState([]);
