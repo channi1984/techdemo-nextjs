@@ -82,6 +82,48 @@ const movies = [
             { name: "데이비드 존슨", imageUrl: "/images/img-movie-actor6-2.png" },
         ],
         youtubeId: "v=rXpDoYtkWMs",
+    },
+    {
+        id: "7",
+        title: "로맨스는 별책부록",
+        imageUrl: "/images/img-movie7.png",
+        imageDetailUrl: "/images/img-movie-detail7.png",
+        description: "책을 만들었는데, 로맨스가 따라왔다? 책을 읽지 않는 세상에서 책을 만드는 사람들의 이야기를 담은 로맨틱 코미디 드라마.",
+        rating: 3,
+        genre: "Romance",
+        actors: [
+            { name: "이종석", imageUrl: "/images/img-movie-actor7-1.png" },
+            { name: "이나영", imageUrl: "/images/img-movie-actor7-2.png" },
+        ],
+        youtubeId: "v=OgEw2ks5a14",
+    },
+    {
+        id: "8",
+        title: "엑시트",
+        imageUrl: "/images/img-movie8.png",
+        imageDetailUrl: "/images/img-movie-detail8.png",
+        description: "짠내 폭발 청년백수,전대미문의 진짜 재난을 만나다.",
+        rating: 5,
+        genre: "Comedy",
+        actors: [
+            { name: "조정석", imageUrl: "/images/img-movie-actor8-1.png" },
+            { name: "윤아", imageUrl: "/images/img-movie-actor8-2.png" },
+        ],
+        youtubeId: "v=li4jOV5j7SI",
+    },
+    {
+        id: "9",
+        title: "극한직업",
+        imageUrl: "/images/img-movie9.png",
+        imageDetailUrl: "/images/img-movie-detail9.png",
+        description: "범인을 잡을 것인가, 닭을 잡을 것인가!",
+        rating: 5,
+        genre: "Comedy",
+        actors: [
+            { name: "류승룡", imageUrl: "/images/img-movie-actor9-1.png" },
+            { name: "이하늬", imageUrl: "/images/img-movie-actor9-2.png" },
+        ],
+        youtubeId: "v=GkECbvHK4js",
     }
 ];
 
