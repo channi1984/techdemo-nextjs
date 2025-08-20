@@ -131,7 +131,7 @@ export default function MovieFeatures() {
 						{/* filteredMovies를 사용하여 렌더링합니다. */}
 						{filteredMovies.map((movie) => (
 							<li key={movie.id}>
-								<Link href={`/movie_api/${movie.id}`}>
+								<Link href={`/movie/${movie.id}`}>
 									<div className="thumb">
 										<Image src={movie.imageUrl} alt={movie.title} width={384} height={538} />
 									</div>
