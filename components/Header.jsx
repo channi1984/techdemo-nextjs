@@ -24,11 +24,11 @@ export default function Header() {
 					</div>
 					<div className="menu">
 						<ul>
-							<li className={isMovieActive ? "on" : ""}>
+							{/* <li className={isMovieActive ? "on" : ""}>
 								<Link href="/movie">Movie</Link>
-							</li>
+							</li> */}
 							<li className={isMovieApiActive ? "on" : ""}>
-								<Link href="/movie_api">Movie by Api</Link>
+								<Link href="/movie_api">Movie</Link>
 							</li>
 							<li className={isMusicActive ? "on" : ""}>
 								<Link href="/music">Music</Link>
