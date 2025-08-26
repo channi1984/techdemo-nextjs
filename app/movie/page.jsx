@@ -17,7 +17,7 @@ export default function MovieFeatures() {
 	// 영화 검색어 입력 상태
 	const [filteredMovies, setFilteredMovies] = useState([]);
 	// 현재 활성화된 탭 상태, 기본값은 All
-	const [activeTab, setActiveTab] = useState("All");
+    const [activeTab, setActiveTab] = useState("All");
 
 	// Fetch
 	useEffect(() => {
@@ -34,7 +34,6 @@ export default function MovieFeatures() {
 				setFilteredMovies(data);
 			} catch (e) {
 				throw new Error("영화 데이터를 불러오는 데 실패했습니다.");
-				console.error("Fetch error:", e);
 			} finally {
 				setLoading(false);
 			}
