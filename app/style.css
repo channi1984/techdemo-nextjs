@@ -157,6 +157,22 @@
 	.wrap-movie-detail img {width: 100%;}
 }
 
+/* 무지 댓글 */
+.wrap-movie-comment {margin-top: 5rem;}
+.wrap-movie-comment .header {display: flex; flex-direction: column; align-items: center;}
+.wrap-movie-comment .header .search {display: flex; align-items: center; width: 100%;}
+.wrap-movie-comment .header .search .input {flex-grow: 1; padding-right: 2rem;}
+.wrap-movie-comment .header .search .input input {width: 100%; height: 5rem; background: #1f1f29; padding: 0 2rem; border-radius: .8rem; font-family: gm; font-size: 1.6rem; color: #fff;}
+.wrap-movie-comment .header .search .input input::placeholder {color: #555;}
+.wrap-movie-comment .header .search .button button {display: flex; align-items: center; height: 5rem; padding: 0 2rem; border-radius: .8rem; background: #272f9a; font-size: 1.6rem; color: rgba(255,255,255,.8);}
+
+.wrap-movie-comment .list {margin-top: 3rem;}
+.wrap-movie-comment .list .work li {display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 2rem 2rem; background: #1f1f29; border-radius: .8rem;}
+.wrap-movie-comment .list .work .left {display: flex; align-items: center;}
+.wrap-movie-comment .list .work .subject {font-family: gm; font-size: 1.6rem; color: #999;}
+.wrap-movie-comment .list .work .del button {display: flex; width: 1.5rem; height: 2rem; background: url('/images/ic-todo-del.png') no-repeat center / 1.5rem; text-indent: -9999rem;}
+.wrap-movie-comment .list .work .del button:hover {background: url('/images/ic-todo-del-on.png') no-repeat center / 1.5rem;}
+
 /* 무비 팝업 */
 .wrap-youtube {position: fixed; left: 0; top: 0; z-index: 100; display: flex; justify-content: center; align-items: center; width: 100%; min-height: 100%; background: rgba(0,0,0,.5); backdrop-filter: blur(1rem) grayscale(.5);}
 .wrap-youtube .box-youtube {position: relative; width: 100%; max-width: 80rem; padding: 2rem;}
