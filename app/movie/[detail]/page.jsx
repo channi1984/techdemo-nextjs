@@ -225,6 +225,7 @@ export default function MovieDetail() {
 									<div className="left">
 										<strong className="subject">{c.content}</strong>
 									</div>
+									{/*
 									<div className="right">
 										<div className="del">
 											<button
@@ -235,6 +236,7 @@ export default function MovieDetail() {
 											</button>
 										</div>
 									</div>
+									 */}
 								</li>
 							))}
 						</ul>
