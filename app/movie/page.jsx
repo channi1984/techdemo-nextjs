@@ -33,7 +33,7 @@ export default function MovieFeatures() {
 				setMovies(data);
 				setFilteredMovies(data);
 			} catch (e) {
-				throw new Error("영화 데이터를 불러오는 데 실패했습니다.");
+				setError(`영화 데이터를 불러오는 데 실패했습니다. 원인: ${e.message}`);
 			} finally {
 				setLoading(false);
 			}
