@@ -56,3 +56,32 @@ export async function POST(request, { params }) {
 
 	return NextResponse.json({ message: "댓글이 성공적으로 저장되었씁니다." });
 }
+
+// 댓글 삭제를 위한 DELETE 핸들러 추가
+export async function DELETE(request, { params }) {
+	const { id } = params; //영화 아이디
+	const { commentId } = await request.json(); // 댓글 ID 추출
+
+	// 해당 영화에 대한 댓글이 없는 경우
+	if (!movieComments[id]) {
+		return new Response(JSON.stringify({ error: "영화에 대한 댓글을 찾을 수 없습니다." }), {
+			status: 404,
+			headers: { 'Content-Type': 'application/json' },
+		});
+	}
+
+	const initialLength = movieComments[id].length;
+
+	//댓글 ID가 일치하는 항목을 제외하고 새 배열을 만듭니다.
+	movieComments[id] = movieComments[id].filter(c => c.id !== commentId);
+
+	// 삭제 후 길이가 변하지 않았다면 메세지 뿌리기
+	if (movieComments[id].length === initialLength) {
+		return new Response(JSON.stringify({ error: "삭제할 댓글이 존재하지 않습니다." }), {
+			status: 404,
+			headers: { 'Content-Type': 'application/json' },
+		});
+	}
+
+	return NextResponse.json({ message: "댓글이 성공적으로 삭제되었습니다." });
+}

@@ -16,6 +16,26 @@ export default function MovieDetail() {
 	const [comment, setComment] = useState("");
 	const [comments, setComments] = useState([]);
 	const [commentLoading, setCommentLoading] = useState(false);
+	const [deleteLoading, setDeleteLoading] = useState({});
+
+	async function fetchMovie() {
+		try {
+			setLoading(true);
+			const response = await fetch(`/api/movies/${detail}`);
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+			const data = await response.json();
+			const { comments, ...movieData } = data;
+			setMovie(movieData);
+			setComments(comments);
+		} catch (e) {
+			setError("영화 데이터를 불러오는 데 실패했습니다.");
+			console.error('Fetch error:', e);
+		} finally {
+			setLoading(false);
+		}
+	}
 
 	// 단일 영화 데이터를 fetch하는 useEffect
 	useEffect(() => {
@@ -24,27 +44,7 @@ export default function MovieDetail() {
 			return;
 		}
 
-		async function fetchMovie() {
-			try {
-				setLoading(true);
-				// 동적 API를 호출하여 특정 영화 정보만 가져옵니다.
-				const response = await fetch(`/api/movies/${detail}`);
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
-				const data = await response.json();
-
-				// 영화 데이터와 댓글 데이터를 분리해서 상태에 저장합니다.
-				const { comments, ...movieData } = data;
-				setMovie(movieData);
-				setComments(comments);
-			} catch (e) {
-				setError("영화 데이터를 불러오는 데 실패했습니다.");
-				console.error('Fetch error:', e);
-			} finally {
-				setLoading(false);
-			}
-		}
+		// useEffect가 실행될 때마다 fetchMovie 함수를 호출합니다.
 		fetchMovie();
 	}, [detail]);
 
@@ -99,9 +99,8 @@ export default function MovieDetail() {
 			const data = await response.json();
 			console.log("댓글 저장 성공", data.message);
 
-			//댓글 작성 성공 후 댓글 목록 업데이트
-			const newComment = { id: Date.now(), content: comment };
-			setComments(prevComments => [...prevComments, newComment]);
+			// POST 요청 성공 후, 전체 댓글 목록을 다시 불러와 상태를 업데이트합니다.
+			await fetchMovie(); // fetchMovie 함수를 호출하여 최신 댓글 데이터를 다시 가져옴
 			setComment(""); //입력 필드 초기화
 		} catch (e) {
 			console.error("댓글 작성 오류:", e);
@@ -110,6 +109,39 @@ export default function MovieDetail() {
 			setCommentLoading(false);
 		}
 	}
+
+	// 댓글 삭제 핸들러
+	const handleDeleteComment = async (commentId) => {
+		// 삭제 중 로딩 상태를 설정합니다.
+		setDeleteLoading(prev => ({ ...prev, [commentId]: true }));
+
+		try {
+			const response = await fetch(`/api/movies/${detail}`, {
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ commentId }), // 삭제할 댓글의 ID를 본문에 담아 보냅니다.
+			});
+
+			if (!response.ok) {
+				// 서버에서 에러가 발생하면, 에러 메시지를 포함하여 오류를 던집니다.
+				const errorData = await response.json();
+				throw new Error(errorData.error || "댓글 삭제에 실패했습니다.");
+			}
+
+			// DELETE 요청 성공 후, 전체 댓글 목록을 다시 불러와 상태를 업데이트합니다.
+			await fetchMovie(); // fetchMovie 함수를 호출하여 최신 댓글 데이터를 다시 가져옴
+			console.log("댓글 삭제 성공");
+
+		} catch (e) {
+			console.error("댓글 삭제 오류:", e);
+			// 서버에서 보낸 에러 메시지를 사용자에게 보여줍니다.
+			alert(`댓글 삭제 중 오류가 발생했습니다: ${e.message}`);
+		} finally {
+			setDeleteLoading(prev => ({ ...prev, [commentId]: false }));
+		}
+	};
 
 	if (loading) {
 		return <div className="desc loading">영화 데이터를 불러오는 중입니다...</div>;
@@ -167,8 +199,8 @@ export default function MovieDetail() {
 					<div className="title">Actors</div>
 					<div className="list">
 						<ul>
-							{movie.actors && movie.actors.map((actor, index) => (
-								<li key={index}>
+							{movie.actors && movie.actors.map((actor) => (
+								<li key={actor.name}>
 									<div className="thumb">
 										<Image src={actor.imageUrl} alt={actor.name} width={216} height={216} />
 									</div>
@@ -219,24 +251,24 @@ export default function MovieDetail() {
 				<div className="list">
 					<div className="work">
 						<ul>
-							{comments.map((c, index) => (
+							{comments.map((c) => (
 								// key prop 추가
-								<li key={index}>
+								<li key={c.id}>
 									<div className="left">
 										<strong className="subject">{c.content}</strong>
 									</div>
-									{/*
 									<div className="right">
 										<div className="del">
 											<button
 												type="button"
 												className="btn-del"
+												onClick={() => handleDeleteComment(c.id)}
+												disabled={deleteLoading[c.id]}
 											>
-												삭제하기
+												{deleteLoading[c.id] ? '삭제 중...' : '삭제하기'}
 											</button>
 										</div>
 									</div>
-									 */}
 								</li>
 							))}
 						</ul>
