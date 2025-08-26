@@ -194,7 +194,7 @@ export default function MovieDetail() {
 						<div className="input">
 							<input
 								type="text"
-								placeholder="댓글을 입력해 주세요."
+								placeholder="감상평을 써주세요."
 								value={comment}
 								onChange={(e) => setComment(e.target.value)}
 								onKeyPress={(e) => {
