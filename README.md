@@ -1,6 +1,6 @@
 ## 각 파일의 쓰임새
 
-### API
+### API2
 ```
 /app/api/movies/route.js : 무비앱 API 데이터
 /app/api/movies/[id]/route.js : 무비앱  동적 API 데이터
