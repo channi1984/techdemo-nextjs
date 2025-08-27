@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function MovieDetail() {
 	const params = useParams();
-	const { detail } = params;
+	const { detail } = params; // 동적 라우터 이름과 같아야함. 지금은 [detail]의 detail임
 
 	const [movie, setMovie] = useState(null);
 	const [loading, setLoading] = useState(true);
