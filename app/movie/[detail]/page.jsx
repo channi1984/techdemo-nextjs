@@ -113,7 +113,7 @@ export default function MovieDetail() {
 	// 댓글 삭제 핸들러
 	const handleDeleteComment = async (commentId) => {
 		// 삭제 중 로딩 상태를 설정합니다.
-		setDeleteLoading(prev => ({ ...prev, [commentId]: true }));
+		setDeleteLoading(prev => ({ ...prev, [commentId]: true })); //[] <- 이건 배열이 아님, [abc] : true 처럼 객체의 대괄호 표기법임.
 
 		try {
 			const response = await fetch(`/api/movies/${detail}`, {
