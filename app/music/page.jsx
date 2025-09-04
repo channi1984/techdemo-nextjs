@@ -82,9 +82,11 @@ export default function Music() {
 		} else {
 			// 다른 음악을 클랙했을 경우
 			setCurrentMusic(music); // 현재 음악을 업데이트
-			setIsPlaying(true); // 재생 상태를 true로 설정
 			audioRef.current.src = music.mp3; // audio 태그의 소스를 변경
-			audioRef.current.play().catch(e => {
+
+			audioRef.current.play().then(() => {
+				setIsPlaying(true); // 재생 성공 시에만 상태 업데이트
+			}).catch(e => {
 				console.error("재생 오류", e);
 				setIsPlaying(false);
 			});
