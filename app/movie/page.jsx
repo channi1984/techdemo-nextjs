@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export default function MovieFeatures() {
 	// 검색어 상태
@@ -14,10 +14,8 @@ export default function MovieFeatures() {
 	const [loading, setLoading] = useState(true);
 	// 에러 상태
 	const [error, setError] = useState(null);
-	// 영화 검색어 입력 상태
-	const [filteredMovies, setFilteredMovies] = useState([]);
 	// 현재 활성화된 탭 상태, 기본값은 All
-    const [activeTab, setActiveTab] = useState("All");
+	const [activeTab, setActiveTab] = useState("All");
 
 	// Fetch
 	useEffect(() => {
@@ -31,7 +29,6 @@ export default function MovieFeatures() {
 
 				const data = await response.json();
 				setMovies(data);
-				setFilteredMovies(data);
 			} catch (e) {
 				setError(`영화 데이터를 불러오는 데 실패했습니다. 원인: ${e.message}`);
 			} finally {
@@ -42,7 +39,7 @@ export default function MovieFeatures() {
 	}, []);
 
 	// 검색어 또는 탭 변경시 필터
-	useEffect(() => {
+	const filteredMovies = useMemo(() => {
 		let currentFilteredMovies = movies;
 
 		// 1차 필터링 : 장르 필터링
@@ -59,8 +56,9 @@ export default function MovieFeatures() {
 				movie.title.toLowerCase().includes(lowercasedSearchTerm)
 			));
 		}
-		setFilteredMovies(currentFilteredMovies);
-	}, [searchTerm, activeTab, movies]); //searchTerm 또는 activeTab이 변경될 때마다 이 효과를 실행
+
+		return currentFilteredMovies;
+	}, [searchTerm, activeTab, movies]);
 
 	// 검색어 입력 핸들러
 	const handleSearchChange = (event) => {
@@ -127,7 +125,6 @@ export default function MovieFeatures() {
 				{/* 무비 리스트 */}
 				<div className="list">
 					<ul>
-						{/* filteredMovies를 사용하여 렌더링합니다. */}
 						{filteredMovies.map((movie) => (
 							<li key={movie.id}>
 								<Link href={`/movie/${movie.id}`}>
