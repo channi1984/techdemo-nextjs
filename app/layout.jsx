@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import ViewportChanger from "@/components/ViewportChanger";
 
 export const viewport = {
-	width: '500px',
+	width: 'device-width',
 	initialScale: 1.0,
 	maximumScale: 1.0,
 	userScalable: false,
