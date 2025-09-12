@@ -48,6 +48,18 @@ export default function Music() {
 			}
 		}
 		fetchMusics();
+
+		const audioEl = audioRef.current;
+		if (audioEl) {
+			const handleEnded = () => {
+				setIsPlaying(false);
+			};
+
+			audioEl.addEventListener('ended', handleEnded);
+			return () => {
+				audioEl.removeEventListener('ended', handleEnded);
+			};
+		}
 	}, []);
 
 	// 검색어 필터
@@ -72,22 +84,25 @@ export default function Music() {
 	// 음악 재생 핸들러
 	const handlePlayMusic = (music) => {
 		if (currentMusic && currentMusic.id === music.id) {
-			// 같은 음악을 다시 클릭했을 경우
 			if (isPlaying) {
 				audioRef.current.pause();
+				setIsPlaying(false);
 			} else {
-				audioRef.current.play();
+				audioRef.current.play().then(() => {
+					setIsPlaying(true);
+				}).catch(e => {
+					console.error("재생 오류:", e);
+					setIsPlaying(false);
+				});
 			}
-			setIsPlaying(!isPlaying);
 		} else {
-			// 다른 음악을 클랙했을 경우
 			setCurrentMusic(music);
 			audioRef.current.src = music.mp3;
 
-			audioRef.current.play().then(() => { // 재생 성공 시에만 상태 업데이트
+			audioRef.current.play().then(() => {
 				setIsPlaying(true);
 			}).catch(e => {
-				console.error("재생 오류", e);
+				console.error("재생 오류:", e);
 				setIsPlaying(false);
 			});
 		}
