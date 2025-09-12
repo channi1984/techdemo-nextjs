@@ -52,6 +52,7 @@ th{text-align:center}
 input::-ms-clear{display:none}
 input,button{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;font-family:gb}
 input[type="radio"]{position:relative;top:.2rem}
+input,textarea,select {font-size: 16px; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent;}
 pre{white-space:pre-line;background-color:#fff;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;overflow-y:auto}
 select::-ms-expand{display:none}
 textarea{resize:none}
