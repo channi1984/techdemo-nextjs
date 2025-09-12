@@ -62,13 +62,13 @@ export default function MovieFeatures() {
 
 	// 검색어 입력 핸들러
 	const handleSearchChange = (event) => {
-		setSearchTerm(event.target.value); //입력 필드의 값으로 검색어 상태를 업데이트
+		setSearchTerm(event.target.value);
 	};
 
 	// 장르 클릭 핸들러
 	const handleTabClick = (genre) => {
-		setActiveTab(genre); //클릭한 탭 탭 상태 업데이트
-		setSearchTerm(""); //검색어 초기화
+		setActiveTab(genre);
+		setSearchTerm("");
 	}
 
 	//로딩중

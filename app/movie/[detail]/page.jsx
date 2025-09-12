@@ -43,7 +43,6 @@ export default function MovieDetail() {
 			return;
 		}
 
-		// useEffect가 실행될 때마다 fetchMovie 함수를 호출합니다.
 		fetchMovie();
 	}, [detail]);
 
@@ -92,12 +91,10 @@ export default function MovieDetail() {
 				throw new Error("댓글 작성에 실패했습니다.");
 			}
 
-			const newComment = await response.json(); // 서버에서 새 댓글 정보를 받아옵니다.
+			const newComment = await response.json();
 
-			// **새 댓글을 comments 상태에 직접 추가합니다.**
 			setComments(prevComments => [...prevComments, newComment]);
-
-			setComment(""); // 입력 필드 초기화
+			setComment("");
 		} catch (e) {
 			alert("댓글 작성 중 오류가 발생했습니다.");
 		} finally {
@@ -107,7 +104,6 @@ export default function MovieDetail() {
 
 	// 댓글 삭제 핸들러
 	const handleDeleteComment = async (commentId) => {
-		// 삭제 중 로딩 상태를 설정합니다.
 		setDeleteLoading(prev => ({ ...prev, [commentId]: true })); //[] <- 이건 배열이 아님, [abc] : true 처럼 객체의 대괄호 표기법임.
 
 		try {

@@ -74,18 +74,18 @@ export default function Music() {
 		if (currentMusic && currentMusic.id === music.id) {
 			// 같은 음악을 다시 클릭했을 경우
 			if (isPlaying) {
-				audioRef.current.pause(); // 재생 중이면 일시정지
+				audioRef.current.pause();
 			} else {
-				audioRef.current.play(); // 정지 상태명 재생
+				audioRef.current.play();
 			}
-			setIsPlaying(!isPlaying); // 재생 상태 토글
+			setIsPlaying(!isPlaying);
 		} else {
 			// 다른 음악을 클랙했을 경우
-			setCurrentMusic(music); // 현재 음악을 업데이트
-			audioRef.current.src = music.mp3; // audio 태그의 소스를 변경
+			setCurrentMusic(music);
+			audioRef.current.src = music.mp3;
 
-			audioRef.current.play().then(() => {
-				setIsPlaying(true); // 재생 성공 시에만 상태 업데이트
+			audioRef.current.play().then(() => { // 재생 성공 시에만 상태 업데이트
+				setIsPlaying(true);
 			}).catch(e => {
 				console.error("재생 오류", e);
 				setIsPlaying(false);
