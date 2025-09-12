@@ -41,7 +41,7 @@ export async function POST(request, { params }) {
 	}
 
 	// 새 댓글 객체 생성
-	const newComment = {
+	const newComment  = {
 		id: Date.now(),
 		content: content
 	};
@@ -54,7 +54,7 @@ export async function POST(request, { params }) {
 	// 댓글 배열에 새 댓글 추가
 	movieComments[id].push(newComment);
 
-	return NextResponse.json({ message: "댓글이 성공적으로 저장되었씁니다." });
+	return NextResponse.json(newComment);
 }
 
 // 댓글 삭제를 위한 DELETE 핸들러 추가

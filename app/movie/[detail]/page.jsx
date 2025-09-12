@@ -31,7 +31,6 @@ export default function MovieDetail() {
 			setComments(comments);
 		} catch (e) {
 			setError("영화 데이터를 불러오는 데 실패했습니다.");
-			console.error('Fetch error:', e);
 		} finally {
 			setLoading(false);
 		}
@@ -67,7 +66,6 @@ export default function MovieDetail() {
 		// "v="를 제거하고 순수한 ID만 추출
 		const videoId = youtubeId.split('v=')[1];
 		if (videoId) {
-			// 올바른 유튜브 embed URL 형식
 			return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 		}
 		return null;
@@ -86,24 +84,21 @@ export default function MovieDetail() {
 			setCommentLoading(true);
 			const response = await fetch(`/api/movies/${detail}`, {
 				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ content: comment }), // 댓글 내용을 JSON 형태로 전송
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ content: comment }),
 			});
 
 			if (!response.ok) {
 				throw new Error("댓글 작성에 실패했습니다.");
 			}
 
-			const data = await response.json();
-			console.log("댓글 저장 성공", data.message);
+			const newComment = await response.json(); // 서버에서 새 댓글 정보를 받아옵니다.
 
-			// POST 요청 성공 후, 전체 댓글 목록을 다시 불러와 상태를 업데이트합니다.
-			await fetchMovie(); // fetchMovie 함수를 호출하여 최신 댓글 데이터를 다시 가져옴
-			setComment(""); //입력 필드 초기화
+			// **새 댓글을 comments 상태에 직접 추가합니다.**
+			setComments(prevComments => [...prevComments, newComment]);
+
+			setComment(""); // 입력 필드 초기화
 		} catch (e) {
-			console.error("댓글 작성 오류:", e);
 			alert("댓글 작성 중 오류가 발생했습니다.");
 		} finally {
 			setCommentLoading(false);
@@ -116,27 +111,21 @@ export default function MovieDetail() {
 		setDeleteLoading(prev => ({ ...prev, [commentId]: true })); //[] <- 이건 배열이 아님, [abc] : true 처럼 객체의 대괄호 표기법임.
 
 		try {
+			setDeleteLoading(prev => ({ ...prev, [commentId]: true }));
 			const response = await fetch(`/api/movies/${detail}`, {
 				method: "DELETE",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ commentId }), // 삭제할 댓글의 ID를 본문에 담아 보냅니다.
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ commentId }),
 			});
 
 			if (!response.ok) {
-				// 서버에서 에러가 발생하면, 에러 메시지를 포함하여 오류를 던집니다.
 				const errorData = await response.json();
 				throw new Error(errorData.error || "댓글 삭제에 실패했습니다.");
 			}
 
-			// DELETE 요청 성공 후, 전체 댓글 목록을 다시 불러와 상태를 업데이트합니다.
-			await fetchMovie(); // fetchMovie 함수를 호출하여 최신 댓글 데이터를 다시 가져옴
-			console.log("댓글 삭제 성공");
+			setComments(prevComments => prevComments.filter(c => c.id !== commentId));
 
 		} catch (e) {
-			console.error("댓글 삭제 오류:", e);
-			// 서버에서 보낸 에러 메시지를 사용자에게 보여줍니다.
 			alert(`댓글 삭제 중 오류가 발생했습니다: ${e.message}`);
 		} finally {
 			setDeleteLoading(prev => ({ ...prev, [commentId]: false }));
