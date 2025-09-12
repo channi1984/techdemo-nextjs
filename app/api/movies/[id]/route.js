@@ -6,7 +6,7 @@ import movies from "@/data/moviesData";
 const movieComments = {};
 
 export async function GET(request, { params }) {
-	const { id } = params;
+	const { id } = await params;
 
 	const movie = movies.find((m) => m.id === id);
 
@@ -27,7 +27,7 @@ export async function GET(request, { params }) {
 
 // 댓글 저장을 위한 POST 핸들러 추가
 export async function POST(request, { params }) {
-	const { id } = params;
+	const { id } = await params;
 	const { content } = await request.json(); //요청 본문에서 댓글 내용 추출
 
 	// 댓글 유효성 검사
@@ -59,7 +59,7 @@ export async function POST(request, { params }) {
 
 // 댓글 삭제를 위한 DELETE 핸들러 추가
 export async function DELETE(request, { params }) {
-	const { id } = params; //영화 아이디
+	const { id } = await params; //영화 아이디
 	const { commentId } = await request.json(); // 댓글 ID 추출
 
 	// 해당 영화에 대한 댓글이 없는 경우
