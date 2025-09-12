@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import ViewportChanger from "@/components/ViewportChanger";
 
 export const viewport = {
-	// width: 'device-width',
+	width: '500px',
 	initialScale: 1.0,
 	maximumScale: 1.0,
 	userScalable: false,
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 		<html lang="ko">
 			<body>
 				{/* 뷰 포트 */}
-				<ViewportChanger />
+				{/* <ViewportChanger /> */}
 				{/* 헤더 */}
 				<Header />
 
