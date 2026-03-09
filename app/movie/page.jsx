@@ -16,6 +16,8 @@ export default function MovieFeatures() {
 	const [error, setError] = useState(null);
 	// 현재 활성화된 탭 상태, 기본값은 All
 	const [activeTab, setActiveTab] = useState("All");
+	// 장르 배열
+	const GENRES = ['All', 'Action', 'Drama', 'Comedy', 'Romance'];
 
 	// Fetch
 	useEffect(() => {
@@ -114,11 +116,11 @@ export default function MovieFeatures() {
 				{/* 장르 */}
 				<div className="tab">
 					<ul>
-						<li className={activeTab === "All" ? "on" : ""}><button type="button" onClick={() => handleTabClick("All")}>All</button></li>
-						<li className={activeTab === "Action" ? "on" : ""}><button type="button" onClick={() => handleTabClick("Action")}>Action</button></li>
-						<li className={activeTab === "Drama" ? "on" : ""}><button type="button" onClick={() => handleTabClick("Drama")}>Drama</button></li>
-						<li className={activeTab === "Comedy" ? "on" : ""}><button type="button" onClick={() => handleTabClick("Comedy")}>Comedy</button></li>
-						<li className={activeTab === "Romance" ? "on" : ""}><button type="button" onClick={() => handleTabClick("Romance")}>Romance</button></li>
+						{GENRES.map(genre => (
+							<li key={genre} className={activeTab === genre ? "on" : ""}>
+								<button type="button" onClick={() => handleTabClick(genre)}>{genre}</button>
+							</li>
+						))}
 					</ul>
 				</div>
 
