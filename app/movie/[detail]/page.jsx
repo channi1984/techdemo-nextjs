@@ -12,6 +12,7 @@ export default function MovieDetail() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
+	const [isLiked, setIsLiked] = useState(false);
 
 	const [comment, setComment] = useState("");
 	const [comments, setComments] = useState([]);
@@ -46,6 +47,28 @@ export default function MovieDetail() {
 		fetchMovie();
 	}, [detail]);
 
+	// 초기 로드시 좋아요 확인
+	useEffect(() => {
+		const savedLikes = JSON.parse(localStorage.getItem("movieLikes") || "[]")
+		setIsLiked(savedLikes.includes(detail));
+	}, [detail]);
+
+	// 좋아요 클릭 핸들러
+	const handleToggleLike = () => {
+		const savedLikes = JSON.parse(localStorage.getItem("movieLikes") || "[]");
+		let updatedLikes;
+
+		if (isLiked) {
+			// 이미 찜 상태면 제거
+			updatedLikes = savedLikes.filter(id => id !== detail);
+		} else {
+			// 찜 상태가 아니면 추가
+			updatedLikes = [...savedLikes, detail];
+		}
+
+		localStorage.setItem("movieLikes", JSON.stringify(updatedLikes));
+		setIsLiked(!isLiked);
+	};
 	// 팝업 열기 핸들러
 	const handleOpenPopup = () => {
 		if (movie && movie.youtubeId) {
@@ -128,6 +151,7 @@ export default function MovieDetail() {
 		}
 	};
 
+
 	if (loading) {
 		return <div className="desc loading">영화 데이터를 불러오는 중입니다...</div>;
 	}
@@ -166,8 +190,12 @@ export default function MovieDetail() {
 							{movie.rating}
 						</li>
 					</ul>
-					<button type="button" className="like">
-						<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={50} height={45} />
+					<button
+						type="button"
+						className={`link ${isLiked ? "on" : ""}`}
+						onClick={handleToggleLike}
+					>
+						<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={32} height={29} style={{ filter: isLiked ? 'none' : 'grayscale(1)' }} />
 					</button>
 				</div>
 
