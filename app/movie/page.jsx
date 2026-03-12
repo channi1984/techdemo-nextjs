@@ -144,7 +144,7 @@ export default function MovieFeatures() {
 					<ul>
 						{filteredMovies.map((movie) => {
 							const displayRating = userRatings[movie.id] || Math.round(movie.rating);
- 
+
 							return (
 								<li key={movie.id}>
 									<Link href={`/movie/${movie.id}`}>
