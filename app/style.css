@@ -99,7 +99,7 @@
 
 .wrap-movie .search {position: relative; display: flex; align-items: center; height: 5rem; background: #131316; border-radius: .75rem;}
 .wrap-movie .search .search {position: absolute; left: 0; top: 0; width: 6rem; height: 100%; background: url('/images/ic-movie-search.png') no-repeat center / 2rem auto; text-indent: -9999rem;}
-.wrap-movie .search .filter {position: absolute; right: 0; top: 0; width: 6rem; height: 100%; background: url('/images/ic-movie-filter.png') no-repeat center / 2rem auto; text-indent: -9999rem;}
+.wrap-movie .search .filter {display: none; position: absolute; right: 0; top: 0; width: 6rem; height: 100%; background: url('/images/ic-movie-filter.png') no-repeat center / 2rem auto; text-indent: -9999rem;}
 .wrap-movie .search input {width: 100%; padding: 0 6rem; background: transparent; font-family: gr; font-size: 1.6rem; color: #fff;}
 
 .wrap-movie .tab {margin-top: 2rem;}
