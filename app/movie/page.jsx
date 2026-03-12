@@ -16,6 +16,8 @@ export default function MovieFeatures() {
 	const [error, setError] = useState(null);
 	// 현재 활성화된 탭 상태, 기본값은 All
 	const [activeTab, setActiveTab] = useState("All");
+	// 좋아요 상태
+	const [likedMovies, setLikedMovies] = useState([]);
 	// 장르 배열
 	const GENRES = ['All', 'Action', 'Drama', 'Comedy', 'Romance'];
 
@@ -38,6 +40,12 @@ export default function MovieFeatures() {
 			}
 		}
 		fetchMovies();
+	}, []);
+
+	// 로컬스토리지에서 좋아요 한 목록 가져오기
+	useEffect(() => {
+		const saved = JSON.parse(localStorage.getItem('movieLikes') || "[]");
+		setLikedMovies(saved);
 	}, []);
 
 	// 검색어 또는 탭 변경시 필터
@@ -132,6 +140,11 @@ export default function MovieFeatures() {
 								<Link href={`/movie/${movie.id}`}>
 									<div className="thumb">
 										<Image src={movie.imageUrl} alt={movie.title} width={384} height={538} />
+										{likedMovies.includes(movie.id) && (
+											<div className="badge">
+												<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={20} height={18} />
+											</div>
+										)}
 									</div>
 									<div className="subject">
 										{movie.title}
