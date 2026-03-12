@@ -6,19 +6,28 @@ import { useState, useEffect } from "react";
 
 export default function MovieDetail() {
 	const params = useParams();
-	const { detail } = params; // 동적 라우터 이름과 같아야함. 지금은 [detail]의 detail임
-
+	// 동적 라우팅 경로인 [detail]에서 영화 ID를 추출
+	const { detail } = params;
+	// 영화 상세 정보 데이터
 	const [movie, setMovie] = useState(null);
+	// 초기 로딩 상태
 	const [loading, setLoading] = useState(true);
+	// 에러 메세지
 	const [error, setError] = useState(null);
+	// 유튜브 팝업 노출 여부
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
+	// 좋아요 여부
 	const [isLiked, setIsLiked] = useState(false);
-
+	// 작성 중인 댓글 텍스트
 	const [comment, setComment] = useState("");
+	// 댓글 리스트
 	const [comments, setComments] = useState([]);
+	// 댓글 등록 중 상태
 	const [commentLoading, setCommentLoading] = useState(false);
+	// 각 댓글별 삭제 로딩 상태
 	const [deleteLoading, setDeleteLoading] = useState({});
 
+	// API 데이터 통신 함수
 	async function fetchMovie() {
 		try {
 			setLoading(true);
@@ -27,6 +36,7 @@ export default function MovieDetail() {
 				throw new Error(`HTTP error! status: ${response.status}`);
 			}
 			const data = await response.json();
+
 			const { comments, ...movieData } = data;
 			setMovie(movieData);
 			setComments(comments);
@@ -37,7 +47,7 @@ export default function MovieDetail() {
 		}
 	}
 
-	// 단일 영화 데이터를 fetch하는 useEffect
+	// [useEffect] 영화 ID(detail)가 바뀔 때마다 영화 상세 정보를 새로 가져옴
 	useEffect(() => {
 		if (!detail) {
 			setLoading(false);
@@ -47,29 +57,29 @@ export default function MovieDetail() {
 		fetchMovie();
 	}, [detail]);
 
-	// 초기 로드시 좋아요 확인
+	// [useEffect] 초기 로드 시 로컬 스토리에서 여부 확인
 	useEffect(() => {
 		const savedLikes = JSON.parse(localStorage.getItem("movieLikes") || "[]")
 		setIsLiked(savedLikes.includes(detail));
 	}, [detail]);
 
-	// 좋아요 클릭 핸들러
+	// 좋아요 토글 로직 : 로컬 스토리지에 영화 ID 저장/삭제
 	const handleToggleLike = () => {
 		const savedLikes = JSON.parse(localStorage.getItem("movieLikes") || "[]");
 		let updatedLikes;
 
 		if (isLiked) {
-			// 이미 찜 상태면 제거
+			// 이미 좋아요 상태면 배열에서 해당 ID 제거
 			updatedLikes = savedLikes.filter(id => id !== detail);
 		} else {
-			// 찜 상태가 아니면 추가
+			// 좋아요 상태가 아니면 기존 배열에서 ID 추가
 			updatedLikes = [...savedLikes, detail];
 		}
 
 		localStorage.setItem("movieLikes", JSON.stringify(updatedLikes));
 		setIsLiked(!isLiked);
 	};
-	// 팝업 열기 핸들러
+	// 유튜브 팝업 제어
 	const handleOpenPopup = () => {
 		if (movie && movie.youtubeId) {
 			setIsPopupOpen(true);
@@ -78,12 +88,11 @@ export default function MovieDetail() {
 		}
 	};
 
-	// 팝업 닫기 핸들러
 	const handleClosePopup = () => {
 		setIsPopupOpen(false);
 	};
 
-	// 유튜브 비디오 ID를 URL로 변환하는 함수
+	// 유튜브 ID(URL 형태 등)에서 Video Id만 추출하여 임베드 URL 생성
 	const getEmbedUrl = (youtubeId) => {
 		// "v="를 제거하고 순수한 ID만 추출
 		const videoId = youtubeId.split('v=')[1];
@@ -95,7 +104,7 @@ export default function MovieDetail() {
 
 	const embedUrl = movie && movie.youtubeId ? getEmbedUrl(movie.youtubeId) : null;
 
-	// 댓글 작성 핸들러
+	// 댓글 등록 비동기 통신
 	const handlePostComment = async () => {
 		if (comment.trim() === "") {
 			alert("댓글을 입력해 주세요.");
@@ -116,6 +125,7 @@ export default function MovieDetail() {
 
 			const newComment = await response.json();
 
+			// 기존 댓글 목록에서 새 댓글 추가 (불변성 유지)
 			setComments(prevComments => [...prevComments, newComment]);
 			setComment("");
 		} catch (e) {
@@ -125,8 +135,9 @@ export default function MovieDetail() {
 		}
 	}
 
-	// 댓글 삭제 핸들러
+	// 댓글 삭제 비동기 통신
 	const handleDeleteComment = async (commentId) => {
+		// 특정 아이디의 삭제 버튼만 로딩 표시하기 위해 객체 활용
 		setDeleteLoading(prev => ({ ...prev, [commentId]: true })); //[] <- 이건 배열이 아님, [abc] : true 처럼 객체의 대괄호 표기법임.
 
 		try {
@@ -142,6 +153,7 @@ export default function MovieDetail() {
 				throw new Error(errorData.error || "댓글 삭제에 실패했습니다.");
 			}
 
+			// 삭제 성공 시 UI에서 해당 댓글 필터링
 			setComments(prevComments => prevComments.filter(c => c.id !== commentId));
 
 		} catch (e) {
@@ -151,7 +163,7 @@ export default function MovieDetail() {
 		}
 	};
 
-
+	// 예외 상황 처리 렌더링
 	if (loading) {
 		return <div className="desc loading">영화 데이터를 불러오는 중입니다...</div>;
 	}
@@ -164,9 +176,10 @@ export default function MovieDetail() {
 		return <div className="desc loading">해당 영화는 없습니다.</div>;
 	}
 
+	// 메인 UI 렌더링
 	return (
 		<div className="desc">
-			{/* 무비 디테일 */}
+			{/* --- 상단: 영화 상세 영역 --- */}
 			<div className="wrap-movie-detail">
 				<div className="thumb">
 					<Image src={movie.imageDetailUrl} alt={movie.title} width={860} height={964} />
@@ -180,10 +193,10 @@ export default function MovieDetail() {
 					</div>
 				</div>
 
+				{/* 뱃지 및 평점, 좋아요 버튼 */}
 				<div className="badge">
 					<ul>
 						<li>+18</li>
-						{/* genre를 동적으로 표시하도록 수정 */}
 						<li>{movie.genre}</li>
 						<li className="star">
 							<Image src="/images/ic-movie-star.png" alt="커버 이미지" width={48} height={48} />
@@ -195,9 +208,10 @@ export default function MovieDetail() {
 						className={`link ${isLiked ? "on" : ""}`}
 						onClick={handleToggleLike}
 					>
+						{/* 찜 여부에 따라 흑백/컬러 필터 적용 */}
 						<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={32} height={29} style={{ filter: isLiked ? 'none' : 'grayscale(1)' }} />
 					</button>
-				</div> 
+				</div>
 
 				<div className="info">
 					<div className="title">
@@ -208,6 +222,7 @@ export default function MovieDetail() {
 					</div>
 				</div>
 
+				{/* 출연 배우 리스트 */}
 				<div className="actor">
 					<div className="title">Actors</div>
 					<div className="list">
@@ -232,7 +247,7 @@ export default function MovieDetail() {
 				</div>
 			</div>
 
-			{/* 무비 댓글 */}
+			{/* --- 하단: 댓글 영역 --- */}
 			<div className="wrap-movie-comment">
 				<div className="header">
 					<div className="search">
@@ -261,6 +276,7 @@ export default function MovieDetail() {
 					</div>
 				</div>
 
+				{/* 등록된 댓글 리스트 */}
 				<div className="list">
 					<div className="work">
 						<ul>
@@ -289,7 +305,7 @@ export default function MovieDetail() {
 				</div>
 			</div>
 
-			{/* 유튜브 팝업 */}
+			{/* --- 모달: 유튜브 팝업 영역 --- */}
 			{isPopupOpen && embedUrl && (
 				<div className="wrap-youtube">
 					<div className="box-youtube">

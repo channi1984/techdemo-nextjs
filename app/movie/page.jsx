@@ -6,22 +6,22 @@ import Link from "next/link";
 import { useState, useEffect, useMemo } from 'react';
 
 export default function MovieFeatures() {
-	// 검색어 상태
+	// 검색어 입력값
 	const [searchTerm, setSearchTerm] = useState("");
-	// API에서 가져온 영화 목록 상태
+	// 전체 영화 데이터 (원본)
 	const [movies, setMovies] = useState([]);
 	// 로딩 상태
 	const [loading, setLoading] = useState(true);
 	// 에러 상태
 	const [error, setError] = useState(null);
-	// 현재 활성화된 탭 상태, 기본값은 All
+	// 현재 선택된 장르 탭
 	const [activeTab, setActiveTab] = useState("All");
-	// 좋아요 상태
+	// 로컬스토리지에서 가져온 좋아요 ID 목록
 	const [likedMovies, setLikedMovies] = useState([]);
-	// 장르 배열
+	// 고정된 장르 배열
 	const GENRES = ['All', 'Action', 'Drama', 'Comedy', 'Romance'];
 
-	// Fetch
+	// API 데이터 통신 함수
 	useEffect(() => {
 		async function fetchMovies() {
 			try {
@@ -42,7 +42,7 @@ export default function MovieFeatures() {
 		fetchMovies();
 	}, []);
 
-	// 로컬스토리지에서 좋아요 한 목록 가져오기
+	// 로컬스토리지에서 좋아요 한 목록
 	useEffect(() => {
 		const saved = JSON.parse(localStorage.getItem('movieLikes') || "[]");
 		setLikedMovies(saved);
@@ -52,14 +52,14 @@ export default function MovieFeatures() {
 	const filteredMovies = useMemo(() => {
 		let currentFilteredMovies = movies;
 
-		// 1차 필터링 : 장르 필터링
+		// [1차 필터링] 장르 탭이 'All'이 아니면 해당 장르만 걸러냄
 		if (activeTab !== 'All') {
 			currentFilteredMovies = currentFilteredMovies.filter(
 				(movie) => movie.genre === activeTab
 			);
 		}
 
-		// 2차 필터링 : 검색어 필터링
+		// [2차 필터링] 검색어가 입력되어 있다면 제목(Title)에서 포함 여부 확인 (대소문자 구분 X)
 		if (searchTerm !== "") {
 			const lowercasedSearchTerm = searchTerm.toLowerCase();
 			currentFilteredMovies = currentFilteredMovies.filter((movie) => (
@@ -81,16 +81,16 @@ export default function MovieFeatures() {
 		setSearchTerm("");
 	}
 
-	//로딩중
+	// 조건부 렌더링: 로딩 중
 	if (loading) return <div className="desc loading">영화 데이터를 불러오는 중입니다.</div>;
-	//에러남
+
+	// 조건부 렌더링: 에러 발생
 	if (error) return <div className="desc error">에러: {error}</div>;
 
 	return (
 		<div className="desc">
-			{/* 무비 */}
 			<div className="wrap-movie">
-				{/* 헤더 */}
+				{/* --- 상단: 사용자 프로필 헤더 --- */}
 				<div className="header">
 					<div className="people">
 						<div className="thumb">
@@ -109,7 +109,7 @@ export default function MovieFeatures() {
 					</div>
 				</div>
 
-				{/* 검색 */}
+				{/* --- 중간: 검색 영역 --- */}
 				<div className="search">
 					<button type="button" className="search">검색버튼</button>
 					<input
@@ -121,7 +121,7 @@ export default function MovieFeatures() {
 					<button type="button" className="filter">필터버튼</button>
 				</div>
 
-				{/* 장르 */}
+				{/* --- 중간: 장르 탭 메뉴 --- */}
 				<div className="tab">
 					<ul>
 						{GENRES.map(genre => (
@@ -132,7 +132,7 @@ export default function MovieFeatures() {
 					</ul>
 				</div>
 
-				{/* 무비 리스트 */}
+				{/* --- 하단: 필터링된 영화 카드 리스트 --- */}
 				<div className="list">
 					<ul>
 						{filteredMovies.map((movie) => (
@@ -140,6 +140,7 @@ export default function MovieFeatures() {
 								<Link href={`/movie/${movie.id}`}>
 									<div className="thumb">
 										<Image src={movie.imageUrl} alt={movie.title} width={384} height={538} />
+										{/* 좋아요 목록에 포함된 영화라면 하트 뱃지 표시 */}
 										{likedMovies.includes(movie.id) && (
 											<div className="badge">
 												<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={20} height={18} />
@@ -149,6 +150,7 @@ export default function MovieFeatures() {
 									<div className="subject">
 										{movie.title}
 									</div>
+									{/* 평점만큼 별점 이미지 렌더링 (반올림 처리) */}
 									<ul className="star">
 										{Array.from({ length: Math.round(movie.rating) }).map((_, index) => (
 											<li key={`star-${index}`}>
@@ -159,7 +161,7 @@ export default function MovieFeatures() {
 								</Link>
 							</li>
 						))}
-						{/* 검색 결과가 없을 때 메세지 표시 */}
+						{/* 검색 결과가 0건일 때의 예외 처리 */}
 						{filteredMovies.length === 0 && searchTerm !== "" && (
 							<li className="nodata">No Data.</li>
 						)}
