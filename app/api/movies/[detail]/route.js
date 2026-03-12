@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import movies from "@/data/moviesData";
 
-
 const movieComments = {};
 
 
