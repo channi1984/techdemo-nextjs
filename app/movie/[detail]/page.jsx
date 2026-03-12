@@ -197,7 +197,7 @@ export default function MovieDetail() {
 					>
 						<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={32} height={29} style={{ filter: isLiked ? 'none' : 'grayscale(1)' }} />
 					</button>
-				</div>
+				</div> 
 
 				<div className="info">
 					<div className="title">
