@@ -137,7 +137,7 @@ export default function MovieDetail() {
 		savedRatings[detail] = rate;
 		localStorage.setItem("movieRatings", JSON.stringify(savedRatings));
 		setUserRating(rate);
-		alert(`${rate}점을 주셨습니다!`);
+		// alert(`${rate}점을 주셨습니다!`);
 	}
 
 	// 유튜브 팝업 제어
