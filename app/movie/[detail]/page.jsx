@@ -224,6 +224,7 @@ export default function MovieDetail() {
 										height={24}
 										style={{
 											filter: num <= userRating ? 'none' : 'grayscale(1)',
+											opacity: num <= userRating ? 1 : .2,
 											transition: 'filter 0.2s'
 										}}
 									/>
