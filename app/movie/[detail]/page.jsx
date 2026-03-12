@@ -8,6 +8,7 @@ export default function MovieDetail() {
 	const params = useParams();
 	// 동적 라우팅 경로인 [detail]에서 영화 ID를 추출
 	const { detail } = params;
+
 	// 영화 상세 정보 데이터
 	const [movie, setMovie] = useState(null);
 	// 초기 로딩 상태
@@ -18,6 +19,7 @@ export default function MovieDetail() {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 	// 좋아요 여부
 	const [isLiked, setIsLiked] = useState(false);
+
 	// 작성 중인 댓글 텍스트
 	const [comment, setComment] = useState("");
 	// 댓글 리스트
@@ -32,14 +34,15 @@ export default function MovieDetail() {
 		try {
 			setLoading(true);
 			const response = await fetch(`/api/movies/${detail}`);
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
 			const data = await response.json();
 
 			const { comments, ...movieData } = data;
+
 			setMovie(movieData);
-			setComments(comments);
+
+			const savedComments = JSON.parse(localStorage.getItem(`comments_${detail}`) || "[]");
+			setComments(savedComments);
+
 		} catch (e) {
 			setError("영화 데이터를 불러오는 데 실패했습니다.");
 		} finally {
@@ -59,8 +62,15 @@ export default function MovieDetail() {
 
 	// [useEffect] 초기 로드 시 로컬 스토리에서 여부 확인
 	useEffect(() => {
+		if (!detail) return;
+
+		//좋아요 여부 확인
 		const savedLikes = JSON.parse(localStorage.getItem("movieLikes") || "[]")
 		setIsLiked(savedLikes.includes(detail));
+
+		//댓글 데이터 로드
+		const savedComments = JSON.parse(localStorage.getItem(`comments_${detail}`) || "[]");
+		setComments(savedComments);
 	}, [detail]);
 
 	// 좋아요 토글 로직 : 로컬 스토리지에 영화 ID 저장/삭제
@@ -79,6 +89,43 @@ export default function MovieDetail() {
 		localStorage.setItem("movieLikes", JSON.stringify(updatedLikes));
 		setIsLiked(!isLiked);
 	};
+
+	// 댓글 등록 (로컬 스토리지에 저장)
+	const handlePostComment = () => {
+		if (comment.trim() === "") {
+			alert("댓글을 입력해 주세요.");
+			return;
+		}
+
+		const newComment = {
+			id: Date.now(), // 고유 ID로 타임스탬프 사용
+			content: comment,
+			date: new Date().toLocaleString() // 작성 시간 추가
+		};
+
+		const updatedComments = [...comments, newComment];
+
+		// 로컬스토리지에 저장
+		localStorage.setItem(`comments_${detail}`, JSON.stringify(updatedComments));
+
+		// UI 상태 업데이트
+		setComments(updatedComments);
+		setComment("");
+	};
+
+	// 댓글 등록 (로컬 스토리지에서 삭제)
+	const handleDeleteComment = (commentId) => {
+		if (!confirm("댓글을 삭제하시겠습니까?")) return;
+
+		const updatedComments = comments.filter(c => c.id !== commentId);
+
+		// 로컬스토리지 업데이트
+		localStorage.setItem(`comments_${detail}`, JSON.stringify(updatedComments));
+
+		// UI 상태 업데이트
+		setComments(updatedComments);
+	};
+
 	// 유튜브 팝업 제어
 	const handleOpenPopup = () => {
 		if (movie && movie.youtubeId) {
@@ -104,64 +151,6 @@ export default function MovieDetail() {
 
 	const embedUrl = movie && movie.youtubeId ? getEmbedUrl(movie.youtubeId) : null;
 
-	// 댓글 등록 비동기 통신
-	const handlePostComment = async () => {
-		if (comment.trim() === "") {
-			alert("댓글을 입력해 주세요.");
-			return;
-		}
-
-		try {
-			setCommentLoading(true);
-			const response = await fetch(`/api/movies/${detail}`, {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ content: comment }),
-			});
-
-			if (!response.ok) {
-				throw new Error("댓글 작성에 실패했습니다.");
-			}
-
-			const newComment = await response.json();
-
-			// 기존 댓글 목록에서 새 댓글 추가 (불변성 유지)
-			setComments(prevComments => [...prevComments, newComment]);
-			setComment("");
-		} catch (e) {
-			alert("댓글 작성 중 오류가 발생했습니다.");
-		} finally {
-			setCommentLoading(false);
-		}
-	}
-
-	// 댓글 삭제 비동기 통신
-	const handleDeleteComment = async (commentId) => {
-		// 특정 아이디의 삭제 버튼만 로딩 표시하기 위해 객체 활용
-		setDeleteLoading(prev => ({ ...prev, [commentId]: true })); //[] <- 이건 배열이 아님, [abc] : true 처럼 객체의 대괄호 표기법임.
-
-		try {
-			setDeleteLoading(prev => ({ ...prev, [commentId]: true }));
-			const response = await fetch(`/api/movies/${detail}`, {
-				method: "DELETE",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ commentId }),
-			});
-
-			if (!response.ok) {
-				const errorData = await response.json();
-				throw new Error(errorData.error || "댓글 삭제에 실패했습니다.");
-			}
-
-			// 삭제 성공 시 UI에서 해당 댓글 필터링
-			setComments(prevComments => prevComments.filter(c => c.id !== commentId));
-
-		} catch (e) {
-			alert(`댓글 삭제 중 오류가 발생했습니다: ${e.message}`);
-		} finally {
-			setDeleteLoading(prev => ({ ...prev, [commentId]: false }));
-		}
-	};
 
 	// 예외 상황 처리 렌더링
 	if (loading) {
