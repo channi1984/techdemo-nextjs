@@ -140,8 +140,10 @@
 .wrap-movie-detail > .thumb .play img {width: 8rem;}
 
 .wrap-movie-detail .badge {display: flex; justify-content: space-between; align-items: center; margin-top: 3rem;}
-.wrap-movie-detail .badge ul {display: flex; align-items: center;}
-.wrap-movie-detail .badge li {display: flex; align-items: center; height: 3.5rem; margin-right: 1.5rem; padding: 0 1rem; background: #312F35; border-radius: 1rem; font-size: 1.6rem;}
+.wrap-movie-detail .badge .info {display: flex; align-items: center;}
+.wrap-movie-detail .badge .util ul {display: flex; align-items: center;}
+.wrap-movie-detail .badge .util li {display: flex; align-items: center; height: 3.5rem; margin-right: 1.5rem; padding: 0 1rem; background: #312F35; border-radius: 1rem; font-size: 1.6rem;}
+.wrap-movie-detail .badge .star {display: none !important;}
 .wrap-movie-detail .badge .star img {position: relative; top: -.15rem; width: 2rem; margin-right: .2rem;}
 
 .wrap-movie-detail .like img {width: 2.5rem;}

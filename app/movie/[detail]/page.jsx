@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function MovieDetail() {
 	const params = useParams();
-	// 동적 라우팅 경로인 [detail]에서 영화 ID를 추출
+	// 동적 라우팅 경로인 [detail]에서 영화 ID를 추출 /movie/[1]
 	const { detail } = params;
 
 	// 영화 상세 정보 데이터
@@ -19,6 +19,9 @@ export default function MovieDetail() {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 	// 좋아요 여부
 	const [isLiked, setIsLiked] = useState(false);
+
+	//별점 관련 상태
+	const [userRating, setUserRating] = useState(0);
 
 	// 작성 중인 댓글 텍스트
 	const [comment, setComment] = useState("");
@@ -52,11 +55,7 @@ export default function MovieDetail() {
 
 	// [useEffect] 영화 ID(detail)가 바뀔 때마다 영화 상세 정보를 새로 가져옴
 	useEffect(() => {
-		if (!detail) {
-			setLoading(false);
-			return;
-		}
-
+		if (!detail) { setLoading(false); return; }
 		fetchMovie();
 	}, [detail]);
 
@@ -71,6 +70,12 @@ export default function MovieDetail() {
 		//댓글 데이터 로드
 		const savedComments = JSON.parse(localStorage.getItem(`comments_${detail}`) || "[]");
 		setComments(savedComments);
+
+		//별점 데이터 로드
+		const savedRatings = JSON.parse(localStorage.getItem("movieRatings") || "{}");
+		if (savedRatings[detail]) {
+			setUserRating(savedRatings[detail]);
+		}
 	}, [detail]);
 
 	// 좋아요 토글 로직 : 로컬 스토리지에 영화 ID 저장/삭제
@@ -113,7 +118,7 @@ export default function MovieDetail() {
 		setComment("");
 	};
 
-	// 댓글 등록 (로컬 스토리지에서 삭제)
+	// 댓글 삭제 (로컬 스토리지에서 삭제)
 	const handleDeleteComment = (commentId) => {
 		if (!confirm("댓글을 삭제하시겠습니까?")) return;
 
@@ -125,6 +130,15 @@ export default function MovieDetail() {
 		// UI 상태 업데이트
 		setComments(updatedComments);
 	};
+
+	// 별점 저장
+	const handleRating = (rate) => {
+		const savedRatings = JSON.parse(localStorage.getItem("movieRatings") || "{}");
+		savedRatings[detail] = rate;
+		localStorage.setItem("movieRatings", JSON.stringify(savedRatings));
+		setUserRating(rate);
+		alert(`${rate}점을 주셨습니다!`);
+	}
 
 	// 유튜브 팝업 제어
 	const handleOpenPopup = () => {
@@ -184,14 +198,40 @@ export default function MovieDetail() {
 
 				{/* 뱃지 및 평점, 좋아요 버튼 */}
 				<div className="badge">
-					<ul>
-						<li>+18</li>
-						<li>{movie.genre}</li>
-						<li className="star">
-							<Image src="/images/ic-movie-star.png" alt="커버 이미지" width={48} height={48} />
-							{movie.rating}
-						</li>
-					</ul>
+					<div className="info">
+						<div className="util">
+							<ul>
+								<li>+18</li>
+								<li>{movie.genre}</li>
+								<li className="star">
+									<Image src="/images/ic-movie-star.png" alt="커버 이미지" width={48} height={48} />
+									{userRating > 0 ? userRating : movie.rating}
+								</li>
+							</ul>
+						</div>
+						<div className="rating-count">
+							{[1, 2, 3, 4, 5].map((num) => (
+								<button
+									key={num}
+									type="button"
+									onClick={() => handleRating(num)}
+									style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+								>
+									<Image
+										src="/images/ic-movie-star.png"
+										alt={`${num}점`}
+										width={24}
+										height={24}
+										style={{
+											filter: num <= userRating ? 'none' : 'grayscale(1)',
+											transition: 'filter 0.2s'
+										}}
+									/>
+								</button>
+							))}
+						</div>
+					</div>
+
 					<button
 						type="button"
 						className={`link ${isLiked ? "on" : ""}`}

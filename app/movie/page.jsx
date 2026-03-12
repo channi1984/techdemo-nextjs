@@ -18,6 +18,8 @@ export default function MovieFeatures() {
 	const [activeTab, setActiveTab] = useState("All");
 	// 로컬스토리지에서 가져온 좋아요 ID 목록
 	const [likedMovies, setLikedMovies] = useState([]);
+	// 사용자가 매긴 별점 목록 상태
+	const [userRatings, setUserRatings] = useState({});
 	// 고정된 장르 배열
 	const GENRES = ['All', 'Action', 'Drama', 'Comedy', 'Romance'];
 
@@ -42,10 +44,15 @@ export default function MovieFeatures() {
 		fetchMovies();
 	}, []);
 
-	// 로컬스토리지에서 좋아요 한 목록
+	// 로컬스토리지에서 좋아요 / 별점 목록
 	useEffect(() => {
-		const saved = JSON.parse(localStorage.getItem('movieLikes') || "[]");
-		setLikedMovies(saved);
+		// 좋아요 목록
+		const savedLikes = JSON.parse(localStorage.getItem('movieLikes') || "[]");
+		setLikedMovies(savedLikes);
+
+		// 별점 목록
+		const savedRatings = JSON.parse(localStorage.getItem('movieRatings') || "{}");
+		setUserRatings(savedRatings);
 	}, []);
 
 	// 검색어 또는 탭 변경시 필터
@@ -135,32 +142,44 @@ export default function MovieFeatures() {
 				{/* --- 하단: 필터링된 영화 카드 리스트 --- */}
 				<div className="list">
 					<ul>
-						{filteredMovies.map((movie) => (
-							<li key={movie.id}>
-								<Link href={`/movie/${movie.id}`}>
-									<div className="thumb">
-										<Image src={movie.imageUrl} alt={movie.title} width={384} height={538} />
-										{/* 좋아요 목록에 포함된 영화라면 하트 뱃지 표시 */}
-										{likedMovies.includes(movie.id) && (
-											<div className="badge">
-												<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={20} height={18} />
-											</div>
-										)}
-									</div>
-									<div className="subject">
-										{movie.title}
-									</div>
-									{/* 평점만큼 별점 이미지 렌더링 (반올림 처리) */}
-									<ul className="star">
-										{Array.from({ length: Math.round(movie.rating) }).map((_, index) => (
-											<li key={`star-${index}`}>
-												<Image src="/images/ic-movie-star.png" alt="별점이미지" width={48} height={48} />
-											</li>
-										))}
-									</ul>
-								</Link>
-							</li>
-						))}
+						{filteredMovies.map((movie) => {
+							const displayRating = userRatings[movie.id] || Math.round(movie.rating);
+ 
+							return (
+								<li key={movie.id}>
+									<Link href={`/movie/${movie.id}`}>
+										<div className="thumb">
+											<Image src={movie.imageUrl} alt={movie.title} width={384} height={538} />
+											{likedMovies.includes(movie.id) && (
+												<div className="badge">
+													<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={20} height={18} />
+												</div>
+											)}
+										</div>
+										<div className="subject">
+											{movie.title}
+										</div>
+
+										<ul className="star">
+											{Array.from({ length: 5 }).map((_, index) => (
+												<li key={`star-${index}`}>
+													<Image
+														src="/images/ic-movie-star.png"
+														alt="별점이미지"
+														width={48}
+														height={48}
+														style={{
+															filter: index < displayRating ? 'none' : 'grayscale(1)',
+															opacity: index < displayRating ? 1 : 0.3
+														}}
+													/>
+												</li>
+											))}
+										</ul>
+									</Link>
+								</li>
+							);
+						})}
 						{/* 검색 결과가 0건일 때의 예외 처리 */}
 						{filteredMovies.length === 0 && searchTerm !== "" && (
 							<li className="nodata">No Data.</li>

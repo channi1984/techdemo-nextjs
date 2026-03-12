@@ -5,7 +5,7 @@ const movies = [
 		imageUrl: "/images/img-movie5.png",
 		imageDetailUrl: "/images/img-movie-detail5.png",
 		description: "이제껏 본 적 없는 진짜 ‘조커’를 만나라.",
-		rating: 4,
+		rating: 0,
 		genre: "Drama",
 		actors: [
 			{ name: "호아킨 피닉스", imageUrl: "/images/img-movie-actor5-1.png" },
@@ -19,7 +19,7 @@ const movies = [
 		imageUrl: "/images/img-movie4.png",
 		imageDetailUrl: "/images/img-movie-detail4.png",
 		description: "레전드 액션 블록버스터 <존 윅>의 새로운 챕터가 열린다!",
-		rating: 3,
+		rating: 0,
 		genre: "Action",
 		actors: [
 			{ name: "키아누 리브스", imageUrl: "/images/img-movie-actor4-1.png" },
@@ -33,7 +33,7 @@ const movies = [
 		imageUrl: "/images/img-movie6.png",
 		imageDetailUrl: "/images/img-movie-detail6.png",
 		description: "An intense and moving drama exploring human emotions.",
-		rating: 3,
+		rating: 0,
 		genre: "Drama",
 		actors: [
 			{ name: "케일리 스패니", imageUrl: "/images/img-movie-actor6-1.png" },
@@ -47,7 +47,7 @@ const movies = [
 		imageUrl: "/images/img-movie1.png",
 		imageDetailUrl: "/images/img-movie-detail1.png",
 		description: "빨간 불이 꺼지고 운명을 건 레이스가 시작된다!",
-		rating: 5,
+		rating: 0,
 		genre: "Drama",
 		actors: [
 			{ name: "브래드 피트", imageUrl: "/images/img-movie-actor1-1.png" },
@@ -61,7 +61,7 @@ const movies = [
 		imageUrl: "/images/img-movie2.png",
 		imageDetailUrl: "/images/img-movie-detail2.png",
 		description: "함부로 상상하지 마라 모든 것은 변신한다!",
-		rating: 3,
+		rating: 0,
 		genre: "Action",
 		actors: [
 			{ name: "샤이아 라보프", imageUrl: "/images/img-movie-actor2-1.png" },
@@ -75,7 +75,7 @@ const movies = [
 		imageUrl: "/images/img-movie3.png",
 		imageDetailUrl: "/images/img-movie-detail3.png",
 		description: "한순간의 실수도 용납되지 않는 하늘 위, 가장 압도적인 비행이 시작된다!",
-		rating: 2,
+		rating: 0,
 		genre: "Action",
 		actors: [
 			{ name: "Steve McQueen", imageUrl: "/images/img-movie-actor3-1.png" },
@@ -89,7 +89,7 @@ const movies = [
 		imageUrl: "/images/img-movie7.png",
 		imageDetailUrl: "/images/img-movie-detail7.png",
 		description: "책을 만들었는데, 로맨스가 따라왔다? 책을 읽지 않는 세상에서 책을 만드는 사람들의 이야기를 담은 로맨틱 코미디 드라마.",
-		rating: 3,
+		rating: 0,
 		genre: "Romance",
 		actors: [
 			{ name: "이종석", imageUrl: "/images/img-movie-actor7-1.png" },
@@ -103,7 +103,7 @@ const movies = [
 		imageUrl: "/images/img-movie8.png",
 		imageDetailUrl: "/images/img-movie-detail8.png",
 		description: "짠내 폭발 청년백수,전대미문의 진짜 재난을 만나다.",
-		rating: 5,
+		rating: 0,
 		genre: "Comedy",
 		actors: [
 			{ name: "조정석", imageUrl: "/images/img-movie-actor8-1.png" },
@@ -117,7 +117,7 @@ const movies = [
 		imageUrl: "/images/img-movie9.png",
 		imageDetailUrl: "/images/img-movie-detail9.png",
 		description: "범인을 잡을 것인가, 닭을 잡을 것인가!",
-		rating: 5,
+		rating: 0,
 		genre: "Comedy",
 		actors: [
 			{ name: "류승룡", imageUrl: "/images/img-movie-actor9-1.png" },
