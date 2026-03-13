@@ -20,6 +20,10 @@ export default function MovieFeatures() {
 	const [likedMovies, setLikedMovies] = useState([]);
 	// 사용자가 매긴 별점 목록 상태
 	const [userRatings, setUserRatings] = useState({});
+	// 장바구니 상태
+	const [cartItems, setCartItems] = useState([]);
+	// 장바구니 레이어 열림/닫힘 상태
+	const [isCartOpen, setIsCartOpen] = useState(false);
 	// 고정된 장르 배열
 	const GENRES = ['All', 'Action', 'Drama', 'Comedy', 'Romance'];
 
@@ -53,6 +57,10 @@ export default function MovieFeatures() {
 		// 별점 목록
 		const savedRatings = JSON.parse(localStorage.getItem('movieRatings') || "{}");
 		setUserRatings(savedRatings);
+
+		// 장바구니 목록
+		const savedCart = JSON.parse(localStorage.getItem('movieCart') || "[]");
+		setCartItems(savedCart);
 	}, []);
 
 	// 검색어 또는 탭 변경시 필터
@@ -76,6 +84,11 @@ export default function MovieFeatures() {
 
 		return currentFilteredMovies;
 	}, [searchTerm, activeTab, movies]);
+
+	// 장바구니에 담긴 영화 객체들만 추출 (UI 렌더링용)
+	const cartMovies = useMemo(() => {
+		return movies.filter(movie => cartItems.includes(movie.id));
+	}, [movies, cartItems]);
 
 	// 검색어 입력 핸들러
 	const handleSearchChange = (event) => {
@@ -110,8 +123,11 @@ export default function MovieFeatures() {
 					</div>
 
 					<div className="menu">
-						<button type="button">
-							<Image src="/images/ic-movie-menu.png" alt="커버이미지" width={40} height={28} />
+						<button type="button" onClick={() => setIsCartOpen(true)} style={{ position: 'relative' }}>
+							<Image src="/images/ic-movie-cart-grey.png" alt="장바구니" width={40} height={28} />
+							{cartItems.length > 0 && (
+								<span className="cart-count">{cartItems.length}</span>
+							)}
 						</button>
 					</div>
 				</div>
@@ -143,6 +159,7 @@ export default function MovieFeatures() {
 				<div className="list">
 					<ul>
 						{filteredMovies.map((movie) => {
+							const isAddedToCart = cartItems.includes(movie.id);
 							const displayRating = userRatings[movie.id] || Math.round(movie.rating);
 
 							return (
@@ -152,9 +169,20 @@ export default function MovieFeatures() {
 											<Image src={movie.imageUrl} alt={movie.title} width={384} height={538} />
 											{likedMovies.includes(movie.id) && (
 												<div className="badge">
-													<Image src="/images/ic-movie-like.png" alt="하트 이미지" width={20} height={18} />
+													<Image src="/images/ic-movie-like.png" alt="하트" width={20} height={18} />
 												</div>
 											)}
+											{
+												/*
+													<button
+														type="button"
+														className="btn-cart"
+														onClick={(e) => handleToggleCart(e, movie.id)}
+													>
+														<Image src="/images/ic-movie-cart-white.png" alt="장바구니" width={43} height={43} />
+													</button>
+												*/
+											}
 										</div>
 										<div className="subject">
 											{movie.title}
@@ -187,6 +215,44 @@ export default function MovieFeatures() {
 					</ul>
 				</div>
 			</div>
+
+			{/* --- [추가] 장바구니 레이어 (Drawer 형태) --- */}
+			{isCartOpen && (
+				<div className="cart-layer-overlay" onClick={() => setIsCartOpen(false)}>
+					<div className="cart-layer-content" onClick={(e) => e.stopPropagation()}>
+						<div className="cart-header">
+							<h3>장바구니 ({cartItems.length})</h3>
+							<button className="btn-close" onClick={() => setIsCartOpen(false)}>닫기</button>
+						</div>
+
+						<div className="cart-list">
+							{cartMovies.length > 0 ? (
+								<ul>
+									{cartMovies.map(movie => (
+										<li key={movie.id}>
+											<div className="cart-item">
+												<Image src={movie.imageUrl} alt={movie.title} width={60} height={80} />
+												<div className="info">
+													<p className="title">{movie.title}</p>
+													<button onClick={() => handleToggleCart({ preventDefault: () => { }, stopPropagation: () => { } }, movie.id)}>삭제</button>
+												</div>
+											</div>
+										</li>
+									))}
+								</ul>
+							) : (
+								<p className="empty">장바구니가 비어 있습니다.</p>
+							)}
+						</div>
+
+						{cartMovies.length > 0 && (
+							<div className="cart-footer">
+								<button className="btn-buy">전체 구매하기</button>
+							</div>
+						)}
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
