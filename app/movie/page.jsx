@@ -101,6 +101,19 @@ export default function MovieFeatures() {
 		setSearchTerm("");
 	}
 
+	// 장바구니 토글 핸들러
+	const handleToggleCart = (e, movieId) => {
+		e.preventDefault();
+		e.stopPropagation();
+
+		const updatedCart = cartItems.includes(movieId)
+			? cartItems.filter(id => id !== movieId)
+			: [...cartItems, movieId];
+
+		localStorage.setItem('movieCart', JSON.stringify(updatedCart));
+		setCartItems(updatedCart);
+	};
+
 	// 조건부 렌더링: 로딩 중
 	if (loading) return <div className="desc loading">영화 데이터를 불러오는 중입니다.</div>;
 
