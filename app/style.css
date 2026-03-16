@@ -12,7 +12,7 @@
 /* 헤더 */
 .wrap-header .area {display: flex; justify-content: space-between; align-items: center; height: 8rem;}
 .wrap-header .left {display: flex; justify-content: center; align-items: center;}
-.wrap-header .left .logo {width: 19rem; margin-right: 7rem; font-family: pb; font-size: 3rem;}
+.wrap-header .left .logo {width: 20rem; margin-right: 7rem; font-family: pbl; font-size: 3rem; letter-spacing: .1rem;}
 .wrap-header .left .menu ul {display: flex; align-items: center;}
 .wrap-header .left .menu li {margin-right: 4rem;}
 .wrap-header .left .menu a {font-family: pb; letter-spacing: .1rem; font-size: 1.6rem;}
