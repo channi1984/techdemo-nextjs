@@ -231,10 +231,10 @@ export default function MovieFeatures() {
 
 			{/* --- [추가] 장바구니 레이어 (Drawer 형태) --- */}
 			{isCartOpen && (
-				<div className="cart-layer-overlay" onClick={() => setIsCartOpen(false)}>
-					<div className="cart-layer-content" onClick={(e) => e.stopPropagation()}>
+				<div className="wrap-cart" onClick={() => setIsCartOpen(false)}>
+					<div className="cart-box" onClick={(e) => e.stopPropagation()}>
 						<div className="cart-header">
-							<h3>장바구니 ({cartItems.length})</h3>
+							<h3>장바구니 <span className="num">{cartItems.length}</span></h3>
 							<button className="btn-close" onClick={() => setIsCartOpen(false)}>닫기</button>
 						</div>
 
@@ -247,7 +247,7 @@ export default function MovieFeatures() {
 												<Image src={movie.imageUrl} alt={movie.title} width={60} height={80} />
 												<div className="info">
 													<p className="title">{movie.title}</p>
-													<button onClick={() => handleToggleCart({ preventDefault: () => { }, stopPropagation: () => { } }, movie.id)}>삭제</button>
+													<button className="del" onClick={() => handleToggleCart({ preventDefault: () => { }, stopPropagation: () => { } }, movie.id)}></button>
 												</div>
 											</div>
 										</li>

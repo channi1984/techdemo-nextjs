@@ -272,8 +272,9 @@ export default function MovieDetail() {
 				<div className="button">
 					{/* 유튜브 ID가 있을 때만 버튼 렌더링 */}
 					{movie.youtubeId && (
-						<button type="button" onClick={handleOpenPopup}>Play</button>
+						<button type="button" className="btn-trailer" onClick={handleOpenPopup}>Watch Trailer</button>
 					)}
+					<button type="button" className="btn-cart" onClick={handleOpenPopup}>Add to Cart</button>
 				</div>
 			</div>
 
