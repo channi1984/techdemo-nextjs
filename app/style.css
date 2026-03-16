@@ -12,14 +12,14 @@
 /* 헤더 */
 .wrap-header .area {display: flex; justify-content: space-between; align-items: center; height: 8rem;}
 .wrap-header .left {display: flex; justify-content: center; align-items: center;}
-.wrap-header .left .logo {width: 19rem; margin-right: 7rem; font-family: gbl; font-size: 3rem;}
+.wrap-header .left .logo {width: 19rem; margin-right: 7rem; font-family: pb; font-size: 3rem;}
 .wrap-header .left .menu ul {display: flex; align-items: center;}
 .wrap-header .left .menu li {margin-right: 4rem;}
-.wrap-header .left .menu a {font-family: gb; font-size: 1.6rem;}
+.wrap-header .left .menu a {font-family: pb; letter-spacing: .1rem; font-size: 1.6rem;}
 .wrap-header .left .menu li.on a,
 .wrap-header .left .menu a:hover {color: #6082da;}
 .wrap-header .right .util {display: flex; align-items: center;}
-.wrap-header .right .util .price {font-size: 1.3rem;}
+.wrap-header .right .util .price {font-family: pb; font-size: 1.3rem; letter-spacing: .1rem;}
 .wrap-header .right .util .price .dolor {padding-left: 1rem; color: #6082da;}
 .wrap-header .right .util .buy button {display: flex; display: none; justify-content: center; align-items: center; height: 3.6rem; margin-left: 3rem; background: #6082da; padding: 0 1rem; border-radius: .8rem; line-height: 1; color: #fff;}
 
@@ -38,8 +38,8 @@
 /* 메인 */
 .wrap-main {display: flex; align-items: flex-start; padding-top: 5rem;}
 .wrap-main .cart {position: sticky; left: 0; top: 4rem; flex-shrink: 0; width: 40rem;}
-.wrap-main .cart .title strong {font-family: gb; font-size: 2.8rem;}
-.wrap-main .cart .title p {margin-top: 1rem; line-height: 1; font-size: 2.8rem; color: #6082da;}
+.wrap-main .cart .title strong {font-family: pl; font-size: 2.8rem; letter-spacing: .1rem;}
+.wrap-main .cart .title p {margin-top: 1.5rem; line-height: 1; font-family: pb; font-size: 2.8rem; letter-spacing: .1rem; color: #6082da;}
 .wrap-main .cart .color ul {display: flex; align-items: center; margin-top: 2.5rem;}
 .wrap-main .cart .color li {margin-right: 1rem;}
 .wrap-main .cart .color button {width: 3.6rem; height: 3.6rem; border-radius: 10rem;}
@@ -56,8 +56,8 @@
 .wrap-main .cart .add button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.6rem; background: #6082da; border-radius: .8rem; color: #050100;}
 .wrap-main .cart .detail {padding: 2rem 0; border-top: 1px solid rgba(255,255,255,.2);}
 .wrap-main .cart .detail1 {margin-top: 3rem;}
-.wrap-main .cart .detail strong {font-size: 1.4rem; letter-spacing: 1px;}
-.wrap-main .cart .detail p {padding-top: 1rem; font-family: gr; font-size: 1.4rem; letter-spacing: 1px; color: rgba(255,255,255,.7);}
+.wrap-main .cart .detail strong {font-family: pm; font-size: 1.4rem; letter-spacing: .2rem;}
+.wrap-main .cart .detail p {padding-top: 1.5rem; font-family: pl; font-size: 1.4rem; letter-spacing: .2rem; color: rgba(255,255,255,.4);}
 
 .wrap-main .desc {flex-grow: 1; padding-left: 7rem; font-size: 1.7rem; padding-bottom: 7rem;}
 .wrap-main .desc.loading {padding: 20rem 0; text-align: center; font-family: gr; font-size: 2rem; color: rgba(255,255,255,.7);}
@@ -97,20 +97,20 @@
 .wrap-movie .header .people {display: flex; align-items: center;}
 .wrap-movie .header .people .thumb {width: 4rem;}
 .wrap-movie .header .people .info {display: flex; flex-direction: column; align-items: flex-start; margin-left: 2rem;}
-.wrap-movie .header .people .info span {font-family: gl; font-size: 1.2rem; letter-spacing: 1px; color: #B9C1D9;}
-.wrap-movie .header .people .info strong {margin-top: .3rem; letter-spacing: 1px;}
+.wrap-movie .header .people .info span {font-family: pb; font-size: 1.2rem; letter-spacing: 1px; color: #B9C1D9;}
+.wrap-movie .header .people .info strong {font-family: pb; margin-top: .7rem; letter-spacing: 1px;}
 .wrap-movie .header .menu img {width: 2rem;}
 .wrap-movie .header .menu .cart-count {position: absolute; top: -1.2rem; right: -1.2rem; display: flex; align-items: center; justify-content: center; padding: .4rem .7rem; background: #bc0f0d; font-family: gb; font-size: 1.2rem; border-radius: .7rem; color: rgba(255,255,255,.7);}
 
 .wrap-movie .search {position: relative; display: flex; align-items: center; height: 5rem; background: #131316; border-radius: .75rem;}
 .wrap-movie .search .search {position: absolute; left: 0; top: 0; width: 6rem; height: 100%; background: url('/images/ic-movie-search.png') no-repeat center / 2rem auto; text-indent: -9999rem;}
 .wrap-movie .search .filter {display: none; position: absolute; right: 0; top: 0; width: 6rem; height: 100%; background: url('/images/ic-movie-filter.png') no-repeat center / 2rem auto; text-indent: -9999rem;}
-.wrap-movie .search input {width: 100%; padding: 0 6rem; background: transparent; font-family: gr; font-size: 1.6rem; color: #fff;}
+.wrap-movie .search input {width: 100%; padding: 0 6rem; background: transparent; font-family: pm; font-size: 1.6rem; letter-spacing: .1rem; color: #fff;}
 
 .wrap-movie .tab {margin-top: 2rem;}
 .wrap-movie .tab ul {display: flex; justify-content: space-between; align-items: center; gap: 0 2rem;}
 .wrap-movie .tab li {width: 25%;}
-.wrap-movie .tab button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.5rem; background: #515053; border-radius: 1rem; letter-spacing: 1px; font-size: 1.2rem; color: rgba(255,255,255,.7);}
+.wrap-movie .tab button {display: flex; justify-content: center; align-items: center; width: 100%; height: 3.5rem; background: #515053; border-radius: 1rem; letter-spacing: 1px; font-family: pm; font-size: 1.2rem; color: rgba(255,255,255,.7);}
 .wrap-movie .tab .on button,
 .wrap-movie .tab button:hover {background: #3A21D9; color: #fff;}
 
@@ -337,7 +337,7 @@
 .wrap-cart .cart-item {display: flex; align-items: center; gap: 2rem; padding: 2rem 0; border-bottom: .1rem solid #111117;}
 .wrap-cart .cart-item img {border-radius: .5rem;}
 .wrap-cart .cart-item .info {display: flex; align-items: center;}
-.wrap-cart .cart-item .title {font-size: 2rem; color: rgba(255,255,255,.8);}
+.wrap-cart .cart-item .title {font-family: gm; font-size: 2rem; color: rgba(255,255,255,.8);}
 .wrap-cart .cart-item .del {display: flex; width: 1.5rem; height: 2rem; margin-left: 2rem; background: url('/images/ic-todo-del.png') no-repeat center / 1.5rem; text-indent: -9999rem;}
 .wrap-cart .cart-item .del:hover {background: url('/images/ic-todo-del-on.png') no-repeat center / 1.5rem;}
 .wrap-cart .btn-close {display: flex; justify-content: center; align-items: center; width: 2rem; height: 2rem; background: url('/images/btn-cart-del.png') no-repeat center / 2rem; text-indent: -9999rem;}
