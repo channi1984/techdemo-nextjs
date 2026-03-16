@@ -140,6 +140,22 @@ export default function MovieDetail() {
 		// alert(`${rate}점을 주셨습니다!`);
 	}
 
+	// 방바구니 추가
+	const handleAddToCart = () => {
+		const savedCart = JSON.parse(localStorage.getItem("movieCart") || "[]");
+
+		if (savedCart.includes(detail)) {
+			alert("이미 장바구니에 담긴 영화입니다.");
+			return;
+		}
+
+		const updatedCart = [...savedCart, detail];
+
+		localStorage.setItem("movieCart", JSON.stringify(updatedCart));
+
+		alert("장바구니에 추가되었습니다!");
+	}
+
 	// 유튜브 팝업 제어
 	const handleOpenPopup = () => {
 		if (movie && movie.youtubeId) {
@@ -274,7 +290,7 @@ export default function MovieDetail() {
 					{movie.youtubeId && (
 						<button type="button" className="btn-trailer" onClick={handleOpenPopup}>Watch Trailer</button>
 					)}
-					<button type="button" className="btn-cart" onClick={handleOpenPopup}>Add to Cart</button>
+					<button type="button" className="btn-cart" onClick={handleAddToCart}>Add to Cart</button>
 				</div>
 			</div>
 
@@ -338,7 +354,7 @@ export default function MovieDetail() {
 
 			{/* --- 모달: 유튜브 팝업 영역 --- */}
 			{isPopupOpen && embedUrl && (
-				<div className="wrap-youtube">
+				<div className="wrap-youtube" onClick={handleClosePopup}>
 					<div className="box-youtube">
 						<button className="close" onClick={handleClosePopup}>닫기</button>
 						<div className="videoWrapper">
