@@ -35,11 +35,25 @@ const portfolios = [
 		genre: "대학교",
 		scope: "UI 퍼블리싱",
 		contribute: "기여 100%",
-		period: "2021.11.05 ~ 2022.04.04",
+		period: "2023.10.04 ~ 2024.04.26",
 		description: "건국대학교 KU브랜드 향상을 위한 대표 홈페이지 및 학과기관 홈페이지 구축",
 		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
 		url: "https://www.konkuk.ac.kr/konkuk/index.do",
 		gradation: "radial-gradient(circle, #016d16 0%, #005f13 90%)"
+	},
+	{
+		id: "4",
+		title: "한국외국어대학교",
+		imageUrl: "/images/img-port4.png",
+		imageDetailUrl: "/images/img-port-detail4.png",
+		genre: "대학교",
+		scope: "UI 퍼블리싱",
+		contribute: "기여 100%",
+		period: "2023.06.23 ~ 2023.10.22",
+		description: "한국외국어대학교 AI기반의 HUFS 스마트교육 플랫폼 고도화 관련 대표 홈페이지 구축",
+		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
+		url: "https://www.hufs.ac.kr/hufs/index.do",
+		gradation: "radial-gradient(circle, #a78258 0%, #896236 90%)"
 	}
 ];
 
