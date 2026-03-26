@@ -4,7 +4,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/',
-				destination: '/movie',
+				destination: '/portfolio',
 				permanent: true, // 영구적인 이동이면 true
 			},
 		];
