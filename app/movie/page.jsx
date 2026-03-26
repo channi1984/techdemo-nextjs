@@ -131,7 +131,7 @@ export default function MovieFeatures() {
 						</div>
 						<div className="info">
 							<span>Welcome back!</span>
-							<strong>Channi84</strong>
+							<strong>Channi</strong>
 						</div>
 					</div>
 

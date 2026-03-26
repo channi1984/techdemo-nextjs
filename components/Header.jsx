@@ -9,6 +9,7 @@ export default function Header() {
 
 	//pathname이 "/movie" 또는 "movie/1" 등 movie로 시작하는지 확인
 	const isMovieActive = pathname.startsWith('/movie_dummy/') || pathname === "/movie_dummy";
+	const isPortfolioActive = pathname.startsWith('/portfolio/') || pathname === "/portfolio";
 	const isMovieApiActive = pathname.startsWith('/movie/') || pathname === "/movie";
 	const isTodoListActive = pathname.startsWith('/todolist/') || pathname === "/todolist";
 	const isMusicActive = pathname.startsWith('/music/') || pathname === "/music";
@@ -24,9 +25,9 @@ export default function Header() {
 					</div>
 					<div className="menu">
 						<ul>
-							{/* <li className={isMovieActive ? "on" : ""}>
-								<Link href="/movie_dummy">Movie</Link>
-							</li> */}
+							<li className={isPortfolioActive ? "on" : ""}>
+								<Link href="/portfolio">Portfolio</Link>
+							</li>
 							<li className={isMovieApiActive ? "on" : ""}>
 								<Link href="/movie">Movie</Link>
 							</li>
