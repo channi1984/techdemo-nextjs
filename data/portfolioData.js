@@ -54,6 +54,20 @@ const portfolios = [
 		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
 		url: "https://www.hufs.ac.kr/hufs/index.do",
 		gradation: "radial-gradient(circle, #a78258 0%, #896236 90%)"
+	},
+	{
+		id: "5",
+		title: "고려대학교",
+		imageUrl: "/images/img-port5.png",
+		imageDetailUrl: "/images/img-port-detail5.png",
+		genre: "대학교",
+		scope: "UI 퍼블리싱",
+		contribute: "기여 60%",
+		period: "2024.04.15 ~ 2024.08.31",
+		description: "고려대학교 서울캠퍼스 국/영문 대표 홈페이지 재구축",
+		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
+		url: "https://www.korea.ac.kr/sites/ko/index.do",
+		gradation: "radial-gradient(circle, #7c0019 0%, #650014 90%)"
 	}
 ];
 
