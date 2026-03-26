@@ -45,7 +45,7 @@ export default function Header() {
 					<div className="util">
 						<div className="price">
 							<span>Developer</span>
-							<span className="dolor">Channi84</span>
+							<span className="dolor">Channi</span>
 						</div>
 						<div className="buy">
 							<button type="button">Button</button>
