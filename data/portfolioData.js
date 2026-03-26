@@ -26,6 +26,20 @@ const portfolios = [
 		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
 		url: "https://www.suhyup.co.kr/suhyup/index.do",
 		gradation: "radial-gradient(circle, #002c77 0%, #001f54 90%)"
+	},
+	{
+		id: "3",
+		title: "건국대학교",
+		imageUrl: "/images/img-port3.png",
+		imageDetailUrl: "/images/img-port-detail3.png",
+		genre: "대학교",
+		scope: "UI 퍼블리싱",
+		contribute: "기여 100%",
+		period: "2021.11.05 ~ 2022.04.04",
+		description: "건국대학교 KU브랜드 향상을 위한 대표 홈페이지 및 학과기관 홈페이지 구축",
+		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
+		url: "https://www.konkuk.ac.kr/konkuk/index.do",
+		gradation: "radial-gradient(circle, #016d16 0%, #005f13 90%)"
 	}
 ];
 
