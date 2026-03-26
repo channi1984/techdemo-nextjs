@@ -68,6 +68,20 @@ const portfolios = [
 		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
 		url: "https://www.korea.ac.kr/sites/ko/index.do",
 		gradation: "radial-gradient(circle, #7c0019 0%, #650014 90%)"
+	},
+	{
+		id: "6",
+		title: "연세대학교",
+		imageUrl: "/images/img-port6.png",
+		imageDetailUrl: "/images/img-port-detail6.png",
+		genre: "대학교",
+		scope: "UI 퍼블리싱",
+		contribute: "기여 100%",
+		period: "2025.01.20 ~ 2025.07.19",
+		description: "연세대학교 대표 홈페이지 개편 사업",
+		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
+		url: "https://yonsei.ac.kr/sites/sc/index.do",
+		gradation: "radial-gradient(circle, #003076 0%, #001f4e 90%)"
 	}
 ];
 
