@@ -32,7 +32,7 @@ export default function PortfolioList() {
 				const data = await response.json();
 				setPortfolios(data);
 			} catch (e) {
-				setError(`영화 데이터를 불러오는 데 실패했습니다. 원인: ${e.message}`);
+				setError(`포트폴리오를 불러오는 데 실패했습니다. 원인: ${e.message}`);
 			} finally {
 				setLoading(false);
 			}
@@ -75,7 +75,7 @@ export default function PortfolioList() {
 	}
 
 	// 조건부 렌더링: 로딩 중
-	if (loading) return <div className="desc loading">영화 데이터를 불러오는 중입니다.</div>;
+	if (loading) return <div className="desc loading">포트폴리오를 불러오는 중입니다.</div>;
 
 	// 조건부 렌더링: 에러 발생
 	if (error) return <div className="desc error">에러: {error}</div>;
