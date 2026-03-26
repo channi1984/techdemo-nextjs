@@ -133,12 +133,9 @@
 }
 
 @media screen and (max-width: 570px) {
-	.wrap-movie .list > ul {width: 100%;}
-	.wrap-movie.portfolio .list > ul {width: calc(100% + 2rem);}
-	.wrap-movie .list > ul > li {width: 100%;}
-	.wrap-movie.portfolio .list > ul > li {width: 50%;}
-	.wrap-movie .list a {padding-right: 0;}
-	.wrap-movie.portfolio .list a {padding-right: 2rem;}
+	.wrap-movie .list > ul {width: calc(100% + 2rem);}
+	.wrap-movie .list > ul > li {width: 50%;}
+	.wrap-movie .list a {padding-right: 2rem;}
 }
 
 /* 무비 디테일 */
