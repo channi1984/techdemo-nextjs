@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
 						<div className="wrap-main">
 							<div className="cart">
 								<div className="title">
-									<strong>TECHDOMO PAGE</strong>
+									<strong>PORTFOLIO PAGE</strong>
 									<p>by Next JS</p>
 								</div>
 
@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
 
 								<div className="detail detail1">
 									<strong>Description</strong>
-									<p>This is Next JS Techdemo page.</p>
+									<p>This is Next JS Portfolio page.</p>
 								</div>
 							</div>
 
