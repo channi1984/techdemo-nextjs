@@ -82,6 +82,34 @@ const portfolios = [
 		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
 		url: "https://yonsei.ac.kr/sites/sc/index.do",
 		gradation: "radial-gradient(circle, #003076 0%, #001f4e 90%)"
+	},
+	{
+		id: "7",
+		title: "한성대학교",
+		imageUrl: "/images/img-port7.png",
+		imageDetailUrl: "/images/img-port-detail7.png",
+		genre: "대학교",
+		scope: "UI 퍼블리싱",
+		contribute: "기여도 100%",
+		period: "2025.11.01 ~ 2026.02.28",
+		description: "한성대학교 대표 홈페이지 재구축",
+		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
+		url: "https://www.hansung.ac.kr/hansung/index.do",
+		gradation: "radial-gradient(circle, #5aaee2 0%, #2d8bc5 90%)"
+	},
+	{
+		id: "8",
+		title: "한라대학교",
+		imageUrl: "/images/img-port8.png",
+		imageDetailUrl: "/images/img-port-detail8.png",
+		genre: "대학교",
+		scope: "UI 퍼블리싱",
+		contribute: "기여도 100%",
+		period: "2025.05.07 ~ 2025.08.06",
+		description: "한라대학교 대표 홈페이지 리뉴얼",
+		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
+		url: "https://www.halla.ac.kr/kr/index.do",
+		gradation: "radial-gradient(circle, #302a6c 0%, #201b56 90%)"
 	}
 ];
 
