@@ -28,6 +28,7 @@ export default function Header() {
 							<li className={isPortfolioActive ? "on" : ""}>
 								<Link href="/portfolio">Portfolio</Link>
 							</li>
+							{/*
 							<li className={isMovieApiActive ? "on" : ""}>
 								<Link href="/movie">Movie</Link>
 							</li>
@@ -37,6 +38,7 @@ export default function Header() {
 							<li className={isTodoListActive ? "on" : ""}>
 								<Link href="/todolist">Todo List</Link>
 							</li>
+							 */}
 						</ul>
 					</div>
 				</div>
