@@ -122,7 +122,7 @@ const portfolios = [
 		period: "2011.12.26 ~ 2012.05.30",
 		description: "성결대학교 홈페이지 구축",
 		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
-		url: "https://www.halla.ac.kr/kr/index.do",
+		url: "https://www.sungkyul.ac.kr/skukr/index.do",
 		gradation: "radial-gradient(circle, #295ca4 0%, #144487 90%)"
 	}
 ];
