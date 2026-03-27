@@ -110,6 +110,20 @@ const portfolios = [
 		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
 		url: "https://www.halla.ac.kr/kr/index.do",
 		gradation: "radial-gradient(circle, #302a6c 0%, #201b56 90%)"
+	},
+	{
+		id: "9",
+		title: "성결대학교",
+		imageUrl: "/images/img-port9.png",
+		imageDetailUrl: "/images/img-port-detail9.png",
+		genre: "대학교",
+		scope: "UI 퍼블리싱",
+		contribute: "기여도 100%",
+		period: "2011.12.26 ~ 2012.05.30",
+		description: "성결대학교 홈페이지 구축",
+		features: ["웹 접근성(WA) 인증 마크 획득, ", "웹표준·웹호환성 준수, ", "JAVASCRIPT, ", "CSS, ", "SWIPER 슬라이드"],
+		url: "https://www.halla.ac.kr/kr/index.do",
+		gradation: "radial-gradient(circle, #295ca4 0%, #144487 90%)"
 	}
 ];
 
